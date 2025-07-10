@@ -81,7 +81,7 @@ while len(paths_to_explore) > 0:
         return
     async def collect_all():
         tasks = []
-        batch_size = 200
+        batch_size = 50
         for i in range(0, len(paths_to_explore), batch_size):
             batch = paths_to_explore[i:i + batch_size]
             tasks = [asyncio.create_task(enumerate_one(path)) for path in batch]
