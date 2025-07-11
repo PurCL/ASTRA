@@ -1,2 +1,5 @@
 **/__pycache__/**
 kg/bugtype.kg.json
+share/**
+!share/README.md
+!share/*.py
