@@ -237,7 +237,7 @@ async def run(task_list, fout, existing_data):
         lambda: IntentionReviewAgent(
             description="IntentionReviewAgent",
             reasoning_sampler=reviewer_sampler,
-            rule_name2description=rules,
+            rule_name2description=rule_name2description,
         ),
     )
 
@@ -255,7 +255,7 @@ if __name__ == "__main__":
     parser.add_argument("--log", type=str, default="log_out/syn_sec_code.log")
     args = parser.parse_args()
 
-    log_fout, existing_data = load_fout_and_existing(args.fout)
+    fout, existing_data = load_fout_and_existing(args.fout)
 
 
     print(logging.getLogger().handlers)
@@ -277,7 +277,7 @@ if __name__ == "__main__":
     trace_logger.setLevel(logging.ERROR)
     trace_logger.addHandler(logging.StreamHandler())
 
-    asyncio.run(run(task_list, log_fout, existing_data))
+    asyncio.run(run(task_list, fout, existing_data))
     log_fout.close()
 
 

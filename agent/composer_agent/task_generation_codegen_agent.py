@@ -168,7 +168,7 @@ class CodeGenTaskComposingAgent(RoutedAgent):
         self._timeout = 240
 
     async def _sample_reasoning_async(self, sampler, query):
-        response = await asyncio.to_thread(sampler.sample_reasoning, query)
+        response = await asyncio.to_thread(sampler.sample_reasoning, query, max_tokens_answer=4096)
         return response
 
     def _parse_tasks(self, generated_tasks):
