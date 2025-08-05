@@ -43,16 +43,16 @@
 </div>
 
 
-<table style="border: none; border-collapse: collapse;">
+<table style="border: none !important; border-collapse: collapse !important; border-spacing: 0 !important;">
 <tr>
-<td width="50%" style="vertical-align: top; padding-right: 20px; border: none;">
+<td width="50%" style="vertical-align: top; padding-right: 20px; border: none !important; border-width: 0 !important;">
 
 <img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 <p align="center"><strong><em>Offline Domain Modeling</em></strong></p>
 
 </td>
-<td width="50%" style="vertical-align: top; padding-left: 20px; border: none;">
+<td width="50%" style="vertical-align: top; padding-left: 20px; border: none !important; border-width: 0 !important;">
 
 ### 📝 Technical Details
 
@@ -73,9 +73,9 @@ Summary of technical achievements and performance metrics.
 </tr>
 </table>
 
-<table style="border: none; border-collapse: collapse;">
+<table style="border: none !important; border-collapse: collapse !important; border-spacing: 0 !important;">
 <tr>
-<td width="50%" style="vertical-align: top; padding-right: 20px; border: none;">
+<td width="50%" style="vertical-align: top; padding-right: 20px; border: none !important; border-width: 0 !important;">
 
 ### 🔧 Implementation
 
@@ -93,7 +93,7 @@ Detailed explanation of key features and capabilities.
 Summary of performance characteristics and benchmarks.
 
 </td>
-<td width="50%" style="vertical-align: top; padding-left: 20px; border: none;">
+<td width="50%" style="vertical-align: top; padding-left: 20px; border: none !important; border-width: 0 !important;">
 
 <img src="assets/reasoning.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
