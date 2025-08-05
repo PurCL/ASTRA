@@ -19,5 +19,5 @@ class State(Enum):
     ANSWER_WITH_NO_CODE = "AnswerWithNoCode"
     ANSWER_WITH_CODE_WITHOUT_GOAL = "AnswerWithCodeWithoutGoal"
     JAILBROKEN = "Jailbroken"
-    ABORT = "Abort"
     UNKNOWN = "Unknown"
+    ABORT = "Abort"
