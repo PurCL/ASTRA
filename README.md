@@ -47,7 +47,7 @@ The system consists of two core modules: **Offline Domain Modeling** for compreh
 
 <div align="center">
 
-<img src="assets/const.png" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<img src="assets/offline_domain_modeling.gif" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 <p align="center"><strong><em>Offline Domain Modeling</em></strong></p>
 
@@ -70,7 +70,7 @@ Summary of technical achievements and performance metrics.
 
 <div align="center">
 
-<img src="assets/reasoning.png" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<img src="assets/temporal_exploration.gif" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 <p align="center"><strong><em>Online Temporal Exploration</em></strong></p>
 
@@ -182,7 +182,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ## ⭐️ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=your-username/ASTRA&type=Date)](https://star-history.com/#your-username/ASTRA&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=PurCL/ASTRA&type=Date)](https://star-history.com/#PurCL/ASTRA&Date)
 
 <div align="center">
 
