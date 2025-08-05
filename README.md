@@ -179,5 +179,3 @@ We would like to thank the following projects and communities for their inspirat
 [![GitHub issues](https://img.shields.io/github/issues/your-username/ASTRA)](https://github.com/your-username/ASTRA/issues)
 
 </div>
-
-    "ahat_with_model",
