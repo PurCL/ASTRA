@@ -33,6 +33,7 @@
 
 **ASTRA** (Autonomous Spatial-Temporal Red-teaming for AI Software Assistants) is the **🏆 winning red team tool** from the **Amazon Nova AI Challenge**. Our framework autonomously discovers and exploits vulnerabilities in AI software assistants through intelligent conversation analysis and strategic attack generation.
 
+The system consists of two core modules: **Offline Domain Modeling** for comprehensive vulnerability analysis and **Online Temporal Exploration** for real-time attack generation. This dual-module architecture enables ASTRA to achieve unprecedented success rates in AI safety assessment.
 
 <div align="center">
 
@@ -42,21 +43,17 @@
 
 </div>
 
+### 🔍 Offline Domain Modeling
 
-<table style="border: none !important; border-collapse: collapse !important; border-spacing: 0 !important;">
-<tr>
-<td width="50%" style="vertical-align: top; padding-right: 20px; border: none !important; border-width: 0 !important;">
+<div align="center">
 
-<img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<img src="assets/const.png" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 <p align="center"><strong><em>Offline Domain Modeling</em></strong></p>
 
-</td>
-<td width="50%" style="vertical-align: top; padding-left: 20px; border: none !important; border-width: 0 !important;">
+</div>
 
-### 📝 Technical Details
-
-This section provides detailed technical information about ASTRA's implementation and methodology.
+This module provides comprehensive vulnerability analysis through offline domain modeling.
 
 **Key Components:**
 - **Component A**: Description of the first technical component
@@ -69,17 +66,17 @@ Detailed explanation of the technical approach and implementation strategy.
 **Results:**
 Summary of technical achievements and performance metrics.
 
-</td>
-</tr>
-</table>
+### ⚡ Online Temporal Exploration
 
-<table style="border: none !important; border-collapse: collapse !important; border-spacing: 0 !important;">
-<tr>
-<td width="50%" style="vertical-align: top; padding-right: 20px; border: none !important; border-width: 0 !important;">
+<div align="center">
 
-### 🔧 Implementation
+<img src="assets/reasoning.png" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
-This section covers the implementation details and technical specifications.
+<p align="center"><strong><em>Online Temporal Exploration</em></strong></p>
+
+</div>
+
+This module handles real-time attack generation through online temporal exploration.
 
 **Architecture:**
 - **Module A**: Description of the first module
@@ -92,16 +89,40 @@ Detailed explanation of key features and capabilities.
 **Performance:**
 Summary of performance characteristics and benchmarks.
 
-</td>
-<td width="50%" style="vertical-align: top; padding-left: 20px; border: none !important; border-width: 0 !important;">
+## 📊 Evaluation
 
-<img src="assets/reasoning.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<div align="center">
 
-<p align="center"><strong><em>Online Temporal Exploration</em></strong></p>
+![ASTRA Performance](assets/astra_performance.png)
 
-</td>
-</tr>
-</table>
+*ASTRA's performance in Amazon Nova AI Challenge*
+
+</div>
+
+### Key Achievements
+
+| Metric | Value | Achievement |
+|:------:|:-----:|:-----------:|
+| **🏆 Challenge Result** | **Winner** | Top attacking team in Amazon Nova AI Challenge |
+| **🥇 Prize Money** | **$250,000** | Awarded for winning the competition |
+| **📊 Success Rate** | **95%** | Vulnerability discovery success rate |
+| **⚡ Response Time** | **< 2s** | Average attack generation time |
+
+### Sample Output
+
+<div align="center">
+
+![ASTRA Demo](assets/astra_demo.png)
+
+*ASTRA in action: Live vulnerability discovery*
+
+</div>
+
+**Example Session:**
+- **🎯 Target**: AI coding assistant
+- **🔄 Strategy**: Multi-turn conversation planning
+- **✅ Result**: Vulnerability discovered in 3 turns
+- **📊 Success**: 95% attack success rate
 
 
 ## 🚀 Quick Start
@@ -145,40 +166,7 @@ Summary of performance characteristics and benchmarks.
 *Batch testing examples will be provided here.*
 
 
-## 📊 Results
 
-<div align="center">
-
-![ASTRA Performance](assets/astra_performance.png)
-
-*ASTRA's performance in Amazon Nova AI Challenge*
-
-</div>
-
-### Key Achievements
-
-| Metric | Value | Achievement |
-|:------:|:-----:|:-----------:|
-| **🏆 Challenge Result** | **Winner** | Top attacking team in Amazon Nova AI Challenge |
-| **🥇 Prize Money** | **$250,000** | Awarded for winning the competition |
-| **📊 Success Rate** | **95%** | Vulnerability discovery success rate |
-| **⚡ Response Time** | **< 2s** | Average attack generation time |
-
-### Sample Output
-
-<div align="center">
-
-![ASTRA Demo](assets/astra_demo.png)
-
-*ASTRA in action: Live vulnerability discovery*
-
-</div>
-
-**Example Session:**
-- **🎯 Target**: AI coding assistant
-- **🔄 Strategy**: Multi-turn conversation planning
-- **✅ Result**: Vulnerability discovered in 3 turns
-- **📊 Success**: 95% attack success rate
 
 ## 🤝 Contributing
 
