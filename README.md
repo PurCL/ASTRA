@@ -36,7 +36,7 @@
 
 <div align="center">
 
-<img src="assets/wf.png" alt="ASTRA Technical Details" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<img src="assets/wf.png" alt="ASTRA Technical Details" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 2px solid #1E40AF;">
 
 *ASTRA System Overview*
 
