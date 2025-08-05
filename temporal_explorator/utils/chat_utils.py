@@ -115,7 +115,7 @@ def query_model(
                         extracted_tags[tag_name] = extracted_content
                     else:
                         all_tags_extracted = False
-                        purcl_logger_adapter.error(f"Failed to extract tag '{tag_name}' from response")
+                        purcl_logger_adapter.warning(f"Failed to extract tag '{tag_name}' from response")
                 
                 if all_tags_extracted:
                     return extracted_tags
@@ -128,7 +128,7 @@ def query_model(
                             retry_count=retry
                         )
                     else:
-                        purcl_logger_adapter.error(f"Retry {retry + 1}/{max_retries}: Failed to extract all tags {tag_names} from response")
+                        purcl_logger_adapter.warning(f"Retry {retry + 1}/{max_retries}: Failed to extract all tags {tag_names} from response")
                         continue
             else:
                 # No tag extraction required, return raw response
@@ -146,7 +146,7 @@ def query_model(
                     retry_count=retry
                 )
             else:
-                purcl_logger_adapter.error(f"Retry {retry + 1}/{max_retries} failed: {str(e)}")
+                purcl_logger_adapter.warning(f"Retry {retry + 1}/{max_retries} failed: {str(e)}")
                 continue
     
     raise ModelCommunicationError(
@@ -154,47 +154,6 @@ def query_model(
         model_name=model_name_or_path,
         retry_count=max_retries
     )
-
-
-def chat_with_model(
-    model_client: OpenAI,
-    model_name_or_path: str,
-    temperature: float,
-    max_tokens: int,
-    max_retries: int,
-    messages: List[Dict[str, str]],
-    tag_name: str = None
-) -> str:
-    """
-    Backward compatibility function for chat_with_model.
-    This function is deprecated, use query_model instead.
-    """
-    if tag_name:
-        result = query_model(
-            model_client=model_client,
-            model_name_or_path=model_name_or_path,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            max_retries=max_retries,
-            messages=messages,
-            tag_names=[tag_name]
-        )
-        if result and tag_name in result:
-            return result[tag_name]
-        return None
-    else:
-        result = query_model(
-            model_client=model_client,
-            model_name_or_path=model_name_or_path,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            max_retries=max_retries,
-            messages=messages,
-            tag_names=None
-        )
-        if result and "raw" in result:
-            return result["raw"]
-        return None
 
 
 def extract_tag(text: str, tag_name: str) -> str:
