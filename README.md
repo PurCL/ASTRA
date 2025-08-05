@@ -43,19 +43,16 @@
 </div>
 
 
-<div style="margin: 30px 0;">
-
-<div style="display: flex; align-items: stretch; gap: 20px; margin-bottom: 20px;">
-
-<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333; display: flex; flex-direction: column; justify-content: center;">
+<table>
+<tr>
+<td width="50%" style="vertical-align: top; padding-right: 20px;">
 
 <img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 
 *Offline Domain Modeling*
 
-</div>
-
-<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333;">
+</td>
+<td width="50%" style="vertical-align: top; padding-left: 20px;">
 
 ### 📝 Technical Details
 
@@ -72,13 +69,13 @@ Detailed explanation of the technical approach and implementation strategy.
 **Results:**
 Summary of technical achievements and performance metrics.
 
-</div>
+</td>
+</tr>
+</table>
 
-</div>
-
-<div style="display: flex; align-items: stretch; gap: 20px;">
-
-<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333;">
+<table>
+<tr>
+<td width="50%" style="vertical-align: top; padding-right: 20px;">
 
 ### 🔧 Implementation
 
@@ -95,19 +92,16 @@ Detailed explanation of key features and capabilities.
 **Performance:**
 Summary of performance characteristics and benchmarks.
 
-</div>
-
-<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333; display: flex; flex-direction: column; justify-content: center;">
+</td>
+<td width="50%" style="vertical-align: top; padding-left: 20px;">
 
 <img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 
 *Implementation Overview*
 
-</div>
-
-</div>
-
-</div>
+</td>
+</tr>
+</table>
 
 
 ## 🚀 Quick Start
