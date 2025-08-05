@@ -36,9 +36,9 @@
 
 <div align="center">
 
-<img src="assets/wf.png" alt="ASTRA Technical Details" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 2px solid #1E40AF;">
+<img src="assets/wf.png" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
-*ASTRA System Overview*
+<p align="center"><strong><em>ASTRA System Overview</em></strong></p>
 
 </div>
 
@@ -47,9 +47,9 @@
 <tr>
 <td width="50%" style="vertical-align: top; padding-right: 20px; border: none;">
 
-<img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
-*Offline Domain Modeling*
+<p align="center"><strong><em>Offline Domain Modeling</em></strong></p>
 
 </td>
 <td width="50%" style="vertical-align: top; padding-left: 20px; border: none;">
@@ -95,9 +95,9 @@ Summary of performance characteristics and benchmarks.
 </td>
 <td width="50%" style="vertical-align: top; padding-left: 20px; border: none;">
 
-<img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<img src="assets/reasoning.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
-*Implementation Overview*
+<p align="center"><strong><em>Online Temporal Exploration</em></strong></p>
 
 </td>
 </tr>
