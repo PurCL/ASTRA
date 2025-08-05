@@ -43,16 +43,16 @@
 </div>
 
 
-<table>
+<table style="border: none; border-collapse: collapse;">
 <tr>
-<td width="50%" style="vertical-align: top; padding-right: 20px;">
+<td width="50%" style="vertical-align: top; padding-right: 20px; border: none;">
 
 <img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 
 *Offline Domain Modeling*
 
 </td>
-<td width="50%" style="vertical-align: top; padding-left: 20px;">
+<td width="50%" style="vertical-align: top; padding-left: 20px; border: none;">
 
 ### 📝 Technical Details
 
@@ -73,9 +73,9 @@ Summary of technical achievements and performance metrics.
 </tr>
 </table>
 
-<table>
+<table style="border: none; border-collapse: collapse;">
 <tr>
-<td width="50%" style="vertical-align: top; padding-right: 20px;">
+<td width="50%" style="vertical-align: top; padding-right: 20px; border: none;">
 
 ### 🔧 Implementation
 
@@ -93,7 +93,7 @@ Detailed explanation of key features and capabilities.
 Summary of performance characteristics and benchmarks.
 
 </td>
-<td width="50%" style="vertical-align: top; padding-left: 20px;">
+<td width="50%" style="vertical-align: top; padding-left: 20px; border: none;">
 
 <img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 
