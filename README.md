@@ -36,9 +36,76 @@
 
 <div align="center">
 
-![ASTRA Technical Details](assets/wf.png)
+<img src="assets/wf.png" alt="ASTRA Technical Details" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
 
 *ASTRA System Overview*
+
+</div>
+
+
+<div style="margin: 30px 0;">
+
+<div style="display: flex; align-items: stretch; gap: 20px; margin-bottom: 20px;">
+
+<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333; display: flex; flex-direction: column; justify-content: center;">
+
+<img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+*Offline Domain Modeling*
+
+</div>
+
+<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333;">
+
+### 📝 Technical Details
+
+This section provides detailed technical information about ASTRA's implementation and methodology.
+
+**Key Components:**
+- **Component A**: Description of the first technical component
+- **Component B**: Description of the second technical component  
+- **Component C**: Description of the third technical component
+
+**Methodology:**
+Detailed explanation of the technical approach and implementation strategy.
+
+**Results:**
+Summary of technical achievements and performance metrics.
+
+</div>
+
+</div>
+
+<div style="display: flex; align-items: stretch; gap: 20px;">
+
+<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333;">
+
+### 🔧 Implementation
+
+This section covers the implementation details and technical specifications.
+
+**Architecture:**
+- **Module A**: Description of the first module
+- **Module B**: Description of the second module
+- **Module C**: Description of the third module
+
+**Features:**
+Detailed explanation of key features and capabilities.
+
+**Performance:**
+Summary of performance characteristics and benchmarks.
+
+</div>
+
+<div style="flex: 1; background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 4px solid #1E40AF; color: #333333; display: flex; flex-direction: column; justify-content: center;">
+
+<img src="assets/const.png" alt="ASTRA Technical Details" width="100%" style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+*Implementation Overview*
+
+</div>
+
+</div>
 
 </div>
 
