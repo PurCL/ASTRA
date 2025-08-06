@@ -1,7 +1,10 @@
 **/__pycache__/**
+
+tests/
 kg/bugtype.kg.json
 share/**
 !share/README.md
 !share/*.py
 data_out/**
 log_out/**
+
