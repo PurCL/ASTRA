@@ -24,7 +24,7 @@
 
 - **🏆 Winner of Amazon Nova AI Challenge** - Top attacking team category
 - **🥇 $250,000 Prize** - Awarded for winning the competition
-- **📊 95% Success Rate** - In AI assistant safety assessment
+- **📊 >=90% Success Rate** - In AI assistant safety assessment
 
 ### 📰 Media Coverage
 
@@ -44,7 +44,7 @@
 
 </div>
 
-**ASTRA** (Autonomous Spatial-Temporal Red-teaming for AI Software Assistants) is a **full lifecycle red-teaming system** that autonomously discovers and exploits vulnerabilities in AI software assistants through intelligent conversation analysis and strategic attack generation.
+**ASTRA** (Autonomous Spatial-Temporal Red-teaming for AI Software Assistants) is a **full lifecycle red-teaming system** that builds structured domain-specific knowledge graphs and performs online vulnerability exploration by adaptively probing both input space (spatial) and reasoning processes (temporal).
 
 ### 🚀 What Makes ASTRA Different
 
@@ -60,10 +60,8 @@ Unlike existing tools that are either **static benchmarks** or **jailbreak attem
 - **Temporal Exploration**: Identifies weak links in target system reasoning traces and dynamically adjusts test prompts to exploit discovered vulnerabilities
 
 #### 🎯 **3. Self-Evolving Red-teaming**
-- **Self-evolving capability**: Uses sampling algorithms to efficiently exploit target systems
-- **Complete lifecycle**: From domain analysis to vulnerability discovery
+- **Self-evolving capability**: Records successful cases and adjusts sampling strategies to target similar prompts, gradually improving success rates
 - **Autonomous operation**: No human intervention required during testing
-- **Success-driven adaptation**: Records successful cases and adjusts sampling strategies to target similar prompts, gradually improving success rates
 
 <!-- ### 🔧 How ASTRA Works
 
@@ -178,7 +176,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ## ⭐️ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=PurCL/ASTRA&type=Date)](https://star-history.com/#PurCL/ASTRA&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=PurCL/astra-share&type=Date)](https://star-history.com/#shen447/astra-share&Date)
 
 <div align="center">
 
@@ -200,7 +198,7 @@ If you find ASTRA useful in your research, please cite our paper:
   author={Your Name and Co-authors},
   journal={Conference/Journal Name},
   year={2024},
-  url={https://github.com/your-username/ASTRA}
+  url={https://github.com/PurCL/astra-share}
 }
 ```
 
@@ -216,8 +214,8 @@ We would like to thank the following projects and communities for their inspirat
 
 **Made with ❤️ for AI Safety Research**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/ASTRA?style=social)](https://github.com/your-username/ASTRA)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/ASTRA?style=social)](https://github.com/your-username/ASTRA)
-[![GitHub issues](https://img.shields.io/github/issues/your-username/ASTRA)](https://github.com/your-username/ASTRA/issues)
+[![GitHub stars](https://img.shields.io/github/stars/PurCL/astra-share?style=social)](https://github.com/PurCL/astra-share)
+[![GitHub forks](https://img.shields.io/github/forks/PurCL/astra-share?style=social)](https://github.com/PurCL/astra-share)
+[![GitHub issues](https://img.shields.io/github/issues/PurCL/astra-share)](https://github.com/PurCL/astra-share)
 
 </div>
