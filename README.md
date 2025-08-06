@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ASTRA Banner" width="100%">
+<img src="assets/banner.svg" alt="ASTRA Banner" width="100%">
 
 </div>
 

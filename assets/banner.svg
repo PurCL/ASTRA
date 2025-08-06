@@ -1,0 +1,67 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 星星图案 -->
+    <pattern id="stars" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="40" cy="20" r="0.8" fill="rgba(255,255,255,0.2)"/>
+      <circle cx="25" cy="35" r="1.2" fill="rgba(255,255,255,0.4)"/>
+    </pattern>
+    
+    <!-- 发光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+  <rect width="1200" height="300" fill="url(#stars)"/>
+  
+  <!-- 装饰性几何图形 -->
+  <circle cx="100" cy="150" r="80" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <circle cx="1100" cy="150" r="60" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  
+  <!-- 主标题 -->
+  <text x="600" y="120" font-family="'Courier New', monospace" font-size="48" font-weight="bold" text-anchor="middle" fill="white" filter="url(#glow)">
+    ASTRA
+  </text>
+  
+  <!-- 副标题 -->
+  <text x="600" y="160" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="rgba(255,255,255,0.9)">
+    Autonomous Spatial-Temporal Red-teaming for AI Software Assistants
+  </text>
+  
+  <!-- 成就标签 -->
+  <rect x="450" y="180" width="300" height="40" rx="20" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="600" y="205" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white" font-weight="bold">
+    🏆 Amazon Nova AI Challenge Winner
+  </text>
+  
+  <!-- 技术标签 -->
+  <rect x="400" y="230" width="400" height="30" rx="15" fill="rgba(255,255,255,0.15)"/>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.8)">
+    AI Safety • Red-teaming • Vulnerability Discovery • Autonomous Testing
+  </text>
+  
+  <!-- 装饰性元素 -->
+  <g transform="translate(50, 50)">
+    <polygon points="0,20 10,0 20,20" fill="rgba(255,255,255,0.3)"/>
+    <polygon points="5,15 15,5 25,15" fill="rgba(255,255,255,0.2)"/>
+  </g>
+  
+  <g transform="translate(1150, 50)">
+    <polygon points="0,20 10,0 20,20" fill="rgba(255,255,255,0.3)"/>
+    <polygon points="5,15 15,5 25,15" fill="rgba(255,255,255,0.2)"/>
+  </g>
+</svg> 
