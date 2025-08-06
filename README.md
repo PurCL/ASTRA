@@ -4,7 +4,7 @@
 
 </div>
 
-# <span style="font-family: 'Courier New', monospace; font-weight: bold; color: #1E40AF; text-shadow: 2px 2px 4px rgba(30, 64, 175, 0.3);">ASTRA</span>: Autonomous Spatial-Temporal Red-teaming for AI Software Assistants
+# 🚀 <span style="font-family: 'Courier New', monospace; font-weight: bold; color: #1E40AF; text-shadow: 2px 2px 4px rgba(30, 64, 175, 0.3);">ASTRA</span>: Autonomous Spatial-Temporal Red-teaming for AI Software Assistants
 
 [![Amazon Nova AI Challenge](https://img.shields.io/badge/Amazon%20Nova%20AI%20Challenge-Winner%20Red%20Team-FF9900?style=for-the-badge&logo=amazon&logoColor=white)](https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge)
 [![Website](https://img.shields.io/badge/Website-ASTRA-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://astra-share.github.io)
@@ -12,8 +12,7 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-B31B1B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](astra-tr.pdf)
 [![License](https://img.shields.io/badge/License-MIT-8DA0CB?style=for-the-badge&logo=mit&logoColor=white)](LICENSE)
 
-> **🏆 Red-Team Winner of Amazon Nova AI Challenge - First-ever global tournament where elite university teams battle to harden and hack AI coding assistants**
-
+**🏆 Red-Team Winner of Amazon Nova AI Challenge - First-ever global tournament where elite university teams battle to harden and hack AI coding assistants** 
 
 ## 📰 News
 
@@ -37,10 +36,6 @@
 
 ## 🎯 About
 
-**ASTRA** (Autonomous Spatial-Temporal Red-teaming for AI Software Assistants) is the **🏆 winning red team tool** from the **Amazon Nova AI Challenge**. Our framework autonomously discovers and exploits vulnerabilities in AI software assistants through intelligent conversation analysis and strategic attack generation.
-
-The system consists of two core modules: **Offline Domain Modeling** for comprehensive vulnerability analysis and **Online Temporal Exploration** for real-time attack generation. This dual-module architecture enables ASTRA to achieve unprecedented success rates in AI safety assessment.
-
 <div align="center">
 
 <img src="assets/wf.png" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -49,86 +44,34 @@ The system consists of two core modules: **Offline Domain Modeling** for compreh
 
 </div>
 
-### 🔍 Offline Domain Modeling
+**ASTRA** (Autonomous Spatial-Temporal Red-teaming for AI Software Assistants) is a **full lifecycle red-teaming system** that autonomously discovers and exploits vulnerabilities in AI software assistants through intelligent conversation analysis and strategic attack generation.
 
-<div align="center">
+### 🚀 What Makes ASTRA Different
 
-<img src="assets/offline_domain_modeling.gif" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+Unlike existing tools that are either **static benchmarks** or **jailbreak attempts on given benchmarks**, ASTRA operates as a **complete red-teaming solution**:
 
-<p align="center"><strong><em>Offline Domain Modeling</em></strong></p>
+#### 🔍 **1. Structural Domain Modeling**
+- **Given a target domain**, ASTRA performs **structural modeling** and generates high-quality violation-inducing prompts
+- **No pre-defined benchmarks required** - ASTRA creates its own test cases systematically
 
-</div>
+#### 💬 **2. Multi-turn Conversation Framework**
+- **Uses generated prompts as starting points** for comprehensive testing
+- **Conducts adaptive multi-round conversations** with target systems based on responses
 
-This module provides comprehensive vulnerability analysis through offline domain modeling.
+#### 🎯 **3. Self-Evolving Red-teaming**
+- **Self-evolving capability**: Uses sampling algorithms to efficiently exploit target systems
+- **Complete lifecycle**: From domain analysis to vulnerability discovery
+- **Autonomous operation**: No human intervention required during testing
 
-**Key Components:**
-- **Component A**: Description of the first technical component
-- **Component B**: Description of the second technical component  
-- **Component C**: Description of the third technical component
+### 🔧 How ASTRA Works
 
-**Methodology:**
-Detailed explanation of the technical approach and implementation strategy.
+ASTRA operates through a sophisticated three-stage process:
 
-**Results:**
-Summary of technical achievements and performance metrics.
+1. **📊 Knowledge Graph Construction** - Builds structured domain-specific knowledge graphs that model complex software tasks and known vulnerabilities
+2. **🔍 Adaptive Exploration** - Performs online vulnerability exploration by probing both input space (spatial) and reasoning processes (temporal) 
+3. **🎯 Violation Generation** - Creates high-quality violation-inducing cases to improve model alignment and safety
 
-### ⚡ Online Temporal Exploration
 
-<div align="center">
-
-<img src="assets/temporal_exploration.gif" alt="ASTRA Technical Details" width="80%" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-
-<p align="center"><strong><em>Online Temporal Exploration</em></strong></p>
-
-</div>
-
-This module handles real-time attack generation through online temporal exploration.
-
-**Architecture:**
-- **Module A**: Description of the first module
-- **Module B**: Description of the second module
-- **Module C**: Description of the third module
-
-**Features:**
-Detailed explanation of key features and capabilities.
-
-**Performance:**
-Summary of performance characteristics and benchmarks.
-
-## 📊 Evaluation
-
-<div align="center">
-
-![ASTRA Performance](assets/astra_performance.png)
-
-*ASTRA's performance in Amazon Nova AI Challenge*
-
-</div>
-
-### Key Achievements
-
-| Metric | Value | Achievement |
-|:------:|:-----:|:-----------:|
-| **🏆 Challenge Result** | **Winner** | Top attacking team in Amazon Nova AI Challenge |
-| **🥇 Prize Money** | **$250,000** | Awarded for winning the competition |
-| **📊 Success Rate** | **95%** | Vulnerability discovery success rate |
-| **⚡ Response Time** | **< 2s** | Average attack generation time |
-
-### Sample Output
-
-<div align="center">
-
-![ASTRA Demo](assets/astra_demo.png)
-
-*ASTRA in action: Live vulnerability discovery*
-
-</div>
-
-**Example Session:**
-- **🎯 Target**: AI coding assistant
-- **🔄 Strategy**: Multi-turn conversation planning
-- **✅ Result**: Vulnerability discovered in 3 turns
-- **📊 Success**: 95% attack success rate
 
 
 ## 🚀 Quick Start
@@ -172,6 +115,51 @@ Summary of performance characteristics and benchmarks.
 *Batch testing examples will be provided here.*
 
 
+
+## 📊 Evaluation
+
+<div align="center">
+
+![ASTRA Performance](assets/astra_performance.png)
+
+*ASTRA's performance in Amazon Nova AI Challenge*
+
+</div>
+
+### Key Achievements
+
+| Metric | Value | Achievement |
+|:------:|:-----:|:-----------:|
+| **🏆 Challenge Result** | **Winner** | Top attacking team in Amazon Nova AI Challenge |
+| **🥇 Prize Money** | **$250,000** | Awarded for winning the competition |
+| **📊 Success Rate** | **95%** | Vulnerability discovery success rate |
+| **⚡ Response Time** | **< 2s** | Average attack generation time |
+
+### Sample Output
+
+<div align="center">
+
+![ASTRA Demo](assets/astra_demo.png)
+
+*ASTRA in action: Live vulnerability discovery*
+
+</div>
+
+**Example Session:**
+- **🎯 Target**: AI coding assistant
+- **🔄 Strategy**: Multi-turn conversation planning
+- **✅ Result**: Vulnerability discovered in 3 turns
+- **📊 Success**: 95% attack success rate
+
+
+## 📧 Contact
+
+For questions, collaborations, or feedback, please contact:
+
+- **Xiangzhe Xu** - [xu1415@purdue.edu](mailto:xu1415@purdue.edu)
+- **Guangyu Shen** - [shen447@purdue.edu](mailto:shen447@purdue.edu)
+
+We welcome academic collaborations and industry partnerships!
 
 
 ## 🤝 Contributing
@@ -219,9 +207,6 @@ If you find ASTRA useful in your research, please cite our paper:
 We would like to thank the following projects and communities for their inspiration and support:
 
 - **[Amazon Nova AI Challenge](https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge)** - For providing the platform and resources that enabled ASTRA's development and validation
-- **[Magicoder](https://github.com/ise-uiuc/magicoder)** - For inspiring the temporal exploration approach
-- **[LLMs-Finetuning-Safety](https://github.com/LLM-Tuning-Safety/LLMs-Finetuning-Safety)** - For safety evaluation methodologies
-- The open-source AI safety community for continuous research and development
 
 ---
 
