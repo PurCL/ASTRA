@@ -1,0 +1,171 @@
+phi4m:
+  model_name: microsoft/Phi-4-mini-instruct
+  apis:
+    - addr: http://localhost:8001/v1
+      api_key: redteam233
+
+mistral:
+  model_name: mistralai/Ministral-8B-Instruct-2410
+  apis:
+    - addr: http://localhost:8002/v1
+      api_key: redteam233
+
+qwen3-coder:
+  model_name: Qwen/Qwen3-Coder-30B-A3B-Instruct
+  apis:
+    - addr: http://35.89.239.12:8000/v1
+      api_key: redteam233
+
+
+# clm-7b:
+#   model_name: meta-llama/CodeLlama-7b-Instruct-hf
+#   apis:
+#     - addr: http://54.148.88.179:8001/v1
+#       api_key: redteam233
+#     - addr: http://54.148.88.179:8002/v1
+#       api_key: redteam233
+#     - addr: http://54.148.88.179:8003/v1
+#       api_key: redteam233
+#     - addr: http://54.148.88.179:8004/v1
+#       api_key: redteam233
+
+
+# cgm-7b:
+#   model_name: google/codegemma-7b-it
+#   apis:
+#     - addr: http://54.186.53.146:8001/v1
+#       api_key: redteam233
+#     - addr: http://54.186.53.146:8002/v1
+#       api_key: redteam233
+#     - addr: http://54.186.53.146:8003/v1
+#       api_key: redteam233
+#     - addr: http://54.186.53.146:8004/v1
+#       api_key: redteam233
+
+
+# llama3-1b:
+#   model_name: meta-llama/Llama-3.2-1B-Instruct
+#   apis:
+#     - addr: http://35.89.143.22:8001/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8002/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8003/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8004/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8005/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8006/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8007/v1
+#       api_key: redteam233
+#     - addr: http://35.89.143.22:8008/v1
+#       api_key: redteam233
+
+
+# qwen2.5coder-0.5b:
+#   model_name: Qwen/Qwen2.5-Coder-0.5B-Instruct
+#   apis:
+#     - addr: http://34.218.58.61:8001/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8002/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8003/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8004/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8005/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8006/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8007/v1
+#       api_key: redteam233
+#     - addr: http://34.218.58.61:8008/v1
+#       api_key: redteam233
+# llama3-70b:
+#   model_name: meta-llama/Llama-3.3-70B-Instruct
+#   apis:
+#     - addr: http://35.94.224.109:8001/v1
+#       api_key: redteam233
+
+# llama3-70b:
+#   model_name: deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+#   apis:
+#     - addr: http://35.94.224.109:8001/v1
+#       api_key: redteam233
+
+
+# qwen3-8b:
+#   model_name: Qwen/Qwen3-8B
+#   apis:
+#     - addr: http://44.248.7.136:8001/v1
+#       api_key: redteam233
+#     - addr: http://44.248.7.136:8002/v1
+#       api_key: redteam233
+#     - addr: http://44.248.7.136:8003/v1
+#       api_key: redteam233
+#     - addr: http://44.248.7.136:8004/v1
+#       api_key: redteam233
+
+
+
+# zian-judg-wo-docstring:
+#   model_name: zian-judge
+#   apis:
+#     - addr: http://35.92.76.124:8001/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8002/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8003/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8004/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8005/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8006/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8007/v1
+#       api_key: redteam233
+#     - addr: http://35.92.76.124:8008/v1
+#       api_key: redteam233
+
+# zian-judge:
+#   model_name: zian-judge
+#   apis:
+#     - addr: http://52.12.13.129:8001/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8002/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8003/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8004/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8005/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8006/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8007/v1
+#       api_key: redteam233
+#     - addr: http://52.12.13.129:8008/v1
+#       api_key: redteam233
+
+# phi4:
+#   model_name: microsoft/phi-4
+#   apis:
+#     - addr: http://35.94.224.109:8001/v1
+#       api_key: redteam233
+#     - addr: http://35.94.224.109:8002/v1
+#       api_key: redteam233
+#     - addr: http://35.94.224.109:8003/v1
+#       api_key: redteam233
+#     - addr: http://35.94.224.109:8004/v1
+#       api_key: redteam233
+
+# qwen3:
+#   model_name: Qwen/Qwen3-30B-A3B
+#   apis:
+#     - addr: http://35.88.232.70:8001/v1
+#       api_key: redteam233
+#     - addr: http://35.88.232.70:8002/v1
+#       api_key: redteam233

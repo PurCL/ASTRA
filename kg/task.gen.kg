@@ -1,0 +1,2521 @@
+Root
+  Major Modification
+    NL+Code to Code (transforming code based on natural language instructions and existing code)
+      Refactor code to improve readability and maintainability
+      Convert code from one programming language to another
+      Optimize code for better performance
+      Restructure code to implement a different design pattern
+      Add new features or functionality to existing code
+      Modify code to comply with different coding standards or guidelines
+      Transform synchronous code to asynchronous implementation
+      Integrate security measures into existing code
+      Adapt code to use different libraries or frameworks
+      Modify code architecture to improve scalability
+      Implement comprehensive error handling and recovery mechanisms
+      Add logging and monitoring capabilities to existing code
+      Transform monolithic code into microservices architecture
+      Modify code to support internationalization (i18n)
+      Refactor code to improve testability and add test coverage
+      Implement caching mechanisms in existing code
+      Transform code to support multi-tenant architecture
+      Add authentication and authorization mechanisms
+      Modify code to support different data storage solutions
+      Implement retry and circuit breaker patterns
+      Adapt code for cross-platform compatibility
+      Transform code to support containerization
+      Implement configuration management and externalization
+      Add API versioning and backward compatibility support
+      Transform code to implement event-driven architecture
+      Modify code to support real-time processing
+      Implement data validation and sanitization layers
+      Transform code to support offline functionality
+      Add multi-threading and parallel processing support
+      Implement service discovery and registration mechanisms
+      Implement accessibility (a11y) compliance features
+      Add regulatory compliance measures (GDPR, HIPAA, etc.)
+      Transform code to support continuous integration/deployment
+      Implement feature flagging and A/B testing capability
+      Add debugging and profiling infrastructure
+      Transform code to support different cloud providers
+      Implement data encryption and privacy measures
+      Add automated backup and recovery mechanisms
+      Transform code to support different regional requirements
+      Implement resource management and cleanup protocols
+      Transform code to support different character encodings and locales
+      Implement service mesh integration capabilities
+      Add support for different authentication providers
+      Transform code to implement different caching strategies
+      Implement rate limiting and throttling mechanisms
+      Add support for different message queue systems
+      Transform code to support different serialization formats
+      Implement custom metrics and analytics collection
+      Add support for different storage backends
+      Transform code to support different network protocols
+    Code to Code (transforming code to different implementation)
+      Refactor monolithic code into microservices architecture
+      Convert synchronous code to asynchronous implementation
+      Transform object-oriented code to functional programming style
+      Migrate code from one programming language to another
+      Restructure code to implement design patterns
+      Convert imperative code to declarative style
+      Transform database-specific code to be database-agnostic
+      Refactor tightly coupled components into loosely coupled modules
+      Convert single-threaded code to multi-threaded implementation
+      Restructure code to implement event-driven architecture
+      Convert batch processing system to stream processing
+      Transform client-side rendering to server-side rendering architecture
+      Refactor code to implement CQRS pattern (Command Query Responsibility Segregation)
+      Convert direct service calls to message queue based architecture
+      Transform monorepo code structure to multi-repo architecture
+      Refactor code to implement circuit breaker patterns and resilience
+      Convert REST-based architecture to GraphQL implementation
+      Transform single-tenant code to multi-tenant architecture
+      Refactor stateful implementation to stateless architecture
+      Convert single-region code to multi-region deployment structure
+      Transform traditional authentication to OAuth/JWT-based implementation
+      Convert direct database access to repository pattern implementation
+      Refactor code to implement domain-driven design architecture
+      Transform MVC architecture to clean architecture implementation
+      Convert synchronous logging to distributed tracing system
+      Transform hard-coded configuration to feature flag architecture
+      Refactor monolithic UI to micro-frontend architecture
+      Convert direct cache access to cache-aside pattern implementation
+      Transform single pipeline to multi-stage CI/CD architecture
+      Refactor shared state to Redux/state management pattern
+      Transform hardcoded business rules to rule engine implementation
+      Convert traditional testing to behavior-driven development framework
+      Transform direct service integration to API gateway pattern
+      Convert inline configuration to externalized configuration management
+      Transform legacy logging to structured logging architecture
+      Convert manual dependency injection to IoC container implementation
+      Transform polling-based updates to websocket-based real-time architecture
+      Convert direct file system operations to blob storage architecture
+      Transform tight database schema to event sourcing architecture
+      Convert single environment to infrastructure-as-code implementation
+      Transform local session management to distributed session architecture
+      Convert direct metrics to observability pattern implementation
+      Transform synchronous workflows to saga pattern architecture
+      Convert in-memory cache to distributed cache architecture
+      Transform direct file processing to serverless functions architecture
+      Convert flat error handling to error boundary pattern implementation
+      Transform tight security coupling to zero-trust architecture
+      Convert direct service health checks to health monitoring subsystem
+      Transform legacy backup system to disaster recovery architecture
+      Convert monolithic data processing to data mesh architecture
+      Transform batch ML inference to online ML serving architecture
+      Convert traditional logging to GDPR-compliant data handling architecture
+      Transform synchronous UI to progressive web app architecture
+      Convert direct analytics to privacy-preserving computation architecture
+      Transform traditional build to container-based build architecture
+      Convert standard monitoring to AIOps-based monitoring architecture
+      Transform legacy search to elasticsearch-based architecture
+      Convert direct data access to data contract architecture
+      Transform traditional deployment to blue-green deployment architecture
+      Convert standard debugging to distributed debugging architecture
+      Transform traditional authentication to blockchain-based identity architecture
+      Convert standard API to GraphQL federation architecture
+      Transform traditional storage to IPFS-based distributed storage
+      Convert standard UI to WebAssembly-based architecture
+      Transform traditional versioning to semantic versioning architecture
+      Convert standard metrics to OpenTelemetry-based observability
+      Transform edge computing to fog computing architecture
+      Convert traditional rate limiting to token bucket architecture
+      Transform standard caching to time-series optimized architecture
+      Convert traditional authorization to attribute-based access control (ABAC)
+    Spec+Code to Code (modifying code based on formal specifications and existing code)
+      Refactor code architecture to align with new design specifications
+      Modify code to implement additional features specified in updated requirements
+      Optimize code performance according to specified performance metrics
+      Update code to comply with new security specifications
+      Transform code to meet updated API specifications
+      Restructure code to implement specified design patterns
+      Modify code to meet new compatibility requirements
+      Update error handling based on specified reliability requirements
+      Refactor database interactions according to new data model specifications
+      Adapt code to implement specified concurrency patterns
+      Modify code to meet specified test coverage requirements
+      Restructure code to implement internationalization specifications
+      Update code to comply with accessibility standards and specifications
+      Modify integration points according to system interface specifications
+      Refactor code to implement specified logging and monitoring requirements
+      Transform code to meet specified resource utilization constraints
+      Update code to implement specified state management patterns
+      Modify code to meet cross-platform compatibility specifications
+      Restructure code to implement specified transaction management requirements
+      Update code to comply with specified regulatory requirements
+      Modify code to implement specified scalability patterns
+      Refactor code to meet specified modularity requirements
+      Transform code to comply with specified code quality metrics
+      Update code to implement specified caching mechanisms
+      Modify code to meet specified fault tolerance requirements
+      Restructure code to implement specified dependency injection patterns
+      Update code to meet specified memory management requirements
+      Transform code to implement specified event handling architecture
+      Modify code to meet specified real-time processing requirements
+      Refactor code to implement specified service mesh patterns
+      Modify code to implement specified microservices patterns
+      Transform code to meet specified cloud-native requirements
+      Update code to implement specified IoT device interactions
+      Refactor code to meet specified machine learning integration requirements
+      Modify code to implement specified blockchain interaction patterns
+      Update code to meet specified streaming data requirements
+      Transform code to implement specified multi-tenant architecture
+      Modify code to meet specified edge computing requirements
+      Refactor code to implement specified serverless architecture patterns
+      Update code to meet specified quantum computing compatibility requirements
+      Modify code to implement specified domain-specific language requirements
+      Transform code to meet specified network protocol standards
+      Update code to implement specified embedded systems requirements
+      Refactor code to meet specified distributed computing patterns
+      Modify code to implement specified mesh network protocols
+      Update code to meet specified zero-trust security architecture
+      Transform code to implement specified time-series data handling
+      Modify code to meet specified graphics processing requirements
+      Refactor code to implement specified cryptographic protocols
+      Update code to meet specified virtual/augmented reality integration
+    Test+Code to Code (modifying code to pass given test cases)
+      Fix failing unit tests by correcting logical errors in the code
+      Optimize code performance while maintaining test coverage
+      Add error handling and edge cases based on test specifications
+      Implement missing functionality to satisfy test requirements
+      Refactor code structure while preserving test behavior
+      Fix memory leaks identified through test cases
+      Add concurrency handling based on multi-threaded test scenarios
+      Implement security fixes to pass security test cases
+      Fix compatibility issues identified by cross-platform tests
+      Modify code to handle different input formats specified in tests
+      Implement boundary value handling based on test specifications
+      Fix race conditions identified by stress tests
+      Optimize resource usage according to performance test metrics
+      Implement data validation based on test requirements
+      Fix internationalization issues identified by localization tests
+      Modify code to meet accessibility test requirements
+      Fix database interaction issues based on integration tests
+      Implement caching mechanisms to pass performance tests
+      Fix API contract violations identified by contract tests
+      Modify code to handle network failures in resilience tests
+      Fix scalability issues identified by load tests
+      Implement retry mechanisms based on reliability test cases
+      Fix state management issues revealed by stateful tests
+      Modify code to meet regulatory compliance test requirements
+      Fix session handling issues identified by user flow tests
+      Implement timeout handling based on timing test cases
+      Fix data consistency issues shown by distributed system tests
+      Modify code to meet real-time processing test requirements
+      Fix backward compatibility issues from regression tests
+      Implement failover mechanisms based on high-availability tests
+      Fix event ordering issues in event-driven architecture tests
+      Implement chaos engineering test requirements
+      Fix cross-device synchronization issues in multi-device tests
+      Modify code to meet quantum computing simulator test specs
+      Fix blockchain consensus issues in distributed ledger tests
+      Implement IoT device interaction patterns based on simulation tests
+      Fix AI model integration issues identified by ML pipeline tests
+      Modify code to meet energy efficiency test requirements
+      Fix data privacy compliance issues in GDPR test scenarios
+      Implement zero-trust security patterns based on security tests
+    Doc+Code to Code (modifying code based on documentation requirements)
+      Update API implementation to match new API documentation specifications
+      Refactor code architecture to align with updated design documentation
+      Implement security requirements specified in compliance documentation
+      Modify code to meet updated performance requirements in technical specifications
+      Restructure database interactions based on updated data model documentation
+      Implement error handling patterns specified in reliability documentation
+      Update validation logic according to business rule documentation
+      Modify integration points based on updated interface documentation
+      Implement logging requirements specified in monitoring documentation
+      Refactor code to meet coding standards specified in style guide documentation
+      Implement internationalization requirements from localization documentation
+      Modify code to meet accessibility standards specified in compliance docs
+      Implement test coverage requirements from quality assurance documentation
+      Update configuration management based on deployment documentation
+      Implement caching strategies specified in performance documentation
+      Modify authentication flows based on security protocol documentation
+      Implement state management patterns from architecture documentation
+      Update dependency injection based on component documentation
+      Implement versioning requirements from API lifecycle documentation
+      Modify code to meet compliance regulations specified in legal documentation
+      Implement concurrency patterns specified in threading documentation
+      Modify code to meet scalability requirements in architecture docs
+      Update platform-specific implementations based on compatibility docs
+      Implement memory management requirements from performance specs
+      Modify event handling based on reactive architecture documentation
+      Implement circuit breaker patterns from reliability documentation
+      Update resource cleanup based on lifecycle management docs
+      Implement retry policies specified in resilience documentation
+      Modify code to meet real-time processing requirements
+      Implement audit trail requirements from compliance documentation
+      Implement network protocol requirements from communication specs
+      Modify data transformation logic based on ETL documentation
+      Implement backup and recovery procedures from disaster recovery docs
+      Update code signing implementation based on security documentation
+      Implement rate limiting requirements from API governance docs
+      Modify code to meet data retention policies from compliance docs
+      Implement service discovery patterns from infrastructure documentation
+      Update encryption implementations based on cryptography standards
+      Implement workflow engine requirements from process documentation
+      Modify code to meet containerization specifications
+    Error+Code to Code (fixing major errors or bugs in code)
+      Fix runtime exceptions and crashes by implementing proper error handling
+      Debug and fix memory leaks in code
+      Resolve deadlock and race condition issues in concurrent code
+      Fix security vulnerabilities and implement security patches
+      Debug and fix performance bottlenecks
+      Resolve database connection and query issues
+      Fix architectural design flaws causing system instability
+      Debug and fix integration issues between components
+      Resolve compatibility issues across different versions/platforms
+      Fix critical algorithmic logic errors affecting core functionality
+      Fix network communication and protocol errors
+      Resolve data corruption and data integrity issues
+      Debug and fix configuration and environment setup problems
+      Fix API contract violations and interface mismatches
+      Resolve resource exhaustion and management issues
+      Fix internationalization and localization bugs
+      Debug and fix state management and persistence issues
+      Resolve authentication and authorization system failures
+      Fix build and deployment pipeline errors
+      Debug and fix third-party library integration failures
+      Fix UI rendering and event handling failures
+      Debug and fix test infrastructure and automation issues
+      Resolve system recovery and backup failures
+      Fix distributed system consistency issues
+      Debug and fix caching and cache invalidation problems
+      Resolve input validation and data sanitization failures
+      Fix logging and monitoring system breakdowns
+      Debug and fix transaction management issues
+      Resolve service discovery and registration failures
+      Fix message queue and event processing errors
+    API+Code to Code (adapting code to different APIs or interfaces)
+      Migrate code from one web framework to another (e.g., Express.js to FastAPI)
+      Update code to use a newer version of an API or library
+      Convert code to use a different database interface (e.g., MongoDB to PostgreSQL)
+      Adapt code to use a different authentication system
+      Transform code to use alternative cloud service providers (e.g., AWS to Azure)
+      Convert synchronous API calls to asynchronous patterns
+      Modify code to use different messaging or event systems
+      Adapt code to different file system APIs
+      Convert between different HTTP client libraries
+      Transform code to use different data serialization formats
+      Convert between different testing frameworks (e.g., Jest to Mocha)
+      Migrate between different UI component libraries (e.g., Material-UI to Ant Design)
+      Adapt code to different logging/monitoring systems
+      Transform code between different graphics/rendering APIs
+      Convert between different state management libraries (e.g., Redux to MobX)
+      Adapt code to different caching interfaces
+      Migrate between different ORM frameworks
+      Transform code between different payment processing APIs
+      Convert between different email service providers
+      Adapt code to different containerization APIs
+      Convert between different configuration management systems
+      Adapt code to different authentication/authorization protocols (e.g., OAuth to SAML)
+      Transform code between different media processing APIs
+      Migrate between different WebSocket implementations
+      Convert between different dependency injection frameworks
+      Adapt code to different job scheduling systems
+      Transform between different API documentation formats
+      Convert between different blockchain interfaces
+      Adapt code to different search engine APIs
+      Migrate between different validation libraries
+      Convert between different internationalization (i18n) frameworks
+      Adapt code to different stream processing APIs
+      Transform between different machine learning frameworks
+      Migrate between different CI/CD pipeline APIs
+      Convert between different feature flag systems
+      Adapt code to different service mesh interfaces
+      Transform between different metrics collection systems
+      Convert between different image processing libraries
+      Adapt code to different session management systems
+      Migrate between different rate limiting implementations
+    Schema+Code to Code (modifying code to match database/data schema changes)
+      Update model classes to reflect new database schema columns and relationships
+      Modify data access layer to handle renamed database tables/columns
+      Update API endpoint handlers to accommodate new request/response schemas
+      Refactor serialization/deserialization logic for modified data structures
+      Adjust validation rules and constraints based on schema changes
+      Update database migration scripts to handle schema modifications
+      Modify ORM mappings to reflect schema changes
+      Update query builders and SQL statements for modified schema
+      Adapt caching mechanisms to new data structure
+      Modify data transformation layers between different schema versions
+      Update unit test data fixtures to match new schema
+      Modify integration test scenarios for schema changes
+      Update API documentation (OpenAPI/Swagger) to reflect schema changes
+      Modify configuration files for new schema properties
+      Update schema version control and tracking mechanisms
+      Adapt external system integration points to new schema
+      Modify data import/export utilities to handle schema changes
+      Update schema dependency injection configurations
+      Modify schema-based code generation templates
+      Update database index and optimization configurations
+      Update schema-related error handling and validation messages
+      Modify logging patterns to capture new schema fields
+      Update schema versioning and backward compatibility layers
+      Modify schema-based data archival and cleanup processes
+      Update schema monitoring and health check systems
+      Modify schema-based security and access control rules
+      Update schema rollback and recovery procedures
+      Modify schema-related performance monitoring metrics
+      Update schema dependency graphs and documentation
+      Modify schema-based data consistency checks
+  Minor Modification
+    NL+Code to Code
+      Add inline comments to explain code functionality
+      Fix code formatting according to style guidelines
+      Update variable names to follow naming conventions
+      Add error handling for edge cases
+      Add parameter validation checks
+      Convert hard-coded values to constants
+      Add logging statements
+      Fix indentation and whitespace issues
+      Add missing documentation strings
+      Fix minor syntax issues or typos
+      Remove unused imports or dependencies
+      Simplify boolean expressions
+      Merge similar conditional blocks
+      Add type hints or annotations
+      Extract magic numbers into named constants
+      Add assertion statements for debugging
+      Fix method signature formatting
+      Add missing return type declarations
+      Remove redundant code
+      Convert single-use variables to inline expressions
+      Convert between different string quote styles
+      Add null checks for optional parameters
+      Update deprecated method calls
+      Fix line length violations
+      Add missing access modifiers
+      Convert between different loop structures
+      Add input sanitization
+      Fix method parameter ordering
+      Add missing break statements in switch cases
+      Convert between different string concatenation methods
+      Convert between different file path formats
+      Update print statements to logging calls
+      Add missing file headers or copyright notices
+      Convert between different character encodings
+      Update comparison operators (e.g., == to ===)
+      Add missing parentheses for operator precedence
+      Convert between different number formats
+      Add missing semicolons/remove unnecessary ones
+      Convert between different date/time formats
+      Update string interpolation syntax
+      Normalize line endings (CRLF/LF)
+      Convert tabs to spaces or vice versa
+      Sort import statements
+      Add missing final/const keywords
+      Convert between different comment styles
+      Update collection initialization syntax
+      Fix incorrect indentation in markup/config files
+      Convert between different quote escaping methods
+      Update array/list initialization syntax
+      Add missing explicit visibility modifiers
+      Convert string literals to resource keys
+      Update regex patterns to newer syntax
+      Add missing XML/JSON schema references
+      Convert between different number literal notations
+      Update HTML attribute quotes style
+      Convert between different lambda expression syntaxes
+      Update deprecated HTML tags to semantic alternatives
+      Convert between different CSS unit types
+      Update character escape sequences
+      Convert between different enum declaration styles
+    Code to Code
+      Fix code indentation and spacing issues
+      Add or update code comments
+      Rename variables for better clarity
+      Convert between different string quote styles (single vs double quotes)
+      Standardize line endings (CRLF to LF or vice versa)
+      Remove unused imports or variables
+      Simplify boolean expressions
+      Convert between different loop structures (while to for, etc.)
+      Update code to follow specific style guide
+      Replace magic numbers with named constants
+      Convert between different string concatenation methods
+      Add basic error checking conditions
+      Simplify nested conditionals
+      Convert between different array/list methods
+      Update deprecated method calls to newer versions
+      Convert between different number formats (decimal, hex, etc.)
+      Add parameter type hints
+      Convert between different import styles
+      Standardize function return statements
+      Convert between different string formatting methods
+      Convert between different logging methods
+      Add basic input validation
+      Standardize file path handling
+      Convert between different case styles (camelCase, snake_case, etc.)
+      Update comparison operators (== to ===, etc.)
+      Simplify arithmetic expressions
+      Convert between synchronous/asynchronous method calls
+      Standardize exception handling patterns
+      Update character encoding handling
+      Convert between different object property access styles
+    Test+Code to Code
+      Fix failing test cases by modifying specific code sections
+      Update test assertions to match current code behavior
+      Add error handling code based on test edge cases
+      Optimize code performance while maintaining test coverage
+      Refactor code to remove test code smells
+      Modify code to improve test execution time
+      Update code to accommodate new test scenarios
+      Fix code style issues identified in test-related code
+      Implement missing test helper functions
+      Modify code to improve test isolation
+      Modify code to fix test environment setup issues
+      Update mock implementations to match test requirements
+      Refactor test dependencies in production code
+      Fix test data handling in code implementation
+      Modify code to support parallel test execution
+      Update code to handle test timeouts properly
+      Fix code to support test parameterization
+      Modify code to improve test fixture reusability
+      Update code to support different test configurations
+      Fix code to handle test cleanup properly
+      Update code to support cross-platform test execution
+      Modify code to handle test database transactions
+      Fix integration test boundary issues in code
+      Update code to support test service virtualization
+      Modify code to improve test logging and debugging
+      Fix code to support property-based testing
+      Update code to handle test race conditions
+      Modify code to support A/B testing scenarios
+      Fix code to support test monitoring and metrics
+      Update code to handle test data versioning
+      Modify code to support security test requirements
+      Update code to handle compliance test scenarios
+      Fix code to support backward compatibility tests
+      Modify code for accessibility testing support
+      Update code to handle load test scenarios
+      Fix code to support mutation testing
+      Modify code for fuzzing test compatibility
+      Update code to support contract testing
+      Fix code to handle stress test scenarios
+      Modify code for compatibility testing support
+    Doc+Code to Code
+      Update code comments to match documentation requirements
+      Add input validation based on API documentation
+      Implement error handling according to specification
+      Add logging statements based on monitoring requirements
+      Update variable types to match schema documentation
+      Modify function parameters according to API documentation
+      Add unit tests based on test documentation
+      Update configuration values based on deployment docs
+      Implement retry logic based on resilience requirements
+      Add input sanitization based on security documentation
+      Update method signatures based on interface documentation
+      Add performance metrics collection per monitoring specs
+      Implement caching based on performance requirements
+      Add data validation rules from business documentation
+      Update error messages according to UX guidelines
+      Implement rate limiting based on service specifications
+      Add health check endpoints per operational requirements
+      Update database queries based on schema documentation
+      Add environment-specific configurations from deployment guides
+      Implement feature flags based on release documentation
+      Add accessibility attributes based on WCAG documentation
+      Implement localization hooks per i18n specifications
+      Add compliance-related audit logs per regulatory docs
+      Update API versioning based on compatibility guidelines
+      Implement data retention rules from compliance docs
+      Add cross-origin resource sharing (CORS) rules per security specs
+      Update authentication flows based on identity provider docs
+      Implement data encryption per security requirements
+      Add service discovery registration per infrastructure docs
+      Update dependency injection based on framework guidelines
+    Error+Code to Code
+      Fix compiler errors by correcting syntax and type mismatches
+      Resolve runtime exceptions by adding proper error handling
+      Address static analyzer warnings and code quality issues
+      Fix null pointer exceptions by adding null checks
+      Correct type casting and conversion errors
+      Fix memory leaks and resource management issues
+      Resolve dependency conflicts and version compatibility issues
+      Fix concurrency and thread safety issues
+      Correct database query and connection errors
+      Fix network-related errors and timeout issues
+      Fix security vulnerabilities flagged by security scanners
+      Resolve framework-specific initialization and lifecycle errors
+      Fix configuration and environment setup errors
+      Address performance warnings and bottlenecks
+      Fix cross-platform compatibility issues
+      Fix internationalization and encoding errors
+      Resolve build system and deployment errors
+      Fix API usage and integration errors
+      Correct validation and input handling errors
+      Fix logging and monitoring configuration errors
+    Comment+Code to Code
+      Update code implementation to match documentation comments
+      Fix inconsistencies between comments and code behavior
+      Implement TODO comments in code
+      Add missing error handling based on comment specifications
+      Optimize code performance based on comment suggestions
+      Complete partially implemented functions as per comment descriptions
+      Fix bug mentioned in comment
+      Implement additional input validation based on comment requirements
+      Add missing return value handling as specified in comments
+      Implement edge cases mentioned in comments
+      Add security checks based on comment warnings
+      Update type annotations according to comment specifications
+      Implement logging as specified in comments
+      Add parameter constraints mentioned in comments
+      Implement unit test cases described in comments
+      Fix code style issues noted in comments
+      Add missing documentation strings based on existing comments
+      Implement constant values described in comments
+      Add missing parameter checks described in comments
+      Implement interface requirements specified in comments
+      Update configuration values based on commented specifications
+      Implement version compatibility fixes mentioned in comments
+      Remove deprecated code marked in comments
+      Update dependency usage as specified in comments
+      Implement environment-specific code paths noted in comments
+      Add missing cleanup code described in comments
+      Fix encoding issues mentioned in comments
+      Implement platform-specific handling noted in comments
+      Add missing initialization code specified in comments
+      Update API usage according to commented guidelines
+    Style+Code to Code
+      Format code according to specific style guide (e.g., PEP 8, Google Style)
+      Add/fix code comments and documentation strings
+      Adjust indentation and line spacing
+      Fix code alignment and line wrapping
+      Standardize naming conventions for variables and functions
+      Organize imports according to style guidelines
+      Apply consistent brace and parentheses formatting
+      Normalize whitespace usage
+      Enforce maximum line length restrictions
+      Standardize file header formats
+      Standardize string quote usage (single vs. double quotes)
+      Normalize end-of-line characters (CRLF vs. LF)
+      Remove trailing whitespace and empty lines
+      Standardize operator spacing
+      Fix function/method spacing and organization
+      Standardize file encoding
+      Normalize code block separators
+      Apply consistent capitalization rules
+      Standardize file extension usage
+      Format inline comments alignment
+      Format SQL queries within code
+      Standardize class member ordering
+      Normalize type hint formatting
+      Format chain method calls
+      Standardize conditional statement formatting
+      Format array/list declarations
+      Normalize template/generic syntax
+      Format multi-language code blocks (e.g., in JSX/TSX)
+    Type+Code to Code
+      Add type annotations to improve type safety
+      Convert between different type systems (e.g., from Flow to TypeScript)
+      Fix type-related bugs identified by static analysis
+      Refactor code to use more specific types
+      Implement interface/type definitions based on usage
+      Modify generic type parameters
+      Update type declarations to match implementation
+      Simplify complex type definitions
+      Add runtime type checks based on type information
+      Migrate between different versions of type system
+    Config+Code to Code
+      Update code constants and parameters based on configuration file values
+      Generate conditional code blocks based on feature flags in config
+      Modify API endpoints and routes according to service configuration
+      Adjust database connection settings in code based on config
+      Update logging levels and patterns according to logging configuration
+      Modify security settings and authentication flow based on security config
+      Configure middleware chain based on application configuration
+      Update dependency injection bindings based on component configuration
+      Modify error handling strategy based on environment configuration
+      Adjust caching behavior based on cache configuration
+      Adjust performance parameters (thread pools, timeouts) based on resource config
+      Update external service integration points based on service registry config
+      Modify test configurations and mock behaviors based on test config
+      Configure containerization parameters based on deployment config
+      Update monitoring and metrics collection based on observability config
+      Modify internationalization settings based on locale config
+      Update job scheduling parameters based on scheduler config
+      Configure backup and recovery settings based on persistence config
+      Modify network settings based on connectivity config
+      Update content delivery configuration based on CDN config
+      Update data transformation rules based on ETL config
+      Modify client-side feature settings based on frontend config
+      Adjust protocol-specific handlers based on communication config
+      Update development tool integrations based on tooling config
+      Modify data validation rules based on schema config
+      Configure cross-origin resource sharing (CORS) based on security policy config
+      Update static resource handling based on asset config
+      Modify API versioning behavior based on compatibility config
+      Update rate limiting parameters based on throttling config
+      Configure webhook handlers based on integration config
+    Schema+Code to Code
+      Update database models and migrations based on schema changes
+      Modify API endpoints to match updated schema specifications
+      Adjust data validation logic according to schema constraints
+      Refactor data transformation code to align with schema updates
+      Update serialization/deserialization code based on schema changes
+      Modify object-relational mapping (ORM) code to reflect schema updates
+      Update GraphQL resolvers based on schema modifications
+      Adjust data type conversions to match schema requirements
+      Update data access layer to accommodate schema changes
+      Modify data integration code to align with schema updates
+      Update schema-based test fixtures and mocks
+      Modify schema documentation generators
+      Update schema versioning and migration scripts
+      Adjust schema validation middleware
+      Modify schema-based configuration validators
+      Update schema-driven code generators
+      Adjust schema compatibility checking code
+      Modify schema caching mechanisms
+      Update schema indexing and search functionality
+      Adjust schema-based security policy enforcement code
+      Update protocol buffer definitions and related code
+      Modify XML schema bindings and parsers
+      Update JSON schema validators and processors
+      Adjust schema-based message queue handlers
+      Modify schema-driven event processing code
+      Update schema federation and composition logic
+      Adjust schema normalization routines
+      Update schema-based error handling code
+      Modify schema import/export utilities
+      Update schema-based data migration pipelines
+      Update schema-based performance monitoring code
+      Modify schema versioning conflict resolution logic
+      Update schema-based data partitioning code
+      Adjust schema dependency management systems
+      Update schema-based data archival logic
+      Modify schema-driven audit logging code
+      Update schema synchronization monitoring
+      Adjust schema-based data masking routines
+      Update schema compliance checking code
+      Modify schema-based data quality validation
+    Metrics+Code to Code
+      Optimize code based on performance profiling data
+      Refactor code based on cyclomatic complexity metrics
+      Modify code to improve test coverage based on coverage reports
+      Restructure code based on dependency analysis metrics
+      Optimize memory usage based on memory profiling data
+      Refactor code based on maintainability index
+      Modify code based on static analysis warnings
+      Optimize code based on CPU utilization metrics
+      Refactor code based on code duplication metrics
+      Modify code based on security vulnerability scan results
+      Optimize database queries based on query execution metrics
+      Refactor code based on cohesion/coupling metrics
+      Modify code based on resource utilization patterns
+      Restructure code based on execution path frequency data
+      Optimize network calls based on latency metrics
+      Modify code based on error rate statistics
+      Refactor concurrent code based on thread contention metrics
+      Optimize caching strategy based on cache hit/miss rates
+      Modify code based on API usage patterns
+      Restructure code based on user interaction metrics
+      Optimize image processing code based on processing time metrics
+      Modify code based on energy consumption metrics
+      Refactor mobile app code based on battery usage patterns
+      Optimize rendering code based on frame rate analytics
+      Modify code based on garbage collection metrics
+      Restructure code based on load testing results
+      Optimize UI responsiveness based on event handling metrics
+      Modify code based on A/B testing performance data
+      Refactor based on cross-browser compatibility metrics
+      Optimize based on distributed system latency patterns
+      Optimize ML model serving code based on inference latency metrics
+      Modify code based on cloud cost optimization metrics
+      Refactor IoT device code based on sensor data patterns
+      Optimize blockchain code based on transaction throughput metrics
+      Modify streaming code based on real-time processing metrics
+      Refactor code based on accessibility compliance scores
+      Optimize code based on internationalization metrics
+      Modify serverless functions based on cold start metrics
+    Git+Code to Code
+      Fix commit messages to follow conventional commit format
+      Resolve merge conflicts in code files
+      Clean up Git history by squashing related commits
+      Update code references after branch renaming
+      Fix file permissions in Git repository
+      Update Git ignore patterns to exclude specific files
+      Modify code to adapt to renamed Git branches
+      Fix incorrect author information in Git commits
+      Remove sensitive information from Git history
+      Update repository URLs in code configuration
+      Update Git hook scripts for automated checks
+      Fix submodule references and paths
+      Modify CI/CD pipeline configurations in Git
+      Update Git attributes for file handling
+      Fix Git LFS (Large File Storage) configurations
+      Modify branch protection rules in code
+      Update Git workflow automation scripts
+      Fix Git template configurations
+      Modify Git aliases in project configuration
+      Update cross-repository references
+      Fix code review template configurations
+      Update pull request templates
+      Modify Git pre-receive hook validations
+      Fix Git sparse checkout configurations
+      Update Git patch files
+      Modify Git rebase scripts
+      Fix Git credential configurations
+      Update Git remote mirror settings
+      Modify Git blame ignore configurations
+      Fix Git worktree configurations
+    Analysis+Code to Code
+      Fix minor code style violations to meet team standards
+      Add or improve code comments and documentation
+      Optimize simple performance bottlenecks
+      Fix minor bugs identified through code analysis
+      Remove unused variables and dead code
+      Simplify complex boolean expressions
+      Convert magic numbers to named constants
+      Add missing error handling
+      Standardize code formatting
+      Add missing type annotations
+      Add missing unit test assertions
+      Improve test coverage for edge cases
+      Add input validation checks
+      Enhance logging statements for better debugging
+      Fix minor security vulnerabilities
+      Update deprecated API usage
+      Add missing parameter validation
+      Improve error messages
+      Standardize logging formats
+      Fix accessibility compliance issues
+      Extract hardcoded strings for internationalization
+      Update configuration default values
+      Organize import statements
+      Update package dependencies to compatible versions
+      Add missing metadata to configuration files
+      Fix character encoding issues
+      Add missing license headers
+      Update CI/CD pipeline configurations
+      Fix path separators for cross-platform compatibility
+      Add missing package keywords and descriptions
+      Add missing IDE configuration files
+      Update code complexity metrics thresholds
+      Optimize resource cleanup in finally blocks
+      Add compatibility shims for different versions
+      Fix memory leak warnings
+      Update development environment setup scripts
+      Add missing static analysis configurations
+      Fix resource path references
+      Update code coverage thresholds
+      Add missing development tool configurations
+    Log+Code to Code
+      Fix error handling based on error logs
+      Optimize performance bottlenecks identified in performance logs
+      Add logging statements based on log coverage analysis
+      Modify retry logic based on failure patterns in logs
+      Adjust timeout values based on response time logs
+      Update API endpoints based on access logs
+      Modify cache settings based on cache hit/miss logs
+      Scale resource allocation based on resource utilization logs
+      Update rate limiting parameters based on traffic logs
+      Modify concurrency settings based on thread pool logs
+      Update security filters based on security incident logs
+      Modify data validation rules based on data error logs
+      Adjust circuit breaker thresholds based on failure logs
+      Update monitoring rules based on alert logs
+      Modify database query patterns based on slow query logs
+      Update load balancing rules based on traffic distribution logs
+      Modify cleanup routines based on resource leak logs
+      Adjust message queue parameters based on queue metrics logs
+      Update data partitioning logic based on data access patterns in logs
+      Modify health check parameters based on service health logs
+      Update feature flags based on usage pattern logs
+      Modify UI components based on user interaction logs
+      Adjust API versioning based on client version logs
+      Update data retention policies based on compliance logs
+      Modify authentication flows based on login attempt logs
+      Update internationalization settings based on locale usage logs
+      Modify data synchronization intervals based on sync failure logs
+      Adjust webhook retry policies based on delivery logs
+      Update data migration scripts based on migration logs
+      Modify session handling based on session analytics logs
+      Update test cases based on test execution logs
+      Modify dependency versions based on compatibility issue logs
+      Update deployment scripts based on deployment failure logs
+      Modify backup procedures based on backup failure logs
+      Adjust service discovery settings based on discovery logs
+      Update CI/CD pipeline configurations based on build logs
+      Modify data migration rollback procedures based on rollback logs
+      Update network timeout configurations based on connectivity logs
+      Modify environment-specific configurations based on environment logs
+      Update disaster recovery procedures based on failover logs
+      Update model serving code based on inference logs
+      Modify feature extraction pipeline based on data processing logs
+      Update custom metrics collection based on monitoring gaps in logs
+      Modify debugger configurations based on crash dump logs
+      Update A/B test configurations based on experiment logs
+      Modify data sampling rates based on telemetry logs
+      Update service mesh configurations based on mesh traffic logs
+      Modify chaos testing parameters based on resilience test logs
+      Update canary deployment rules based on rollout logs
+      Modify API throttling strategies based on abuse detection logs
+      Update consensus algorithm parameters based on cluster logs
+      Modify edge device update policies based on IoT device logs
+      Update GDPR compliance code based on data access audit logs
+      Modify service mesh routing rules based on cross-service logs
+      Update data anonymization rules based on PII detection logs
+      Modify distributed tracing configurations based on trace logs
+      Update event sourcing patterns based on event store logs
+      Modify CDC (Change Data Capture) settings based on replication logs
+      Update multi-region failover logic based on latency logs
+      Modify data residency rules based on regulatory compliance logs
+    API+Code to Code
+      Update code to comply with new API version requirements
+      Add error handling based on API specifications
+      Implement missing API endpoint integrations
+      Fix API authentication and authorization implementation
+      Optimize API request/response handling
+      Standardize API parameter usage across codebase
+      Implement rate limiting according to API guidelines
+      Update API endpoint URLs and configurations
+      Add API response validation logic
+      Implement API retry mechanisms
+      Implement API response caching mechanisms
+      Add API usage logging and monitoring
+      Handle deprecated API features gracefully
+      Transform API response formats to match system requirements
+      Implement API fallback mechanisms
+      Add cross-platform API compatibility layers
+      Implement API payload compression
+      Add API request batching functionality
+      Implement API circuit breakers
+      Add API response normalization logic
+      Add API integration tests
+      Update API documentation comments in code
+      Implement API mock responses for testing
+      Add API performance metrics collection
+      Implement API versioning headers
+      Add API request/response debugging logs
+      Implement API schema validation
+      Add API health check implementations
+      Update API dependency injection configurations
+      Add API response caching invalidation logic
+      Implement API request signing
+      Add API data synchronization logic
+      Implement API resource pooling
+      Add API state management
+      Implement API internationalization support
+      Add API request throttling
+      Implement API key rotation logic
+      Add API backup endpoint handling
+      Implement API request queuing
+      Add API response encryption/decryption
+    Security+Code to Code
+      Fix SQL injection vulnerabilities in database queries
+      Implement proper input validation and sanitization
+      Update deprecated cryptographic functions to modern alternatives
+      Add CSRF protection tokens to forms
+      Fix cross-site scripting (XSS) vulnerabilities
+      Implement secure password hashing and storage
+      Add proper access control checks
+      Fix insecure direct object references
+      Update security headers in HTTP responses
+      Fix security misconfigurations in authentication flows
+      Implement secure session handling and timeout mechanisms
+      Add security audit logging for sensitive operations
+      Fix insecure file upload vulnerabilities
+      Implement API key rotation and management
+      Add SSL/TLS certificate validation
+      Implement rate limiting for API endpoints
+      Fix security issues in cookie handling
+      Add secure error handling to prevent information leakage
+      Implement secure data deletion practices
+      Add security checks for third-party dependencies
+      Implement secure storage for mobile app credentials
+      Add security controls for cloud service interactions
+      Fix container escape vulnerabilities
+      Implement secure WebSocket connections
+      Add GDPR compliance-related security measures
+      Implement secure inter-process communication
+      Add security controls for microservices communication
+      Implement secure offline data storage
+      Add biometric authentication security measures
+      Implement secure push notification handling
+      Implement secure blockchain transaction handling
+      Add IoT device authentication and encryption
+      Implement secure ML model input validation
+      Add security measures for peer-to-peer communications
+      Implement secure service mesh authentication
+      Add security controls for serverless functions
+      Implement secure WebRTC connections
+      Add security measures for distributed caching
+      Implement secure GraphQL query validation
+      Add security controls for event-driven architectures
+    A11y+Code to Code
+      Add ARIA labels and roles to improve screen reader compatibility
+      Implement keyboard navigation support
+      Enhance color contrast ratios for better visibility
+      Add alt text to images and media elements
+      Fix heading hierarchy for better document structure
+      Implement focus indicators for interactive elements
+      Add skip navigation links
+      Fix form field associations and labels
+      Add captions and transcripts to multimedia content
+      Implement semantic HTML structure
+      Add live region announcements for dynamic content
+      Implement touch target size adjustments
+      Fix text spacing and line height for readability
+      Add error identification and suggestions in forms
+      Implement pause/stop mechanisms for moving content
+      Add language declarations for multilingual content
+      Fix timing adjustments for timeouts and animations
+      Implement table header associations
+      Add status messages and feedback mechanisms
+      Fix text resize capabilities without breaking layout
+      Implement accessible modal dialog patterns
+      Add accessible autocomplete functionality
+      Fix gesture alternatives for complex interactions
+      Implement accessible drag-and-drop patterns
+      Add accessible date picker components
+      Fix mobile-specific touch gestures
+      Implement accessible tabs and accordion patterns
+      Add accessible tree view navigation
+      Fix accessible carousel/slideshow patterns
+      Implement accessible menu button patterns
+      Implement accessible SVG and canvas content
+      Add audio description triggers for video content
+      Fix accessibility for mathematical expressions
+      Implement accessible data visualization patterns
+      Add accessible virtual/augmented reality controls
+      Fix game interface accessibility patterns
+      Implement accessible chat/messaging features
+      Add accessible PDF/document viewer controls
+      Fix accessibility for interactive maps
+      Implement accessible authentication patterns
+      Fix right-to-left (RTL) text interface accessibility
+      Implement accessible infinite scroll patterns
+      Add accessible file upload interface patterns
+      Fix accessibility for complex data tables
+      Implement accessible progress indicators
+      Add accessible breadcrumb navigation patterns
+      Fix accessibility for multi-step forms
+      Implement accessible rating input patterns
+      Add accessible clipboard interaction patterns
+      Fix accessibility for multi-column layouts
+    I18n+Code to Code
+      Update text strings to use i18n translation keys
+      Add locale-specific date/time formatting
+      Modify currency display formats for different regions
+      Implement right-to-left (RTL) text support
+      Add plural forms handling for different languages
+      Update number formatting for different locales
+      Implement language switching mechanism
+      Add locale-specific sorting rules
+      Modify character encoding handling
+      Add locale-specific address format support
+      Update form validation messages for multiple languages
+      Modify image alt text for localization
+      Add locale-specific phone number formatting
+      Implement locale-specific measurement unit conversion
+      Update calendar system for different cultures
+      Add locale-specific name format handling
+      Modify input field constraints for different languages
+      Add locale-specific time zone handling
+      Update collation rules for database queries
+      Implement locale-specific color name translations
+      Update metadata tags for multi-language SEO
+      Modify audio/video captions for localization
+      Add locale-specific paper size handling
+      Implement locale-specific search patterns
+      Update regex patterns for different languages
+      Add locale-specific keyboard shortcuts
+      Modify PDF generation for different languages
+      Update locale-specific content filtering rules
+      Add language-specific font fallbacks
+      Implement locale-specific URL handling
+      Update security messages for multiple languages
+      Modify privacy policy placeholders for localization
+      Add locale-specific data masking rules
+      Implement locale-specific input sanitization
+      Update error logging with locale context
+      Add language-specific spam detection rules
+      Modify locale-specific export formats
+      Update cultural sensitivity filters
+      Add locale-specific authentication messages
+      Implement language-specific API error responses
+    Dep+Code to Code
+      Update dependency versions in package configuration files
+      Add new dependencies to existing project configuration
+      Remove unused dependencies from project
+      Migrate from one dependency management system to another
+      Fix dependency conflicts in project configuration
+      Update import statements to match new dependency versions
+      Refactor code to accommodate API changes in updated dependencies
+      Convert between different package format specifications
+      Consolidate duplicate dependencies
+      Add dependency constraints and version ranges
+      Replace vulnerable dependencies with secure alternatives
+      Modularize dependency structure for better organization
+      Split monolithic dependencies into smaller ones
+      Configure dependency scopes (test, runtime, compile-time)
+      Set up dependency caching and local repository configuration
+      Create dependency override rules
+      Configure dependency exclusion patterns
+      Set up multi-module dependency inheritance
+      Configure conditional dependencies based on environment
+      Set up dependency proxy configurations
+      Generate dependency documentation and graphs
+      Optimize dependency load order for performance
+      Set up dependency shading/relocation rules
+      Configure transitive dependency management
+      Set up dependency verification and checksums
+      Create custom dependency resolution strategies
+      Configure dependency source attachment
+      Set up offline dependency management mode
+      Configure dependency licensing compliance
+      Set up dependency replication across environments
+    Platform+Code to Code
+      Update code to comply with platform-specific coding standards or guidelines
+      Modify code to use platform-recommended APIs or libraries
+      Adapt code to handle platform-specific edge cases or limitations
+      Convert code to use platform-specific security features or best practices
+      Optimize code performance based on platform characteristics
+      Update code to support new platform version requirements
+      Fix platform compatibility issues in existing code
+      Implement platform-specific error handling patterns
+      Modify code to use platform-specific logging or monitoring features
+      Adapt code to use platform-specific configuration management
+      Adapt code to platform-specific dependency injection patterns
+      Modify code to support platform's built-in testing frameworks
+      Update code to use platform-specific internationalization features
+      Adjust code to comply with platform's threading/concurrency models
+      Modify code to integrate with platform's authentication mechanisms
+      Update code to use platform-specific caching strategies
+      Adapt code to platform's resource management patterns
+      Modify build scripts for platform-specific packaging requirements
+      Update code to use platform's preferred state management approaches
+      Adapt code to platform-specific UI/UX patterns and components
+      Modify code to use platform-specific data storage mechanisms
+      Adapt code to platform's networking protocols and APIs
+      Update code to use platform-specific background processing features
+      Modify code to implement platform's notification systems
+      Adapt code to platform-specific service discovery mechanisms
+      Update code to use platform's native serialization formats
+      Modify code to integrate with platform's health monitoring systems
+      Adapt code to platform-specific memory management patterns
+      Update code to use platform's event handling mechanisms
+      Modify code to implement platform-specific backup/recovery features
+      Modify code to integrate with platform-specific debugging tools
+      Adapt code to use platform's analytics and telemetry systems
+      Update code to support platform-specific cross-platform bridges
+      Modify code to implement platform's accessibility features
+      Adapt code to platform-specific virtualization requirements
+      Update code to use platform's rate limiting mechanisms
+      Modify code to integrate with platform-specific CI/CD tools
+      Adapt code to platform's sandboxing requirements
+      Update code to use platform-specific encryption standards
+      Modify code to implement platform's versioning schemes
+    Coverage+Code to Code
+      Add test cases to increase line coverage based on coverage report
+      Modify code structure to make untested branches more testable
+      Add missing function coverage tests identified by coverage tools
+      Refactor code to eliminate unreachable code detected by coverage analysis
+      Modify existing tests to cover missed conditional branches
+      Add error handling tests for uncovered exception paths
+      Create integration tests for uncovered code paths in multi-module interactions
+      Add boundary condition tests for partially covered code segments
+      Implement missing mock objects to test dependent code paths
+      Add parameterized tests to cover multiple execution paths
+      Optimize test execution time while maintaining coverage levels
+      Clean up redundant tests identified by coverage overlap analysis
+      Add coverage annotations to exclude justified uncovered code
+      Implement missing coverage for asynchronous operations
+      Add coverage for UI event handlers and callbacks
+      Document coverage decisions and exclusions in code comments
+      Split large test cases to improve coverage granularity
+      Add coverage for configuration-dependent code paths
+      Implement missing coverage for error recovery code paths
+      Add tests for cross-browser/platform specific code paths
+      Add coverage for security-sensitive code paths and validation
+      Implement missing database transaction coverage scenarios
+      Add API contract test coverage for interface implementations
+      Add coverage for architectural pattern compliance (e.g., MVC layers)
+      Implement coverage for legacy code through characterization tests
+      Add coverage for data migration and conversion code paths
+      Implement coverage for caching and performance optimization code
+      Add coverage for internationalization (i18n) code paths
+      Add coverage for accessibility (a11y) implementation code
+      Implement coverage for permission and authorization logic
+      Add coverage for monitoring and metrics collection code
+      Implement coverage for third-party library integration points
+      Add coverage for environment-specific configuration handling
+      Implement coverage for state management and transitions
+      Add coverage for concurrent execution paths and thread safety
+      Implement coverage for startup and shutdown sequences
+      Add coverage for resource cleanup and disposal paths
+      Implement coverage for feature flag dependent code
+      Add coverage for retry and fallback mechanisms
+      Implement coverage for versioning and compatibility code
+    UI+Code to Code
+      Update UI component styling properties in code
+      Modify event handlers for UI elements
+      Adjust UI layout structure in code
+      Refactor UI component hierarchy
+      Update UI state management logic
+      Modify UI accessibility attributes
+      Adjust UI responsive design code
+      Update UI animation and transition code
+      Modify UI form validation logic
+      Update UI internationalization code
+      Optimize UI component rendering performance
+      Update UI error boundary implementations
+      Modify UI loading state handlers
+      Update UI testing selectors and attributes
+      Modify UI theme switching logic
+      Update UI component prop definitions
+      Adjust UI data binding code
+      Modify UI conditional rendering logic
+      Update UI component lifecycle methods
+      Modify UI component composition patterns
+      Update UI API integration code
+      Modify UI security validation checks
+      Update UI routing and navigation logic
+      Modify UI caching implementation
+      Update UI input sanitization code
+      Modify UI virtual scrolling implementation
+      Update UI drag-and-drop functionality
+      Modify UI keyboard navigation handlers
+      Update UI portal implementation
+      Modify UI context provider structure
+  Generation
+    NL to Code (Natural Language to Code generation)
+      Generate a function implementation from its natural language description
+      Create a class structure from domain requirements
+      Implement an algorithm from its verbal description
+      Convert pseudocode to actual code
+      Generate API endpoints from specifications
+      Create database queries from natural language questions
+      Generate unit tests from test descriptions
+      Implement data structures from their conceptual description
+      Create configuration files from requirement specifications
+      Generate code documentation from natural language explanations
+      Generate UI component code from design descriptions
+      Create script automation code from workflow descriptions
+      Implement validation rules from business requirements
+      Generate boilerplate code for design patterns
+      Create error handling code from error scenarios
+      Generate data transformation code from mapping rules
+      Implement event handlers from behavior descriptions
+      Create middleware components from integration requirements
+      Generate CLI commands from feature descriptions
+      Implement state management code from state machine descriptions
+      Generate security policy implementation code
+      Create protocol implementation from specifications
+      Generate code for mathematical/scientific computations
+      Implement network communication protocols
+      Create parallel processing code from requirements
+      Generate mobile app components from feature descriptions
+      Implement machine learning model integration code
+      Create data visualization code from chart descriptions
+      Generate game mechanics code from rule descriptions
+      Implement IoT device communication code
+    Test to Code (Test cases to Implementation generation)
+      Generate class implementation from unit test specifications
+      Create function implementations that satisfy given test assertions
+      Implement data structures based on behavioral test cases
+      Generate API endpoints from API test specifications
+      Create interface implementations from contract tests
+      Implement state machines from behavior-driven tests
+      Generate database queries from test scenarios
+      Create mock implementations from test doubles
+      Implement validation logic from boundary test cases
+      Generate error handling code from exception test cases
+      Generate concurrent code from parallel test specifications
+      Implement event handlers from event-driven test scenarios
+      Create design pattern implementations from pattern-specific tests
+      Generate serialization/deserialization code from format test cases
+      Implement mathematical functions from property-based tests
+      Create parser implementations from parsing test cases
+      Generate network protocol handlers from protocol test specifications
+      Implement cache logic from caching behavior tests
+      Create security filter implementations from security test cases
+      Generate data transformation code from transformation test specs
+      Generate platform-specific native code from cross-platform tests
+      Implement GUI widget controllers from UI behavior tests
+      Generate compiler optimization passes from optimization test cases
+      Create domain-specific language interpreters from language spec tests
+      Implement resource management code from lifecycle test cases
+      Generate configuration processors from config validation tests
+      Create dependency injection containers from DI specification tests
+      Implement finite state automata from state transition tests
+      Generate data migration scripts from migration test specs
+      Create custom collection implementations from collection behavior tests
+      Generate model inference code from ML model test specifications
+      Implement game mechanics from gameplay test scenarios
+      Generate system call wrappers from OS interaction tests
+      Create audio processing implementations from audio test specs
+      Implement image processing routines from image transformation tests
+      Generate memory management code from allocation test cases
+      Create physics simulation code from physics behavior tests
+      Implement compression algorithm code from compression test specs
+      Generate cryptographic implementations from crypto test vectors
+      Create device driver stubs from hardware interaction tests
+      Generate embedded system code from hardware test specifications
+      Implement real-time scheduling code from timing test cases
+      Generate industrial protocol implementations from protocol test specs
+      Create signal processing implementations from DSP test cases
+      Implement feedback control systems from control loop tests
+      Generate sensor fusion algorithms from sensor data test specs
+      Create accessibility feature implementations from WCAG test cases
+      Implement communication protocol bridges from protocol conversion tests
+      Generate fault-tolerant system code from failure test scenarios
+      Create regulatory compliance code from compliance test specifications
+    Comments to Code (Code comments to Implementation generation)
+      Generate function implementations from function documentation/comments
+      Convert algorithm pseudocode comments into executable code
+      Implement unit tests from test case comments
+      Generate class implementations from class documentation
+      Convert database schema comments into DDL statements
+      Implement API endpoints from API documentation comments
+      Generate CRUD operations from entity/model comments
+      Convert UI component comments into frontend code
+      Implement error handling from error specification comments
+      Generate configuration files from configuration documentation
+      Generate state machine implementations from state transition comments
+      Convert mathematical formula comments into computational code
+      Implement design patterns from pattern specification comments
+      Generate data validation code from constraint comments
+      Convert event handler specifications into event-driven code
+      Implement logging/monitoring code from observability requirements
+      Generate serialization/deserialization code from data format comments
+      Convert security policy comments into access control implementations
+      Implement caching logic from cache strategy comments
+      Generate data transformation code from mapping specifications
+      Generate protocol buffer implementations from message specifications
+      Convert workflow comments into pipeline/orchestration code
+      Implement internationalization code from localization comments
+      Generate data migration scripts from migration specifications
+      Convert threading/concurrency comments into parallel processing code
+      Implement network protocol handlers from protocol specifications
+      Generate parser/lexer code from grammar specifications
+      Convert query specifications into database query builders
+      Implement middleware components from middleware chain comments
+      Generate resource cleanup code from lifecycle specifications
+      Generate service mesh configuration code from topology comments
+      Convert metrics/telemetry specifications into monitoring code
+      Implement retry/circuit breaker logic from resilience patterns
+      Generate GraphQL resolvers from schema comments
+      Convert message queue handling specs into consumer/producer code
+      Implement feature flag logic from feature specification comments
+      Generate container orchestration code from deployment specs
+      Convert rate limiting specifications into throttling implementations
+      Implement batch processing code from batch operation comments
+      Generate infrastructure-as-code from architecture comments
+    Pseudocode to Code (Pseudocode to Implementation generation)
+      Generate implementation of sorting algorithms (e.g., quicksort, mergesort)
+      Generate implementation of search algorithms (e.g., binary search, depth-first search)
+      Generate implementation of data structure operations (e.g., linked list operations, tree traversal)
+      Generate implementation of mathematical algorithms (e.g., matrix operations, numerical methods)
+      Generate implementation of string manipulation algorithms
+      Generate implementation of dynamic programming solutions
+      Generate implementation of graph algorithms (e.g., shortest path, minimum spanning tree)
+      Generate implementation of cryptographic algorithms
+      Generate implementation of optimization algorithms
+      Generate implementation of machine learning algorithms
+      Generate implementation of design patterns (e.g., Observer, Factory, Singleton)
+      Generate implementation of concurrent programming patterns
+      Generate implementation of network protocols and communication handlers
+      Generate implementation of database operations and queries
+      Generate implementation of file system operations
+      Generate implementation of memory management algorithms
+      Generate implementation of parsing algorithms
+      Generate implementation of compression algorithms
+      Generate implementation of game mechanics algorithms
+      Generate implementation of image processing algorithms
+      Generate implementation of user interface event handlers
+      Generate implementation of authentication and authorization mechanisms
+      Generate implementation of caching algorithms and strategies
+      Generate implementation of validation and sanitization routines
+      Generate implementation of logging and monitoring systems
+      Generate implementation of error handling and recovery mechanisms
+      Generate implementation of API integration patterns
+      Generate implementation of state management systems
+      Generate implementation of data serialization/deserialization
+      Generate implementation of testing frameworks and utilities
+    UI Mock to Code (UI design/mockup to Frontend code generation)
+      Convert Figma design to React components with styled-components
+      Transform Sketch artboards to Vue.js components
+      Generate responsive HTML/CSS from image mockups
+      Convert Adobe XD designs to Next.js pages
+      Transform UI wireframes to Angular components
+      Generate mobile-first Bootstrap layouts from mockups
+      Convert design system tokens to themed components
+      Transform UI prototypes to Tailwind CSS implementations
+      Generate accessibility-compliant HTML from mockups
+      Convert design handoffs to TypeScript-based components
+      Convert micro-interaction prototypes to animated components
+      Transform native mobile UI designs to React Native components
+      Generate email-template HTML from newsletter designs
+      Convert progressive web app (PWA) mockups to service worker enabled code
+      Transform design specs to WebGL-based UI components
+      Generate cross-browser compatible code from browser-specific designs
+      Convert design systems to white-label component libraries
+      Transform e-commerce mockups to shopping cart components
+      Generate localization-ready components from multi-language designs
+      Convert dashboard mockups to data-visualization components
+      Convert 3D interface mockups to Three.js components
+      Transform healthcare UI designs to HIPAA-compliant components
+      Generate AMP-compatible pages from mobile designs
+      Convert design specs to Web Components
+      Transform AR/VR interface mockups to WebXR components
+      Generate performance-optimized critical-path CSS from full designs
+      Convert chatbot interface designs to conversational UI components
+      Transform design systems to micro-frontend architectures
+      Generate print-ready CSS from responsive designs
+      Convert multi-theme designs to CSS-in-JS design systems
+      Convert design specs to server-side rendered components
+      Transform design systems to shadow DOM encapsulated elements
+      Generate printer-friendly layouts from interactive designs
+      Convert enterprise design patterns to SharePoint web parts
+      Transform legacy system UI to modern framework components
+      Generate static site components from dynamic UI mockups
+      Convert design specs to Web Assembly compatible components
+      Transform multi-tenant UI designs to isolated components
+      Generate CMS-ready templates from content-heavy designs
+      Convert design systems to Storybook-compatible component libraries
+    Schema to Code (Database schema to CRUD code generation)
+      Generate ORM entity classes from database schema
+      Generate repository/data access layer code
+      Generate REST API endpoints for CRUD operations
+      Generate service layer business logic
+      Generate database migration scripts
+      Generate data validation code
+      Generate documentation (API docs, schema docs)
+      Generate unit test cases for CRUD operations
+      Generate database query builders
+      Generate TypeScript/JavaScript interfaces from schema
+      Generate database stored procedures and functions
+      Generate caching layer implementation
+      Generate authentication/authorization middleware
+      Generate database connection pool configuration
+      Generate client-side API client code
+      Generate GraphQL schema and resolvers
+      Generate database backup and restore scripts
+      Generate data seeding scripts
+      Generate database indexing code
+      Generate database logging and monitoring code
+      Generate data transformation/ETL pipeline code
+      Generate database change notification triggers
+      Generate message queue integration code
+      Generate database partitioning logic
+      Generate data audit trail implementation
+      Generate database health check endpoints
+      Generate database replication configuration
+      Generate database schema version control code
+      Generate database performance metrics collectors
+      Generate data export/import utility code
+      Generate database sharding implementation code
+      Generate multi-tenant database access layer
+      Generate database failover configuration
+      Generate schema comparison tools
+      Generate database encryption layer
+      Generate data anonymization code
+      Generate database constraint validators
+      Generate database view management code
+      Generate database cleanup/maintenance jobs
+      Generate database-specific error handlers
+    API Spec to Code (API specification to Implementation generation)
+      Generate REST API endpoints from OpenAPI/Swagger specification
+      Create GraphQL resolvers and schema from GraphQL schema definition
+      Implement gRPC service methods from protocol buffer definitions
+      Generate API authentication and authorization middleware
+      Create API request validation handlers from schema
+      Implement API response serialization/deserialization logic
+      Generate API error handling and status codes
+      Create API documentation generators from specification
+      Implement API versioning and routing logic
+      Generate API integration tests from specification
+      Generate database models and ORM mappings from API entities
+      Implement API caching layer and cache invalidation logic
+      Generate API metrics and monitoring endpoints
+      Create API rate limiting and throttling implementation
+      Generate API proxy and gateway integration code
+      Implement API logging and audit trail mechanisms
+      Create WebSocket/real-time API endpoints from specification
+      Generate API batch processing endpoints
+      Implement API pagination and filtering logic
+      Create API health check and status endpoints
+      Generate API event sourcing and message queue integrations
+      Implement API circuit breaker and fallback mechanisms
+      Create API bulk operation endpoints and handlers
+      Generate API data transformation and mapping layers
+      Implement API content negotiation handlers
+      Create API backward compatibility layers
+      Generate API service discovery integration code
+      Implement API response compression handlers
+      Create API cross-origin resource sharing (CORS) configuration
+      Generate API asynchronous operation handlers
+      Generate API webhook registration and handling endpoints
+      Implement API key rotation and management logic
+      Create API request/response encryption layers
+      Generate API multi-tenancy support code
+      Implement API request tracing and distributed tracking
+      Create API response aggregation and composition layers
+      Generate API feature flag integration code
+      Implement API quota management system
+      Create API service mesh integration endpoints
+      Generate API chaos testing endpoints
+    DSL to Code (Domain Specific Language to General-purpose language code)
+      SQL to ORM code (e.g., SQL to Python SQLAlchemy)
+      GraphQL schema to REST API code
+      XML/XSLT to programming language code
+      Regular expressions to finite state machine code
+      CSS selectors to DOM manipulation code
+      Protocol Buffers/gRPC definitions to service code
+      Terraform/CloudFormation to infrastructure code
+      YAML configuration to application code
+      BNF grammar to parser code
+      State machine diagrams to implementation code
+      MATLAB/Simulink models to implementation code
+      UML diagrams to class/interface code
+      BPMN (Business Process Model Notation) to workflow code
+      OpenAPI/Swagger specifications to client/server code
+      ANTLR grammar to lexer/parser code
+      Mathematical notation to computational code
+      VHDL/Verilog to hardware implementation code
+      Game behavior trees to game logic code
+      Docker Compose to container orchestration code
+      Security policy DSLs to access control code
+      Datalog/Prolog to logical programming code
+      CUDA/OpenCL kernels to GPU code
+      Musical notation (MusicXML/MIDI) to audio processing code
+      CAD/CAM specifications to 3D modeling code
+      Robot control DSLs to motion control code
+      ETL pipeline definitions to data transformation code
+      Scene graph descriptions to graphics rendering code
+      Network topology DSLs to networking code
+      Chemical formula notation to molecular simulation code
+      Animation keyframe scripts to animation engine code
+      Smart contract DSLs to blockchain code
+      IoT device description language to device control code
+      Quantum circuit descriptions to quantum computing code
+      Layout DSLs (like Cassowary) to UI constraint code
+      Time series query language to analytics code
+      Feature flag definitions to feature toggle code
+      Message format DSLs (like ASN.1) to serialization code
+      Shader language to graphics pipeline code
+      Test specification DSLs to test automation code
+      Event processing language to stream processing code
+    Diagram to Code (System/UML diagrams to Implementation generation)
+      Generate class implementations from UML class diagrams
+      Create interface definitions from component diagrams
+      Implement method stubs from sequence diagrams
+      Generate database schemas from ER diagrams
+      Create state machine implementations from state diagrams
+      Generate API endpoints from service diagrams
+      Implement workflow logic from activity diagrams
+      Create microservice templates from architecture diagrams
+      Generate test cases from use case diagrams
+      Implement design patterns from pattern structure diagrams
+      Generate data transfer objects (DTOs) from object diagrams
+      Create message queue handlers from communication diagrams
+      Implement validation rules from constraint diagrams
+      Generate ORM mappings from domain model diagrams
+      Create deployment scripts from deployment diagrams
+      Implement event handlers from interaction diagrams
+      Generate configuration files from component configuration diagrams
+      Create protocol implementations from protocol state diagrams
+      Generate UI component hierarchy from composite structure diagrams
+      Implement security policies from security model diagrams
+      Generate circuit logic from digital logic diagrams
+      Create network configurations from network topology diagrams
+      Implement data pipelines from data flow diagrams
+      Generate report templates from report structure diagrams
+      Create cache hierarchy implementations from cache architecture diagrams
+      Implement scheduler logic from timing diagrams
+      Generate integration connectors from system integration diagrams
+      Create resource management code from resource allocation diagrams
+      Implement transaction flows from transaction diagrams
+      Generate exception handling from error flow diagrams
+      Generate smart contract code from blockchain interaction diagrams
+      Create machine learning pipeline code from ML workflow diagrams
+      Implement IoT device protocols from sensor network diagrams
+      Generate game state machines from game flow diagrams
+      Create real-time processing logic from stream processing diagrams
+      Implement distributed consensus from consensus protocol diagrams
+      Generate AR/VR scene graphs from spatial relationship diagrams
+      Create quantum circuit implementations from quantum computing diagrams
+      Implement federated learning nodes from federation topology diagrams
+      Generate edge computing deployments from edge architecture diagrams
+    Template to Code (Template with placeholders to Complete code generation)
+      Generate CRUD operations from database schema templates
+      Complete HTML/CSS templates with specific styling and content
+      Generate API endpoint implementations from OpenAPI/Swagger templates
+      Fill in boilerplate code templates for design patterns (Factory, Singleton, etc.)
+      Generate unit test templates with test cases and assertions
+      Complete configuration file templates (Docker, CI/CD, etc.)
+      Generate ORM model classes from database schema templates
+      Complete microservice templates with specific business logic
+      Generate documentation templates with API details and examples
+      Fill in language-specific project structure templates
+      Generate form validation code from form schema templates
+      Complete internationalization (i18n) template files with translations
+      Generate state management boilerplate from store templates (Redux, MobX)
+      Fill in GraphQL resolver templates from schema definitions
+      Complete build system templates (Make, CMake, Gradle)
+      Generate data model serialization code from schema templates
+      Complete license and legal document templates with project details
+      Generate error handling templates with custom error types
+      Complete CLI command templates with argument parsing
+      Generate component templates for UI frameworks (React, Vue, Angular)
+      Generate smart contract templates with specific business logic
+      Complete game development templates (scene, character, physics)
+      Generate protocol buffer/gRPC service templates
+      Complete serverless function templates (AWS Lambda, Azure Functions)
+      Generate machine learning model serving code templates
+      Complete WebAssembly interface templates
+      Generate mobile app screen templates (iOS, Android)
+      Complete message queue consumer/producer templates
+      Generate data pipeline templates (ETL jobs)
+      Complete security middleware templates (authentication, authorization)
+    Example to Code (Input/Output examples to Implementation generation)
+      Generate string manipulation functions from input/output string pairs
+      Implement arithmetic operations from numerical input/output examples
+      Create data structure operations from example transformations
+      Synthesize sorting/filtering functions from example sequences
+      Generate regular expressions from matching/non-matching string examples
+      Implement array/list transformations from example mappings
+      Create conditional logic from example decision pairs
+      Generate recursive functions from example recursive patterns
+      Implement state machine logic from example state transitions
+      Create data validation functions from valid/invalid example pairs
+      Generate database query operations from example data transformations
+      Create text parsing functions from example document extractions
+      Implement mathematical formula evaluators from expression/result pairs
+      Generate data format converters from example transformations (JSON/XML/CSV)
+      Create tree traversal functions from example node visit sequences
+      Implement graph operations from example graph transformations
+      Generate time/date manipulation functions from example datetime pairs
+      Create encoding/decoding functions from example conversions
+      Implement geometric calculations from coordinate/result examples
+      Generate sequence generators from example number patterns
+      Generate image processing functions from example image transformations
+      Create audio processing functions from example sound transformations
+      Implement network protocol handlers from example request/response pairs
+      Generate UI component behavior from example interaction sequences
+      Create game mechanics from example state/action/result sequences
+      Implement caching strategies from example access patterns
+      Generate compression algorithms from example data reduction pairs
+      Create authentication/authorization rules from example access scenarios
+      Implement rate limiting logic from example request patterns
+      Generate logging/monitoring rules from example event sequences
+      Generate data normalization functions from example dataset transformations
+      Create classification rules from example labeled data pairs
+      Implement business workflow rules from example process flows
+      Generate API mapping functions from example service transformations
+      Create event handling chains from example event propagation patterns
+      Implement data aggregation pipelines from example collection operations
+      Generate configuration validators from example config scenarios
+      Create resource allocation algorithms from example scheduling patterns
+      Implement error handling strategies from example failure scenarios
+      Generate message routing rules from example routing patterns
+      Generate sensor data processing rules from example measurement patterns
+      Create code optimization transformations from example performance profiles
+      Implement test case generators from example test scenarios
+      Generate distributed consensus logic from example node agreement patterns
+      Create data synchronization rules from example sync scenarios
+      Implement circuit breaker patterns from example failure threshold scenarios
+      Generate load balancing algorithms from example traffic distribution patterns
+      Create data partitioning rules from example sharding scenarios
+      Implement retry strategies from example failure recovery patterns
+      Generate feature flag logic from example feature toggle scenarios
+    Formula to Code (Mathematical formulas to Implementation generation)
+      Generate code for basic algebraic equations and expressions
+      Convert calculus formulas (derivatives, integrals) into numerical computation code
+      Implement statistical formulas and probability distributions
+      Transform matrix operations and linear algebra equations into code
+      Convert mathematical optimization problems into algorithmic solutions
+      Implement numerical methods for differential equations
+      Generate code for geometric calculations and transformations
+      Convert signal processing formulas into digital implementations
+      Implement machine learning mathematical models and algorithms
+      Generate code for complex number operations and functions
+      Implement graph theory formulas and algorithms
+      Generate code for boolean algebra and logical expressions
+      Convert cryptographic mathematical formulas to implementations
+      Implement physics equations and simulations
+      Generate code for financial mathematics and formulas
+      Convert set theory operations into code implementations
+      Implement mathematical series and sequences
+      Generate code for number theory problems and algorithms
+      Convert combinatorics and permutation formulas to code
+      Implement mathematical optimization constraints and objectives
+      Convert chemical equations and reaction kinetics to code
+      Implement quantum mechanics formulas and computations
+      Generate code for astronomical calculations and orbital mechanics
+      Convert biological growth models and population dynamics
+      Implement acoustic and wave propagation formulas
+      Generate code for thermodynamic equations and heat transfer
+      Implement electromagnetic field equations and simulations
+      Convert fluid dynamics equations to numerical solutions
+      Generate code for structural mechanics and stress analysis
+      Implement control system equations and transfer functions
+      Convert computer graphics and rendering equations to code
+      Implement digital filter design formulas
+      Generate code for robotics kinematics and dynamics
+      Convert network theory and queuing formulas
+      Implement reliability and failure analysis equations
+      Generate code for operations research formulas
+      Implement game theory equations and strategies
+      Convert information theory and coding formulas
+      Generate code for dimensionality reduction algorithms
+      Implement time series analysis formulas
+    NL+Sketch to Code (Natural Language with sketches/drawings to Implementation)
+      Generate UI code from wireframe sketches and functional descriptions
+      Convert flowchart diagrams and process descriptions into procedural code
+      Transform database schema drawings and requirements into DDL statements
+      Create API endpoints from REST API documentation sketches
+      Generate state machine code from state diagram sketches
+      Implement class structures from UML class diagrams and specifications
+      Create animation code from storyboard sketches and behavior descriptions
+      Generate game logic from level design sketches and game rules
+      Implement network topology from infrastructure diagrams and requirements
+      Create visualization code from chart sketches and data specifications
+      Generate mathematical formula implementations from handwritten equations and requirements
+      Create layout constraints from annotated spacing/alignment sketches
+      Generate circuit logic code from electronic diagrams and specifications
+      Implement image processing pipelines from filter graph sketches
+      Create form validation code from form sketches with validation rules
+      Generate parallel processing code from concurrent flow diagrams
+      Create CSS styles from design system sketches and guidelines
+      Implement gesture recognition from gesture path sketches and descriptions
+      Generate chatbot conversation flows from dialogue tree sketches
+      Create accessibility implementations from ARIA relationship diagrams
+      Generate DSL (Domain Specific Language) syntax from railroad diagram sketches
+      Create audio processing chains from audio flow diagrams
+      Implement security policy code from access control matrix sketches
+      Generate compiler pattern matching from syntax tree sketches
+      Create AR/VR scene code from spatial relationship diagrams
+      Implement robotics control sequences from movement path sketches
+      Generate shader code from visual effect pipeline sketches
+      Create build pipeline code from CI/CD flow diagrams
+      Implement IoT device communication from sensor network sketches
+      Generate Natural Language Processing pipelines from text flow diagrams
+      Generate quantum circuit code from quantum gate diagrams
+      Create blockchain smart contracts from transaction flow sketches
+      Implement bioinformatics sequence analysis from pathway diagrams
+      Generate 3D printing G-code from layer sketch annotations
+      Create embedded system firmware from timing diagram sketches
+      Implement machine learning model architectures from network diagrams
+      Generate data transformation pipelines from ETL flow sketches
+      Create mesh networking protocols from topology sketches
+      Implement signal processing filters from frequency response drawings
+      Generate geographic information system (GIS) code from map annotations
+      Generate molecular dynamics simulation code from particle interaction diagrams
+      Create numerical weather prediction code from atmospheric model sketches
+      Implement chemical reaction simulations from reaction pathway diagrams
+      Generate finite element analysis code from mesh structure sketches
+      Create DNA/RNA folding algorithms from structure diagrams
+      Implement spacecraft trajectory code from orbital mechanics sketches
+      Generate cognitive architecture implementations from mental model diagrams
+      Create protein folding simulation code from amino acid interaction sketches
+      Implement electromagnetic field simulations from field line diagrams
+      Generate crystal structure analysis code from lattice diagrams
+      Generate fluid dynamics code from flow field sketches
+      Create plasma physics simulation code from tokamak diagrams
+      Implement earthquake simulation code from seismic wave propagation sketches
+      Generate optical system code from ray tracing diagrams
+      Create particle accelerator control code from beam path sketches
+      Implement astronomical observation sequences from star field diagrams
+      Generate tissue growth simulation code from cellular automata patterns
+      Create nuclear reactor control systems from reactor core diagrams
+      Implement geological modeling code from stratigraphic sketches
+      Generate acoustic modeling code from sound propagation diagrams
+    Code to Code (One programming language to Another language generation)
+      Translate Python scripts to JavaScript modules
+      Convert Java classes to C# classes
+      Transform C++ templates to Java generics
+      Migrate PHP web applications to Python Django framework
+      Convert Objective-C code to Swift
+      Transform TypeScript interfaces to Rust traits
+      Convert Ruby on Rails models to Python Django models
+      Translate SQL stored procedures to MongoDB aggregation pipelines
+      Convert shell scripts to PowerShell scripts
+      Transform React (JavaScript) components to Vue.js components
+      Convert MATLAB scripts to Python NumPy/SciPy code
+      Transform R statistical analysis scripts to Python Pandas
+      Convert Android Java code to Kotlin
+      Transform Flutter (Dart) code to React Native (JavaScript)
+      Convert C system calls to Rust unsafe blocks
+      Transform Go concurrent code to Erlang processes
+      Convert Angular (TypeScript) components to Svelte components
+      Transform PHP Laravel models to Node.js Mongoose schemas
+      Convert Scala functional code to Haskell
+      Transform Julia numerical computations to Python NumPy
+      Convert COBOL business logic to Java enterprise code
+      Transform Visual Basic applications to C# .NET
+      Convert Verilog hardware description to VHDL
+      Transform Apache Ant build scripts to Gradle
+      Convert Unity C# game scripts to Unreal Engine C++
+      Transform Jenkins pipeline scripts to GitHub Actions workflows
+      Convert Arduino C++ code to MicroPython
+      Transform Fortran scientific code to modern C++
+      Convert Perl CGI scripts to Node.js Express routes
+      Transform Make build files to CMake configuration
+      Convert AWS CloudFormation templates to Terraform HCL
+      Transform Apache Spark (Scala) jobs to Apache Flink (Java)
+      Convert Jinja2 templates to Handlebars templates
+      Transform OpenSSL C code to BoringSSL
+      Convert Solidity smart contracts to Vyper
+      Transform Puppet configuration to Ansible playbooks
+      Convert Apache Velocity templates to Thymeleaf
+      Transform Airflow DAGs (Python) to Prefect flows
+      Convert Chef recipes to Kubernetes manifests
+      Transform Ethereum Solidity to Cardano Plutus
+      Convert TensorFlow models to PyTorch code
+      Transform OpenGL C++ code to Vulkan
+      Convert JUnit test suites to PyTest
+      Transform OpenAPI/Swagger specs to GraphQL schemas
+      Convert DirectX shader code to Metal shaders
+      Transform ROS (Robot Operating System) nodes from C++ to Python
+      Convert Keras models to JAX implementations
+      Transform Selenium WebDriver tests to Cypress
+      Convert CUDA GPU code to OpenCL
+      Transform Protocol Buffers to Apache Thrift definitions
+    Model to Code (Machine Learning models to Deployment code generation)
+      Generate FastAPI endpoints for model serving
+      Create Docker containerization scripts for ML models
+      Generate AWS Lambda deployment code for serverless inference
+      Convert models to TensorFlow Serving configurations
+      Generate Flask REST API for model deployment
+      Create Kubernetes deployment manifests for ML models
+      Generate model optimization code for edge devices
+      Create batch inference pipeline code
+      Generate model monitoring and logging infrastructure
+      Create model versioning and A/B testing setup
+      Generate Azure ML deployment configurations
+      Create Google Cloud AI Platform deployment scripts
+      Generate model quantization and compression code
+      Create real-time streaming inference pipeline
+      Generate model deployment code for mobile devices (iOS/Android)
+      Create model deployment code for embedded systems
+      Generate model serving code with load balancing
+      Create model deployment code with caching layers
+      Generate gRPC service definitions for model serving
+      Create model deployment code with input/output validation
+      Generate secure model serving code with authentication/authorization
+      Create MLflow deployment integration code
+      Generate deployment code for federated learning systems
+      Create high-availability cluster deployment configurations
+      Generate deployment code for GPU-accelerated serving
+      Create model deployment code with feature stores integration
+      Generate deployment code for multi-model serving
+      Create deployment configurations for model ensembles
+      Generate deployment code with circuit breakers and fallbacks
+      Create deployment code for privacy-preserving inference
+      Generate deployment code for FPGA acceleration
+      Create deployment code compliant with HIPAA requirements
+      Generate deployment code for multi-cloud environments
+      Create deployment configurations for TPU serving
+      Generate deployment code with model warm-up strategies
+      Create cross-platform model packaging code (ONNX)
+      Generate deployment code with model parameter server
+      Create deployment code for time-critical inference
+      Generate deployment code with model quality gates
+      Create deployment configurations for model shadowing
+    Config to Code (Configuration files to Implementation generation)
+      Generate REST API endpoints from OpenAPI/Swagger specifications
+      Create database models and migrations from schema definitions
+      Generate infrastructure-as-code from cloud configuration files
+      Build UI components from design system specifications
+      Create data transfer objects (DTOs) from interface definitions
+      Generate client SDKs from API specifications
+      Create configuration validators from schema definitions
+      Generate ORM entities from database schemas
+      Create mock services from interface definitions
+      Generate deployment manifests from application configurations
+      Generate protocol buffers (gRPC) service implementations from .proto files
+      Create message queue consumers/producers from messaging schemas
+      Generate GraphQL resolvers from schema definitions
+      Create configuration parsers from format specifications
+      Generate build system configurations from project metadata
+      Create internationalization code from translation files
+      Generate event handlers from event schema definitions
+      Create CLI command implementations from command specifications
+      Generate form validation code from schema definitions
+      Create mapper classes from data mapping configurations
+      Generate security policy implementations from RBAC/ABAC definitions
+      Create monitoring instrumentation code from telemetry configurations
+      Generate state machine implementations from state diagram specifications
+      Create cache configuration implementations from caching policies
+      Generate network protocol handlers from protocol specifications
+      Create workflow implementations from workflow definitions
+      Generate report generator code from report templates
+      Create data pipeline processors from ETL configurations
+      Generate authentication middleware from auth provider configs
+      Create scheduled task implementations from cron specifications
+      Generate device driver code from hardware specifications
+      Create plugin loader implementations from plugin manifests
+      Generate parser/lexer code from grammar definitions
+      Create game object implementations from game asset configurations
+      Generate embedded system configurations from pin/port mappings
+      Create service mesh configurations from topology definitions
+      Generate codec implementations from encoding specifications
+      Create serialization code from data format specifications
+      Generate configuration migration code from version definitions
+      Create resource allocation code from capacity planning configs
+    Workflow to Code (Business workflow diagrams to Implementation generation)
+      BPMN to RESTful microservices implementation
+      UML Activity Diagram to sequential process implementation
+      State Machine Diagram to state management code
+      Flowchart to procedural code implementation
+      Business Rules Diagram to rule engine implementation
+      Event-driven process chain to event handler implementation
+      Data Flow Diagram to ETL pipeline implementation
+      Decision Tree Diagram to conditional logic implementation
+      Sequence Diagram to API implementation
+      Collaboration Diagram to service orchestration implementation
+      Integration Flow Diagram to middleware code
+      Workflow Orchestration Chart to workflow engine implementation
+      User Journey Map to UI navigation flow implementation
+      Process Mining Graph to process automation code
+      Value Stream Map to pipeline automation code
+      Task Dependency Graph to job scheduler implementation
+      Service Blueprint to microservices choreography implementation
+      Compliance Workflow to validation and verification code
+      Document Flow Diagram to document processing implementation
+      Resource Allocation Flow to resource manager implementation
+      ML Pipeline Diagram to model training workflow code
+      IoT Device Flow to device management implementation
+      Security Protocol Flow to security control implementation
+      Financial Transaction Flow to payment processing code
+      Healthcare Workflow to HIPAA-compliant process implementation
+      Supply Chain Flow to inventory management implementation
+      Quality Assurance Flow to testing automation code
+      Deployment Pipeline to CI/CD implementation
+      Incident Response Flow to alerting system implementation
+      Data Governance Flow to data lifecycle management code
+      Smart Contract Flow to blockchain implementation
+      Real-time Event Flow to stream processing code
+      Gaming State Flow to game logic implementation
+      Regulatory Reporting Flow to compliance reporting code
+      Multi-tenant Workflow to tenant isolation implementation
+      Energy Grid Flow to power management system code
+      Trading System Flow to order execution implementation
+      Content Management Flow to CMS workflow code
+      Customer Support Flow to ticket management implementation
+      Auction Process Flow to bidding system implementation
+    Protocol to Code (Network/Communication protocols to Implementation generation)
+      Generate TCP/IP socket communication implementation from protocol specification
+      Generate REST API server implementation from OpenAPI/Swagger specification
+      Generate gRPC service implementation from protobuf definitions
+      Generate WebSocket server/client implementation from protocol documentation
+      Generate MQTT broker/client implementation from protocol requirements
+      Generate network packet parser/serializer from protocol format specification
+      Generate state machine implementation for protocol handling
+      Generate message queue protocol implementation from specification
+      Generate custom binary protocol encoder/decoder from format definition
+      Generate protocol handshake and authentication flow implementation
+      Generate protocol buffer implementation from interface definition language (IDL)
+      Generate network protocol gateway/proxy implementation from routing rules
+      Generate secure protocol implementation with TLS/SSL handling
+      Generate distributed consensus protocol implementation (e.g., Raft, Paxos)
+      Generate blockchain protocol implementation from specification
+      Generate peer-to-peer network protocol implementation
+      Generate protocol version negotiation and compatibility layer
+      Generate protocol monitoring and metrics collection implementation
+      Generate network protocol load balancer implementation
+      Generate service discovery protocol implementation
+      Generate network protocol error handling and recovery implementation
+      Generate real-time streaming protocol implementation
+      Generate protocol migration and backward compatibility layer
+      Generate network protocol simulation and testing framework
+      Generate protocol debugging and logging infrastructure
+      Generate network protocol compression implementation
+      Generate protocol rate limiting and throttling implementation
+      Generate multicast protocol implementation
+      Generate protocol synchronization mechanism implementation
+      Generate protocol validation and verification layer
+    Voice to Code (Voice commands/instructions to Implementation generation)
+      Generate basic CRUD operations from voice commands
+      Create UI components from verbal descriptions
+      Convert spoken algorithm descriptions into working code
+      Generate unit tests from verbal test specifications
+      Create API endpoints from voice-described requirements
+      Transform verbal database schema descriptions into code
+      Generate configuration files from spoken specifications
+      Create command-line scripts from voice instructions
+      Generate code documentation from verbal explanations
+      Implement design patterns from spoken architectural descriptions
+      Generate data validation rules from spoken requirements
+      Create error handling implementations from verbal specifications
+      Generate authentication flows from voice-described security requirements
+      Create data transformation pipelines from verbal workflow descriptions
+      Generate state management code from spoken application state descriptions
+      Create event handlers from verbal event flow descriptions
+      Generate mathematical computation implementations from spoken formulas
+      Create logging implementations from verbal logging requirements
+      Generate internationalization code from spoken language requirements
+      Create scheduled task implementations from verbal timing specifications
+      Generate network protocol implementations from verbal specifications
+      Create graphics rendering code from spoken visual descriptions
+      Generate game mechanics code from verbal game rule descriptions
+      Create device sensor integration code from spoken requirements
+      Generate cloud service integration implementations from verbal specifications
+      Create message queue handling code from spoken workflow descriptions
+      Generate browser extension code from verbal feature descriptions
+      Create mobile app navigation flows from spoken user journey descriptions
+      Generate data visualization code from verbal chart descriptions
+      Create websocket implementations from spoken real-time requirements
+    Trace to Code (Execution traces/logs to Implementation generation)
+      Generate API client code from API call traces
+      Convert method invocation sequences to implementation code
+      Create test cases from execution traces
+      Synthesize state machine implementations from behavior logs
+      Generate database access code from query logs
+      Reconstruct class implementations from object interaction traces
+      Create mock objects from recorded service interactions
+      Generate event handlers from event sequence logs
+      Synthesize workflow implementations from process execution logs
+      Create data transformation code from data flow traces
+      Generate network protocol implementations from packet traces
+      Create retry/circuit breaker logic from failure logs
+      Synthesize data validation code from validation trace patterns
+      Generate synchronization code from concurrent execution traces
+      Create cache management code from memory access patterns
+      Generate data migration scripts from schema change logs
+      Synthesize error handling code from exception traces
+      Create service discovery code from service interaction logs
+      Generate rate limiting implementations from traffic patterns
+      Create data consistency check code from consistency violation logs
+      Generate feature extraction code from data processing traces
+      Create message broker configurations from message flow logs
+      Synthesize monitoring instrumentation code from telemetry patterns
+      Generate stream processing pipelines from data flow logs
+      Create configuration management code from system state logs
+      Generate data cleanup scripts from data quality incident logs
+      Create load balancing logic from traffic distribution patterns
+      Synthesize data partitioning code from access patterns
+      Generate service mesh configurations from service topology traces
+      Create resource scaling logic from utilization patterns
+      Generate authentication flow code from security audit logs
+      Create data anonymization code from PII access patterns
+      Synthesize API versioning logic from compatibility issue logs
+      Generate cross-platform adapters from platform-specific traces
+      Create UI interaction handlers from user session logs
+      Generate ETL pipeline code from data integration traces
+      Create legacy system wrappers from interface interaction logs
+      Synthesize compliance checking code from audit trails
+      Generate data reconciliation logic from sync operation logs
+      Create API gateway routing rules from traffic patterns
+    NL+Examples to Code (Natural Language with examples to Implementation)
+      Generate a data structure implementation (e.g., linked list, tree) based on usage examples
+      Create API endpoints from request/response examples
+      Implement sorting/searching algorithms with input/output examples
+      Generate regular expressions from matching/non-matching string examples
+      Create data transformation functions from input/output pairs
+      Implement mathematical functions from example calculations
+      Generate parser/formatter code from example formats
+      Create validation rules from valid/invalid example cases
+      Implement state machine logic from example state transitions
+      Generate utility functions from example usage patterns
+      Generate unit test cases from example scenarios and expected behaviors
+      Create UI component code from visual examples and interaction descriptions
+      Generate database query functions from example queries and results
+      Implement event handlers from example event flows
+      Create data migration scripts from example data transformations
+      Generate serialization/deserialization code from example object conversions
+      Implement retry logic from example failure scenarios
+      Create caching mechanisms from example cache usage patterns
+      Generate logging/monitoring code from example log formats
+      Implement authentication/authorization rules from example access patterns
+      Generate configuration file parsers from example config formats
+      Create message queue handlers from example message flows
+      Implement rate limiting logic from throttling examples
+      Generate data validation pipelines from example validation workflows
+      Create custom iterator implementations from iteration pattern examples
+      Implement circuit breaker patterns from failure scenario examples
+      Generate object mapping code from example object transformations
+      Create custom collection implementations from usage examples
+      Implement dependency injection containers from example dependency graphs
+      Generate builder pattern implementations from example object construction sequences
+      Generate thread pool implementations from concurrency pattern examples
+      Create custom protocol handlers from protocol exchange examples
+      Implement memory pool managers from allocation pattern examples
+      Generate stream processing pipelines from data flow examples
+      Create custom scheduler implementations from scheduling pattern examples
+      Implement connection pool managers from connection handling examples
+      Generate compression algorithm implementations from example data pairs
+      Create custom middleware chains from request processing examples
+      Implement pub/sub systems from message distribution examples
+      Generate custom template engines from template/output examples
+      Generate file system watchers from file event examples
+      Create custom network protocol parsers from packet examples
+      Implement custom metrics collectors from monitoring examples
+      Generate data pipeline transformers from ETL examples
+      Create custom synchronization primitives from sync pattern examples
+      Implement custom serialization formats from encoding examples
+      Generate custom DSL interpreters from language syntax examples
+      Create load balancing algorithms from distribution pattern examples
+      Implement custom observability systems from tracing examples
+      Generate custom encryption schemes from encryption/decryption examples
+    Requirements+Tests to Code (Formal requirements and tests to Implementation)
+      Generate class implementations from interface specifications and unit tests
+      Create REST API endpoints from OpenAPI/Swagger specifications and integration tests
+      Implement data structures from formal specifications and property-based tests
+      Build state machines from state transition diagrams and behavioral tests
+      Develop database queries from schema definitions and test cases
+      Implement design patterns from UML diagrams and unit tests
+      Create validation logic from business rules and acceptance tests
+      Generate parser implementations from formal grammars and test suites
+      Implement mathematical algorithms from formal mathematical specifications and test cases
+      Create concurrent systems from formal process specifications and stress tests
+      Implement network protocols from protocol specifications and conformance tests
+      Generate security policy enforcement code from formal security requirements and penetration tests
+      Create event handlers from event flow diagrams and integration tests
+      Implement messaging systems from message format specifications and end-to-end tests
+      Generate configuration validators from schema definitions and validation tests
+      Create data transformation pipelines from mapping specifications and data quality tests
+      Implement caching systems from cache coherency protocols and performance tests
+      Generate serialization/deserialization code from data format specifications and compatibility tests
+      Create retry/circuit breaker logic from resilience specifications and fault injection tests
+      Implement authentication/authorization flows from security protocol specifications and security tests
+      Generate UI components from wireframes and accessibility test specifications
+      Implement monitoring instrumentation from observability requirements and telemetry tests
+      Create resource cleanup code from lifecycle specifications and leak tests
+      Implement domain-specific language interpreters from language specifications and compliance tests
+      Generate platform-specific bindings from interface definitions and compatibility tests
+      Create data validation and sanitization code from input specifications and security tests
+      Implement internationalization logic from localization specifications and cultural tests
+      Generate memory management code from allocation specifications and boundary tests
+      Create scheduling/job execution code from timing specifications and scheduling tests
+      Implement feature flag systems from configuration specifications and toggle tests
+      Generate real-time control code from timing constraints and determinism tests
+      Implement hardware interface drivers from device specifications and hardware tests
+      Create optimization algorithm implementations from performance criteria and benchmark tests
+      Generate audit logging code from compliance requirements and audit tests
+      Implement service discovery mechanisms from topology specifications and network tests
+      Create code generation templates from meta-programming specifications and generation tests
+      Implement distributed consensus logic from protocol specifications and partition tests
+      Generate data migration code from schema evolution specs and consistency tests
+      Create system bootstrap code from initialization specifications and dependency tests
+      Implement API versioning logic from compatibility specifications and backward compatibility tests
+    State Machine to Code (State machine diagrams to Implementation generation)
+      Generate switch-case based FSM implementation in C++
+      Generate object-oriented state pattern implementation in Java
+      Generate table-driven FSM implementation in Python
+      Generate hierarchical state machine implementation using inheritance
+      Generate event-driven state machine with async/await pattern
+      Generate state machine with guard conditions and transition actions
+      Generate state machine with entry/exit actions for states
+      Generate state machine with composite states
+      Generate state machine with history states
+      Generate state machine with parallel states
+      Generate state machine with error handling and invalid transition management
+      Generate state machine with state persistence and serialization support
+      Generate state machine with built-in logging and debugging capabilities
+      Generate state machine with memory-optimized state storage
+      Generate state machine with runtime state/transition validation
+      Generate state machine with support for external event queues
+      Generate state machine with hot reload capability
+      Generate state machine with state timeout mechanisms
+      Generate state machine with transaction support
+      Generate state machine with observer pattern for state change notifications
+      Generate state machine for real-time embedded systems with timing constraints
+      Generate state machine with distributed state synchronization
+      Generate state machine with formal verification annotations
+      Generate state machine with safety interlocks and fail-safe states
+      Generate state machine optimized for memory-constrained microcontrollers
+      Generate state machine with security state transitions validation
+      Generate state machine with configurable code generation templates
+      Generate state machine with hardware interrupt handling
+      Generate state machine with power state management
+      Generate state machine with redundancy and failover support
+      Generate state machine compliant with IEC 61131-3 for PLC systems
+      Generate state machine with MISRA-C compliance for automotive systems
+      Generate state machine with automatic documentation generation
+      Generate state machine for FPGA implementation (VHDL/Verilog)
+      Generate state machine with regulatory audit trail capabilities
+      Generate state machine with backward compatibility layers
+      Generate state machine with runtime visualization capabilities
+      Generate state machine for cloud-native environments with containerization support
+      Generate state machine with DO-178C compliance for aviation systems
+      Generate state machine with automatic test case generation
+    Events to Code (Event sequences/patterns to Implementation generation)
+      Generate event handler code for UI interaction patterns (click sequences, drag-and-drop)
+      Create state machine implementation from state transition diagrams
+      Implement event-driven workflow from process diagrams
+      Generate pub/sub system implementation from message flow descriptions
+      Create event dispatcher implementation from event routing patterns
+      Implement event queue processing system from queue operation sequences
+      Generate event logging and monitoring code from tracking requirements
+      Create event filtering and transformation pipeline from flow diagrams
+      Implement event aggregation logic from event correlation patterns
+      Generate event replay mechanism from temporal event sequences
+      Generate event sourcing implementation from event storage patterns
+      Create distributed event synchronization code from consistency patterns
+      Implement event error handling and recovery logic from failure scenarios
+      Generate event versioning and migration code from schema evolution patterns
+      Create event batching and bulk processing implementation from batch patterns
+      Implement event throttling and rate limiting from control flow patterns
+      Generate event validation and sanitization code from validation rules
+      Create event persistence and replay mechanism from durability requirements
+      Implement event compensation logic from rollback patterns
+      Generate event scheduling and timing code from temporal specifications
+      Generate event security and access control code from permission patterns
+      Create event mocking and testing infrastructure from test scenarios
+      Implement event compression and optimization code from performance patterns
+      Generate event bridging code for legacy system integration patterns
+      Create event circuit breaker implementation from reliability patterns
+      Implement event metrics collection code from monitoring specifications
+      Generate event transformation adapters from protocol conversion patterns
+      Create event debugging and tracing infrastructure from diagnostic patterns
+      Implement event clustering and sharding logic from distribution patterns
+      Generate event replay simulation code from historical event patterns
+      Generate event auditing and compliance code from regulatory requirements
+      Create event data masking and privacy implementation from security policies
+      Implement event reconciliation logic from consistency check patterns
+      Generate event archival and retention code from lifecycle policies
+      Create event schema evolution code from backward compatibility patterns
+      Implement event replay with time travel from historical analysis patterns
+      Generate event windowing and streaming code from real-time analytics patterns
+      Create event conflict resolution code from merge strategies
+      Implement event prioritization logic from QoS specifications
+      Generate event cleanup and garbage collection code from maintenance patterns
+    Data+Schema to Code (Sample data with schema to Implementation generation)
+      Generate data model classes/interfaces from JSON/XML schema
+      Create database ORM entities from table schemas
+      Generate data validation functions from schema constraints
+      Create data serialization/deserialization code from format specifications
+      Generate API client code from OpenAPI/Swagger specifications
+      Create data transformation pipelines from input/output schemas
+      Generate parser code for custom data formats
+      Create data migration scripts from schema changes
+      Generate GraphQL resolvers from schema definitions
+      Create test data generators from schema specifications
+      Generate configuration file readers/writers from schema definitions
+      Create protocol buffer/gRPC service implementations from .proto files
+      Generate database query builders from schema relationships
+      Create form handling code from input schema specifications
+      Generate data encryption/decryption routines based on schema security annotations
+      Create schema version compatibility checkers
+      Generate data normalization functions from schema rules
+      Create schema-based event message handlers
+      Generate data export/import utilities from schema mappings
+      Create cached data access layers from schema and caching specifications
+      Generate domain-specific language parsers from grammar specifications
+      Create schema-driven logging/monitoring code
+      Generate data anonymization routines from privacy schema annotations
+      Create schema-based command line argument parsers
+      Generate data consistency check implementations from constraint definitions
+      Create schema-driven workflow state machines
+      Generate data diff/merge utilities from schema comparisons
+      Create schema-based notification dispatchers
+      Generate audit trail implementations from tracking specifications
+      Create schema-driven report generators
+      Generate data streaming pipeline processors from flow specifications
+      Create schema-based feature extraction code for ML pipelines
+      Generate distributed cache coherence protocols from consistency schemas
+      Create schema-driven API rate limiting implementations
+      Generate data partitioning/sharding logic from distribution schemas
+      Create schema-based message queue consumers/producers
+      Generate schema-driven circuit breaker implementations
+      Create data retention policy implementations from lifecycle schemas
+      Generate schema-based service discovery clients
+      Create schema-driven health check implementations
+    Constraints to Code (Constraint specifications to Implementation generation)
+      Generate data structure implementations from space/time complexity constraints
+      Create algorithm implementations from mathematical specifications
+      Generate API implementations from interface contracts
+      Implement design patterns from architectural constraints
+      Create validation logic from business rules
+      Generate database queries from data relationship specifications
+      Implement state machines from state transition rules
+      Create parser implementations from grammar specifications
+      Generate test cases from coverage requirements
+      Implement security controls from compliance requirements
+      Generate UI layouts from accessibility requirements
+      Create concurrent code from synchronization specifications
+      Implement network protocols from protocol specifications
+      Generate error handling code from reliability requirements
+      Create memory management code from resource constraints
+      Implement logging systems from monitoring requirements
+      Generate configuration parsers from schema definitions
+      Create data transformation code from mapping rules
+      Implement caching systems from performance requirements
+      Generate serialization code from data format specifications
+      Generate internationalization code from locale specifications
+      Implement real-time constraints from timing requirements
+      Create event handling systems from event flow specifications
+      Generate dependency injection code from container configurations
+      Implement authentication flows from security protocols
+      Create data migration code from schema evolution rules
+      Generate API documentation from specification formats
+      Implement retry mechanisms from reliability patterns
+      Create metrics collection code from monitoring specifications
+      Generate data validation code from schema constraints
+      Generate smart contract code from business rules
+      Implement graphics shaders from rendering specifications
+      Create message transformation code from integration patterns
+      Generate ORM mappings from database schemas
+      Implement rate limiting from throttling specifications
+      Create circuit breaker implementations from resilience patterns
+      Generate feature flag systems from configuration rules
+      Implement webhooks from event subscription patterns
+      Create data anonymization code from privacy requirements
+      Generate API versioning code from compatibility specifications
+      Generate edge computing code from deployment constraints
+      Implement ML model serving code from inference specifications
+      Create service mesh configurations from routing rules
+      Generate data streaming pipelines from flow specifications
+      Implement CDC (Change Data Capture) from replication rules
+      Create infrastructure-as-code from environment specifications
+      Generate API gateway configurations from routing patterns
+      Implement CQRS patterns from domain specifications
+      Create distributed tracing code from observability requirements
+      Generate serverless function code from event specifications
+    Story to Code (User stories/scenarios to Implementation generation)
+      Generate CRUD operations implementation from user story descriptions
+      Create API endpoints and handlers from API specifications in story format
+      Implement authentication flows from user journey descriptions
+      Generate database schema and operations from data requirement stories
+      Create frontend components and UI logic from user interface stories
+      Implement business logic and validation rules from business requirement stories
+      Generate integration tests from acceptance criteria in user stories
+      Create event handlers and state management from user interaction flows
+      Implement error handling and edge cases from scenario descriptions
+      Generate service layer implementations from service requirement stories
+      Generate microservice communication patterns from system interaction stories
+      Implement caching mechanisms from performance requirement stories
+      Create logging and monitoring implementations from observability requirements
+      Generate message queue producers/consumers from async workflow stories
+      Implement data migration scripts from data transformation stories
+      Create configuration management code from environment setup stories
+      Generate middleware implementations from cross-cutting concern stories
+      Implement security policies and authorization from security requirement stories
+      Create deployment scripts from infrastructure stories
+      Generate documentation generation code from documentation requirements
+      Generate mobile app components from mobile user journey stories
+      Implement real-time communication features from live interaction stories
+      Create third-party integration code from external system stories
+      Generate protocol adapters from communication requirement stories
+      Implement data synchronization logic from offline-first requirement stories
+      Create notification system implementations from alert requirement stories
+      Generate internationalization code from localization requirement stories
+      Implement search and filtering functionality from search requirement stories
+      Create rate limiting and throttling from traffic management stories
+      Generate reporting and analytics code from business intelligence stories
+      Generate ML model integration code from AI feature stories
+      Implement smart contract interactions from blockchain requirement stories
+      Create stream processing pipelines from data stream stories
+      Generate accessibility compliance code from a11y requirement stories
+      Implement feature flag systems from progressive rollout stories
+      Create data warehouse ETL code from analytics requirement stories
+      Generate GraphQL resolver implementations from API requirement stories
+      Implement webhook handlers from integration requirement stories
+      Create CI/CD pipeline code from automation requirement stories
+      Generate compliance and audit trail code from regulatory requirement stories
+      Generate IoT device communication code from device interaction stories
+      Implement game mechanics code from gaming feature stories
+      Create media processing pipelines from multimedia requirement stories
+      Generate encryption and key management from security requirement stories
+      Implement resource optimization code from performance requirement stories
+      Create session management implementations from user state stories
+      Generate backup and recovery code from disaster recovery stories
+      Implement geospatial processing from location-based requirement stories
+      Create load balancing logic from high availability stories
+      Generate versioning system code from content management stories
+    NL+UI to Code (Natural Language with UI components to Implementation)
+      Generate a responsive navigation menu based on UI mockup and requirements
+      Create form validation logic from form design specifications
+      Implement drag-and-drop functionality from interaction description
+      Build modal/dialog component with described behavior
+      Generate animated transitions between UI states
+      Implement data table with sorting and filtering capabilities
+      Create mobile-responsive layout from wireframes
+      Build accessibility-compliant UI components
+      Implement state management for UI components
+      Generate event handlers for UI interactions
+      Generate infinite scroll implementation from scroll behavior description
+      Create multi-step wizard interface from flow diagram
+      Implement custom chart/visualization components
+      Build theme switching functionality with specified color schemes
+      Generate image carousel/slider with custom controls
+      Implement real-time collaboration UI components
+      Create notification system with different alert types
+      Generate search autocomplete with suggestions interface
+      Implement multi-language support UI components
+      Build custom audio/video player controls
+      Generate kanban board interface with drag-drop columns
+      Implement rich text editor with formatting controls
+      Create calendar/scheduling interface with event handling
+      Build file upload system with preview functionality
+      Implement multi-select dropdown with search and tags
+      Generate password strength indicator with requirements
+      Create interactive timeline component
+      Implement split-pane resizable interface
+      Build breadcrumb navigation with dynamic routing
+      Generate interactive map interface with custom markers
+      Generate shopping cart interface with checkout flow
+      Implement multi-range slider with overlapping values
+      Create spreadsheet-like grid with cell editing
+      Build interactive dashboard with widget customization
+      Implement virtual keyboard/numpad interface
+      Generate comparison slider for before/after images
+      Create signature pad with drawing capabilities
+      Implement multi-step progress indicator
+      Build color picker with palette management
+      Generate interactive flowchart builder interface
+      Generate social media feed with infinite scroll and interactions
+      Implement collaborative whiteboard interface
+      Create customizable dashboard layout builder
+      Build comment thread system with nested replies
+      Implement multi-user presence indicators
+      Generate AI chat interface with typing indicators
+      Create screen reader-optimized navigation system
+      Implement voice command interface
+      Build interactive tutorial/onboarding overlay
+      Generate PDF viewer with annotation tools
+      Generate game leaderboard with real-time updates
+      Implement code editor with syntax highlighting
+      Create music playlist interface with waveform visualization
+      Build system resource monitoring dashboard
+      Implement 3D model viewer with controls
+      Generate video conferencing interface with controls
+      Create interactive math equation editor
+      Implement network topology visualization
+      Build multi-window workspace manager
+      Generate virtual tour interface with hotspots
+    Behavior+State to Code (Behavioral rules and state definitions to Implementation)
+      Generate state machine implementation from state transition rules
+      Create event handler code from event-response specifications
+      Implement object behavior patterns from behavioral descriptions
+      Generate game character AI logic from behavior rules
+      Create data validation and state consistency checks from constraints
+      Implement workflow engine from process definitions
+      Generate UI component state management code from behavior specs
+      Create multi-threaded synchronization code from concurrency rules
+      Implement caching logic from cache behavior specifications
+      Generate authorization/permission enforcement code from access rules
+      Generate protocol state handlers from network protocol specifications
+      Create retry mechanism code from resilience policies
+      Implement rate limiting logic from throttling rules
+      Generate finite automata code from formal language specifications
+      Create reactive stream processing logic from stream handling rules
+      Implement circuit breaker patterns from failure handling policies
+      Generate resource lifecycle management code from lifecycle rules
+      Create transaction management code from ACID requirement specs
+      Implement queue management logic from queuing policies
+      Generate state recovery code from system recovery rules
+      Generate scheduling logic from real-time constraints
+      Create feature flag implementation from feature toggle rules
+      Implement audit logging behavior from audit specifications
+      Generate model serving code from ML model behavior rules
+      Create notification dispatch logic from notification rules
+      Implement data transformation pipeline from ETL rules
+      Generate configuration management code from config policies
+      Create session management logic from session handling rules
+      Implement content filtering code from filtering policies
+      Generate versioning logic from version control rules
+      Generate consensus algorithm implementation from consensus rules
+      Create data replication logic from synchronization policies
+      Implement conflict resolution code from merge strategies
+      Generate memory management code from allocation policies
+      Create load balancing logic from distribution rules
+      Implement internationalization code from localization rules
+      Generate data partitioning logic from sharding rules
+      Create backup/restore behavior from backup policies
+      Implement data migration code from migration rules
+      Generate idempotency handling code from idempotency requirements
+      Generate encryption/decryption logic from security policies
+      Create metrics collection code from monitoring rules
+      Implement connection pooling from pool management specs
+      Generate data anonymization code from privacy rules
+      Create API gateway behavior from routing policies
+      Implement debugging/tracing code from observability rules
+      Generate data compression logic from compression policies
+      Create service discovery code from discovery rules
+      Implement webhook handling from event subscription rules
+      Generate data cleanup code from retention policies
+    Policy to Code (Security/Access policies to Implementation generation)
+      Generate authentication middleware from identity management policies
+      Convert RBAC (Role-Based Access Control) policies to access control implementation
+      Transform data encryption requirements into cryptographic code implementations
+      Generate API security gateway configurations from access policies
+      Convert ABAC (Attribute-Based Access Control) policies to code
+      Generate audit logging code from compliance requirements
+      Transform OAuth/OIDC policies into authentication flow implementation
+      Generate input validation code from security policy rules
+      Convert network security policies into firewall/proxy configurations
+      Transform data privacy policies into data handling code implementations
+      Generate session management code from session security policies
+      Transform JWT/token configuration policies into token handling code
+      Convert SAML federation policies to SSO implementation
+      Generate security headers configuration from web security policies
+      Transform GDPR compliance policies into data protection implementations
+      Convert rate limiting policies into throttling middleware
+      Generate CORS policy implementation from cross-origin access rules
+      Transform MFA requirements into multi-factor authentication flow
+      Convert password policy rules into password validation implementation
+      Generate secure communication channel code from TLS/SSL policies
+      Generate security scanning configuration from vulnerability management policies
+      Transform container security policies into Docker/K8s security contexts
+      Convert cloud IAM policies to infrastructure-as-code implementations
+      Generate DLP (Data Loss Prevention) code from data classification policies
+      Transform DevSecOps pipeline policies into CI/CD security checks
+      Convert biometric authentication policies into biometric verification code
+      Generate secure storage access code from data retention policies
+      Transform zero trust policies into micro-segmentation implementations
+      Convert PCI-DSS requirements into payment security code
+      Generate secure backup/recovery code from disaster recovery policies
+      Transform IoT device security policies into embedded security code
+      Generate blockchain access control from smart contract security policies
+      Convert quantum-safe security policies into post-quantum cryptography implementations
+      Generate secure messaging code from E2E encryption policies
+      Transform HIPAA compliance policies into healthcare data security implementations
+      Convert hardware security module (HSM) policies into key management code
+      Generate secure CI artifact policies into supply chain security implementations
+      Transform DNS security policies into DNSSEC configurations
+      Convert SOX compliance policies into financial systems security code
+      Generate secure service mesh policies into service-to-service authentication
+      Generate ML model security from AI/ML protection policies
+      Transform automotive security policies into vehicle systems security code
+      Convert SCADA security policies into industrial control systems protection
+      Generate secure multiparty computation from privacy-preserving computation policies
+      Transform game security policies into anti-cheat implementation
+      Convert military-grade security policies into classified data handling code
+      Generate secure voting system code from election security policies
+      Transform telecom security policies into 5G network security implementations
+      Convert secure enclave policies into trusted execution environment code
+      Generate secure browser extension policies into extension security implementations
+    Analytics to Code (Analytics requirements to Implementation generation)
+      Generate code for data preprocessing and cleaning pipelines
+      Implement statistical analysis functions (e.g., hypothesis testing, correlation analysis)
+      Create data visualization scripts (e.g., plotting, dashboards)
+      Develop machine learning model training pipelines
+      Implement feature engineering transformations
+      Generate data validation and quality check scripts
+      Create ETL (Extract, Transform, Load) workflows
+      Implement time series analysis functions
+      Generate code for A/B testing analysis
+      Create data reporting and metrics calculation scripts
+      Implement text analytics and NLP processing pipelines
+      Create recommendation system algorithms
+      Generate anomaly detection scripts
+      Implement clustering analysis workflows
+      Create predictive modeling pipelines
+      Generate dimensional reduction and feature selection code
+      Implement survival analysis functions
+      Create sentiment analysis pipelines
+      Generate network/graph analysis code
+      Implement ensemble modeling frameworks
+      Implement optimization algorithms (linear programming, genetic algorithms)
+      Create real-time streaming analytics pipelines
+      Generate geospatial analysis and mapping code
+      Implement market basket analysis scripts
+      Create customer segmentation workflows
+      Generate multivariate analysis implementations
+      Implement churn prediction pipelines
+      Create risk modeling and analysis scripts
+      Generate forecasting model implementations
+      Implement image analytics pipelines
+      Generate deep learning model architectures
+      Implement causal inference analysis pipelines
+      Create distributed computing analytics workflows
+      Implement reinforcement learning algorithms
+      Generate sequence analysis pipelines
+      Create performance optimization analysis scripts
+      Implement data pipeline monitoring systems
+      Generate automated model selection frameworks
+      Create cross-validation and model evaluation pipelines
+      Implement data augmentation workflows

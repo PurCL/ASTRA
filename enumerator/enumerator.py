@@ -2,6 +2,7 @@ from typing import List
 from tree_utils import get_all_expansion_paths, tree_loads, tree_dumps, TreeNode
 from tqdm import tqdm
 from claude_utils import query_claude
+import asyncio
 
 requirements_of_enumerator = """
 ## Requirements of your enumeration
@@ -80,6 +81,15 @@ class Enumerator:
                 max_tokens=1024,
                 system_prompt=None,
             )
+            if "error" in rsp:
+                # randomly sleep from 10 to 30 seconds
+                import random
+                sleep_time = random.randint(10, 30)
+                print(f"Error: {rsp['error']}. Retrying in {sleep_time} seconds...")
+                import time
+                time.sleep(sleep_time)
+                continue
+                
 
             if self.pbar:
                 pbar.update(1)
