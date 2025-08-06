@@ -8,7 +8,6 @@
 
 [![Amazon Nova AI Challenge](https://img.shields.io/badge/Amazon%20Nova%20AI%20Challenge-Winner%20Red%20Team-FF9900?style=for-the-badge&logo=amazon&logoColor=white)](https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge)
 [![Website](https://img.shields.io/badge/Website-ASTRA-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://astra-share.github.io)
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-Model-FF6B6B?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/astra-share)
 [![Paper](https://img.shields.io/badge/Paper-PDF-B31B1B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](astra-tr.pdf)
 [![License](https://img.shields.io/badge/License-MIT-8DA0CB?style=for-the-badge&logo=mit&logoColor=white)](LICENSE)
 
@@ -184,9 +183,6 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 </div>
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📄 Citation
 
