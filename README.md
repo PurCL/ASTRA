@@ -4,7 +4,7 @@
 
 </div>
 
-# 🚀 <span style="font-family: 'Courier New', monospace; font-weight: bold; color: #1E40AF; text-shadow: 2px 2px 4px rgba(30, 64, 175, 0.3);">ASTRA</span>: Autonomous Spatial-Temporal Red-teaming for AI Software Assistants
+# <span style="font-family: 'Courier New', monospace; font-weight: bold; color: #1E40AF; text-shadow: 2px 2px 4px rgba(30, 64, 175, 0.3);">ASTRA</span>: Autonomous Spatial-Temporal Red-teaming for AI Software Assistants
 
 [![Amazon Nova AI Challenge](https://img.shields.io/badge/Amazon%20Nova%20AI%20Challenge-Winner%20Red%20Team-FF9900?style=for-the-badge&logo=amazon&logoColor=white)](https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge)
 [![Website](https://img.shields.io/badge/Website-ASTRA-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://astra-share.github.io)
