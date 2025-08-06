@@ -12,7 +12,7 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-B31B1B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](astra-tr.pdf)
 [![License](https://img.shields.io/badge/License-MIT-8DA0CB?style=for-the-badge&logo=mit&logoColor=white)](LICENSE)
 
-**🏆 Red-Team Winner of Amazon Nova AI Challenge - First-ever global tournament where elite university teams battle to harden and hack AI coding assistants** 
+> **🏆 Red-Team Winner of Amazon Nova AI Challenge - First-ever global tournament where elite university teams battle to harden and hack AI coding assistants** 
 
 ## 📰 News
 
@@ -57,19 +57,21 @@ Unlike existing tools that are either **static benchmarks** or **jailbreak attem
 #### 💬 **2. Multi-turn Conversation Framework**
 - **Uses generated prompts as starting points** for comprehensive testing
 - **Conducts adaptive multi-round conversations** with target systems based on responses
+- **Temporal Exploration**: Identifies weak links in target system reasoning traces and dynamically adjusts test prompts to exploit discovered vulnerabilities
 
 #### 🎯 **3. Self-Evolving Red-teaming**
 - **Self-evolving capability**: Uses sampling algorithms to efficiently exploit target systems
 - **Complete lifecycle**: From domain analysis to vulnerability discovery
 - **Autonomous operation**: No human intervention required during testing
+- **Success-driven adaptation**: Records successful cases and adjusts sampling strategies to target similar prompts, gradually improving success rates
 
-### 🔧 How ASTRA Works
+<!-- ### 🔧 How ASTRA Works
 
 ASTRA operates through a sophisticated three-stage process:
 
 1. **📊 Knowledge Graph Construction** - Builds structured domain-specific knowledge graphs that model complex software tasks and known vulnerabilities
 2. **🔍 Adaptive Exploration** - Performs online vulnerability exploration by probing both input space (spatial) and reasoning processes (temporal) 
-3. **🎯 Violation Generation** - Creates high-quality violation-inducing cases to improve model alignment and safety
+3. **🎯 Violation Generation** - Creates high-quality violation-inducing cases to improve model alignment and safety -->
 
 
 
