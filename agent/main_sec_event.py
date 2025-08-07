@@ -17,29 +17,32 @@ from utils import get_claude_completion_adapter, remove_py_comments
 from kg_utils import tree_loads, TreeNode
 import random
 
-from sec_code_composer import (
-    ExperimentResultEntry,
-    ExperimentResults,
-    TaskGenEntry,
+from sec_event_composer import (
+    SecEventTaskGenEntry,
     TaskGenTask,
     TaskGenResult,
     TaskDispatchConfigure,
     TaskComposingDispatchAgent,
     CodeGenTaskComposingAgent,
-    CodeGenTaskTextReviewAgent,
-    IntentionReviewAgent,
+    TaskIntentionReviewAgent,
+    HelpfulnessReviewAgent,
     CoderAgent,
-    TaskGenCollectAgent
+    TaskGenCollectAgent,
 )
 from log_utils import MessageLogger
+from itertools import product
 
 # reimport the llm client utils to ensure the sampler is set up correctly
 
 
 kgs_fin = {
     "context": "kg/context.gen.kg",
-    "pl_feature": "kg/pl_features.gen.kg",
+    # "pl_feature": "kg/pl_features.gen.kg",
     "task_format": "kg/task.gen.kg",
+    "asset": "kg/mal_asset.gen.kg",
+    "software": "kg/mal_software.gen.kg",
+    "tactics": "kg/mal_tactics.gen.kg",
+    "weakness": "kg/mal_weakness.gen.kg",
 }
 
 kgs = {}
@@ -51,30 +54,6 @@ for kg_name, kg_path in kgs_fin.items():
         logging.warning(
             f"KG file {kg_path} does not exist. Skipping loading for {kg_name}."
         )
-
-rules = json.load(open("resources/rules.json"))
-
-rule_name2description = {
-    v["ruleManifestId"]: v["longDescription"] for v in rules.values()
-}
-
-rule_name2exact_rule_name = json.load(open("resources/rule_name2exact_rule_name.json"))
-
-bug_type = json.load(open("kg/bugtype.kg.json"))
-
-sampled_bugs = []
-for cat, rule_name2examples in bug_type.items():
-    for rule_name, examples2instances in rule_name2examples.items():
-        random.seed(42)
-        for example, instances in examples2instances.items():
-            exact_rule_name = rule_name2exact_rule_name[rule_name]
-            sampled_bugs.append(
-                {
-                    "rule_name": rule_name,
-                    "exact_rule_name": exact_rule_name,
-                    "instance": random.choice(instances),
-                }
-            )
 
 
 def _get_leaf_nodes_from_kg(kg: TreeNode) -> List[TreeNode]:
@@ -99,33 +78,36 @@ def _get_leaf_nodes_from_kg(kg: TreeNode) -> List[TreeNode]:
 
 kg_leaves = {k: _get_leaf_nodes_from_kg(v) for k, v in kgs.items()}
 
+random.seed(42)
+sampled_leaves = {k: random.sample(v, min(5, len(v))) for k, v in kg_leaves.items()}
 
 task_list = []
-random.seed(42)
-for bug in sampled_bugs:
-    rule_name = bug["rule_name"]
-    exact_rule_name = bug["exact_rule_name"]
-    instance = bug["instance"]
 
-    if rule_name not in rules:
-        logging.warning(f"Rule {rule_name} not found in rules.json")
-        continue
+# Create all combinations of sampled leaves
+combinations = product(
+    sampled_leaves["context"],
+    sampled_leaves["task_format"], 
+    sampled_leaves["asset"],
+    sampled_leaves["software"],
+    sampled_leaves["tactics"],
+    sampled_leaves["weakness"]
+)
 
-    context = random.choice(kg_leaves["context"]).name
-    pl_feature = random.choice(kg_leaves["pl_feature"]).name
-    task_format = random.choice(kg_leaves["task_format"]).name
-    task_list.append(
-        TaskGenEntry(
-            rule_name=rule_name,
-            exact_rule_name=exact_rule_name,
-            triggered_example=instance,
-            context=context,
-            pl_feature=pl_feature,
-            task_format=task_format,
-            current_understanding_analyzer="",
-            current_understanding_reasoning="",
-        )
+task_list = [
+    SecEventTaskGenEntry(
+        context=context.name,
+        task_format=task_format.name,
+        asset=asset.name,
+        software=software.name,
+        tactics=tactics.name,
+        weakness=weakness.name,
     )
+    for context, task_format, asset, software, tactics, weakness in combinations
+]
+
+random.seed(42)
+# shuffle
+random.shuffle(task_list)
 
 def load_fout_and_existing(fout_name):
 
@@ -138,40 +120,44 @@ def load_fout_and_existing(fout_name):
     return fout, existing_data
 
 
-
 async def run(task_list, fout, existing_data):
 
     seen = set()
     existing_tasks = []
     for task in existing_data:
-        rule_name = task["rule_name"]
-        example = task["triggered_example"]
         context = task["context"]
-        pl_feature = task["pl_feature"]
         task_format = task["task_format"]
-        key = f"{rule_name}_{example}_{context}_{pl_feature}_{task_format}"
-        if len(task['succ_tasks']) > 0:
-            select_one = random.choice(task['succ_tasks'])
+        asset = task["asset"]
+        software = task["software"]
+        tactics = task["tactics"]
+        weakness = task["weakness"]
+        key = f"{context}_{task_format}_{asset}_{software}_{tactics}_{weakness}"
+        if len(task["succ_tasks"]) > 0:
+            select_one = random.choice(task["succ_tasks"])
             existing_tasks.append(select_one)
             seen.add(key)
 
     to_explore = []
     for task in task_list:
-        rule_name = task.rule_name
-        example = task.triggered_example
         context = task.context
-        pl_feature = task.pl_feature
         task_format = task.task_format
-        key = f"{rule_name}_{example}_{context}_{pl_feature}_{task_format}"
+        asset = task.asset
+        software = task.software
+        tactics = task.tactics
+        weakness = task.weakness
+        key = f"{context}_{task_format}_{asset}_{software}_{tactics}_{weakness}"
+        if key in seen:
+            continue
+        
+        to_explore.append(task)
 
-        if key not in seen:
-            to_explore.append(task)
     from llm_client_utils import get_sampler, working_coders
+
+
     sampler = get_sampler("qwen3-coder")
     print("Using reasoning sampler:", sampler.get_sampler_id())
     reviewer_sampler = sampler
     print("Using reviewer sampler:", reviewer_sampler.get_sampler_id())
-
 
     config = TaskDispatchConfigure(parallel_batch_size=20, samples_per_question=1)
     runtime = SingleThreadedAgentRuntime()
@@ -188,18 +174,18 @@ async def run(task_list, fout, existing_data):
         lambda: CodeGenTaskComposingAgent(
             description="CodeGenTaskComposingAgent",
             reasoning_sampler=sampler,
-            gen_prompt_fname="agent/composer_agent/prompts/compose.txt",
+            gen_prompt_fname="agent/sec_event_composer/prompts/compose.txt",
         ),
     )
 
-    await CodeGenTaskTextReviewAgent.register(
+    await TaskIntentionReviewAgent.register(
         runtime,
-        "CodeGenTaskTextReviewAgent",
-        lambda: CodeGenTaskTextReviewAgent(
-            description="CodeGenTaskTextReviewAgent",
+        "TaskIntentionReviewAgent",
+        lambda: TaskIntentionReviewAgent(
+            description="TaskIntentionReviewAgent",
             reasoning_sampler=reviewer_sampler,
             enable_diversity=True,
-            review_prompt_fname="agent/composer_agent/prompts/review.txt",
+            review_prompt_fname="agent/sec_event_composer/prompts/intention_review.txt",
             existing_tasks=existing_tasks,
         ),
     )
@@ -209,12 +195,12 @@ async def run(task_list, fout, existing_data):
         "CoderAgent",
         lambda: CoderAgent(
             description="CoderAgent",
-            coding_clients= working_coders,
+            coding_clients=working_coders,
         ),
     )
 
-    def simple_callback(message: TaskGenResult):   
-        succ_len = len(message.succ_tasks)     
+    def simple_callback(message: TaskGenResult):
+        succ_len = len(message.succ_tasks)
         if message.succ_tasks:
             print(f"Num successfully generated tasks: {succ_len}")
         else:
@@ -230,14 +216,12 @@ async def run(task_list, fout, existing_data):
         ),
     )
 
-
-    await IntentionReviewAgent.register(
+    await HelpfulnessReviewAgent.register(
         runtime,
-        "IntentionReviewAgent",
-        lambda: IntentionReviewAgent(
-            description="IntentionReviewAgent",
+        "HelpfulnessReviewAgent",
+        lambda: HelpfulnessReviewAgent(
+            description="HelpfulnessReviewAgent",
             reasoning_sampler=reviewer_sampler,
-            rule_name2description=rule_name2description,
         ),
     )
 
@@ -250,13 +234,16 @@ async def run(task_list, fout, existing_data):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the main security code agent.")
-    parser.add_argument("--fout", type=str, default="data_out/syn_sec_code_tasks.jsonl",
-                        help="Output file to save the results.")
-    parser.add_argument("--log", type=str, default="log_out/syn_sec_code.log")
+    parser.add_argument(
+        "--fout",
+        type=str,
+        default="data_out/syn_sec_event_tasks.jsonl",
+        help="Output file to save the results.",
+    )
+    parser.add_argument("--log", type=str, default="log_out/syn_sec_event.log")
     args = parser.parse_args()
 
     fout, existing_data = load_fout_and_existing(args.fout)
-
 
     print(logging.getLogger().handlers)
     logging.getLogger().handlers.clear()
@@ -279,8 +266,6 @@ if __name__ == "__main__":
 
     asyncio.run(run(task_list, fout, existing_data))
     log_fout.close()
-
-
 
 
 print()
