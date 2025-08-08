@@ -137,7 +137,7 @@ class TaskGenMemory:
     bad_intention_tasks: List[str]
     fail_to_trigger_tasks: List[str]
     succ_tasks: List[str]
-    all_triggered_examples_w_reasoning: List[Tuple[str, str, bool]]
+    all_triggered_examples_w_reasoning: List[TaskCodeReasoningResultEntry]
 
 
 @default_subscription

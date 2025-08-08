@@ -13,6 +13,7 @@ from autogen_core import (
     SingleThreadedAgentRuntime,
 )
 from autogen_core.models import ChatCompletionClient
+from tqdm import tqdm
 from utils import get_claude_completion_adapter, remove_py_comments
 from kg_utils import tree_loads, TreeNode
 import random
@@ -46,7 +47,7 @@ kgs_fin = {
 }
 
 kgs = {}
-for kg_name, kg_path in kgs_fin.items():
+for kg_name, kg_path in tqdm(kgs_fin.items(), desc="Loading knowledge graphs"):
     if os.path.exists(kg_path):
         with open(kg_path, "r") as f:
             kgs[kg_name] = tree_loads(f.read())
@@ -104,6 +105,12 @@ task_list = [
     )
     for context, task_format, asset, software, tactics, weakness in combinations
 ]
+
+task_list_out = open("data_out/share-gy-sec-event-task-list.jsonl", "w")
+for task in task_list:
+    task_list_out.write(json.dumps(task.dict()) + "\n")
+task_list_out.close()
+exit(0)
 
 random.seed(42)
 # shuffle

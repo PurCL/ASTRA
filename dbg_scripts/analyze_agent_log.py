@@ -3,7 +3,7 @@ from tqdm import tqdm
 from transformers import AutoTokenizer
 import os
 
-re_log = [json.loads(line) for line in open("log_out/syn_sec_code.log")]
+re_log = [json.loads(line) for line in open("log_out/syn_sec_event.log")]
 
 re_log = [e for e in re_log if 'msg' in e and "IGNORE-LOG" not in e["msg"] and "SEND" in e["msg"]]
 
