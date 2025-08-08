@@ -5,7 +5,7 @@ from pathlib import Path
 # Create log directory if it doesn't exist
 log_dir = Path(__file__).parent.parent.parent / "tests" / "log"
 log_dir.mkdir(parents=True, exist_ok=True)
-log_file = log_dir / "llama-3-8b-instruct-cb.log"
+log_file = log_dir / "qwen-2.5-coder-7b-instruct-new-agent-prompt-150.log"
 
 # Configure the root logger
 logger = logging.getLogger()

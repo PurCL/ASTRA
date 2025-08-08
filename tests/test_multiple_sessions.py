@@ -23,32 +23,54 @@ from temporal_explorator.config import get_config
 from temporal_explorator.utils.logger import logger, purcl_logger_adapter, update_session_info
 
 
-def load_data(data_dir="/data4/user/shen447/amazon_code_challenge/amazon-cobot-code/purcl_attacker/t3_malware_probing_agent/data"):
-    data = []
-    for file in os.listdir(data_dir):
-        if file.endswith(".json"):
-            with open(os.path.join(data_dir, file), "r") as f:
-                raw_data = json.load(f)
-                for item in raw_data:
-                    if item["prompt_type"] == "MaliciousGoal":
-                        goal = item["prompt"]
-                        break
+# def load_data(data_dir="/data4/user/shen447/amazon_code_challenge/amazon-cobot-code/purcl_attacker/t3_malware_probing_agent/data"):
+#     data = []
+#     for file in os.listdir(data_dir):
+#         if file.endswith(".json"):
+#             with open(os.path.join(data_dir, file), "r") as f:
+#                 raw_data = json.load(f)
+#                 for item in raw_data:
+#                     if item["prompt_type"] == "MaliciousGoal":
+#                         goal = item["prompt"]
+#                         break
                 
-                for item in raw_data:
-                    if "seedprompt" in item["prompt_type"].lower() and "benign" not in item["prompt_type"].lower():
-                        seed_prompt = item["prompt"]
-                        data.append({
-                            "goal": goal,
-                            "seed_prompt": seed_prompt,
-                        })
+#                 for item in raw_data:
+#                     if "seedprompt" in item["prompt_type"].lower() and "benign" not in item["prompt_type"].lower():
+#                         seed_prompt = item["prompt"]
+#                         data.append({
+#                             "goal": goal,
+#                             "seed_prompt": seed_prompt,
+#                         })
+#     return data
+
+
+def load_data(data_filepath="/data4/user/shen447/amazon_code_challenge/astra-share/data_out/syn_sec_event_tasks.jsonl"):
+    data = []
+    with open(data_filepath, "r") as f:
+        for line in f:
+            raw_data = json.loads(line)
+            succ_tasks = raw_data["succ_tasks"]
+            all_triggered_examples_w_reasoning = raw_data["all_triggered_examples_w_reasoning"]
+            for task in succ_tasks:
+                for example in all_triggered_examples_w_reasoning:
+                    if example["task"] == task:
+                        goal = example["goal"]
+                        break
+                data.append({
+                    "goal": goal,
+                    "seed_prompt": task,
+                })
+    
+    print(f"number of data: {len(data)}")
     return data
+
 
 
 
 class TestTemporalExploratorIntegration:
     """Integration test class for the Temporal Explorator module."""
 
-    def load_data(self, data_dir="/data4/user/shen447/amazon_code_challenge/amazon-cobot-code/purcl_attacker/t3_malware_probing_agent/data"):
+    def load_data(self, data_dir="/data4/user/shen447/amazon_code_challenge/astra-share/data_out/syn_sec_event_tasks.jsonl"):
         """Load test data from the specified directory."""
         self.data = load_data(data_dir)
         purcl_logger_adapter.info(f"Loaded {len(self.data)} test cases from {data_dir}")
@@ -70,26 +92,26 @@ class TestTemporalExploratorIntegration:
             # "model_url": "http://54.202.245.166:8010/v1",
             # "model_api_key": "reverse-training",
             # "model_name": "llama-3.1-70b-inst-judge",
-            "model_url": "http://0.0.0.0:8010/v1",
+            "model_url": "http://54.212.178.87:8010/v1",
             "model_api_key": "astra",
-            "model_name": "llama-3-8b-instruct-cb",
+            "model_name": "qwen-2.5-coder-7b-instruct",
             "temperature": 0.7,
             "max_tokens": 1024,
             "max_retries": 5,
             
             # Mutator model configuration
-            "mutator_model_url": "http://54.202.245.166:8010/v1",
-            "mutator_model_api_key": "reverse-training",
-            "mutator_model_name_or_path": "llama-3.1-70b-inst-judge",
+            "mutator_model_url": "http://35.87.6.13:8000/v1",
+            "mutator_model_api_key": "redteam233",
+            "mutator_model_name_or_path": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
             "mutator_model_temperature": 0.7,
             "mutator_model_max_tokens": 1024,
             "mutator_model_max_retries": 5,
             
             # State mapper configuration
             "state_mapper": {
-                "model_url": "http://54.202.245.166:8010/v1",
-                "model_api_key": "reverse-training",
-                "model_name": "llama-3.1-70b-inst-judge",
+                "model_url": "http://35.87.6.13:8000/v1",
+                "model_api_key": "redteam233",
+                "model_name": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
                 "temperature": 0.7,
                 "max_tokens": 1024,
                 "max_retries": 5
@@ -102,9 +124,9 @@ class TestTemporalExploratorIntegration:
             
             # Prompt generator configuration
             "prompt_generator": {
-                "mutator_model_url": "http://54.202.245.166:8010/v1",
-                "mutator_model_api_key": "reverse-training",
-                "mutator_model_name_or_path": "llama-3.1-70b-inst-judge",
+                "mutator_model_url": "http://35.87.6.13:8000/v1",
+                "mutator_model_api_key": "redteam233",
+                "mutator_model_name_or_path": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
                 "mutator_model_temperature": 0.7,
                 "mutator_model_max_tokens": 1024,
                 "mutator_model_max_retries": 5
@@ -113,12 +135,15 @@ class TestTemporalExploratorIntegration:
         
         # Test data - will be set per session
         # self.test_bt_id = "llama-3.1-70b-inst"
-        # self.test_bt_id = "qwen-2.5-coder-7b-instruct"
-        self.test_bt_id = "llama-3-8b-instruct-cb"
+        self.test_bt_id = "qwen-2.5-coder-7b-instruct"
+        # self.test_bt_id = "purpcode-14b-rl"
+        # self.test_bt_id = "llama-3-8b-instruct-cb"
+
+        self.note = "new-agent-prompt-150"
 
         # Create a temporary directory for test sessions
         # put the test dir in the current directory
-        self.test_dir = os.path.join(os.path.dirname(__file__), "session_data", self.test_bt_id)
+        self.test_dir = os.path.join(os.path.dirname(__file__), "session_data", self.test_bt_id, self.note)
         purcl_logger_adapter.debug(f"Test directory: {self.test_dir}")
         
         # Ensure test directory exists
