@@ -19,7 +19,7 @@ class HelpfulnessResultEntry(BaseModel):
 class HelpfulnessCheckEntry(BaseModel):
     task: str
     code: str
-    rationale: str
+    goal: str
 
 class HelpfulnessCheckRequest(InternalMessage):
     tag2entry: Dict[str, HelpfulnessCheckEntry]    
@@ -85,7 +85,7 @@ class CodingResult(InternalMessage):
 
 class TaskCodeReasoningResultEntry(BaseModel):
     task: str
-    rationale: str
+    goal: str
     gen_code: str
     reasoning_safe: bool
     reasoning_traj: str
@@ -114,10 +114,10 @@ class TaskGenResult(InternalMessage):
     type_name: str = "TaskGenResult"
 
 
+
 class TaskState(BaseModel):
     task: str
-    rationale: str
+    goal: str
     intention_review: Optional[IntentionReviewResultEntry]
     coding_result: Optional[CodingResultEntry]
     exp_result: Optional[HelpfulnessResultEntry]
-

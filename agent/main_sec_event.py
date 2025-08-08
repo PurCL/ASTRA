@@ -80,7 +80,6 @@ kg_leaves = {k: _get_leaf_nodes_from_kg(v) for k, v in kgs.items()}
 
 random.seed(42)
 sampled_leaves = {k: random.sample(v, min(5, len(v))) for k, v in kg_leaves.items()}
-
 task_list = []
 
 # Create all combinations of sampled leaves
@@ -105,9 +104,12 @@ task_list = [
     for context, task_format, asset, software, tactics, weakness in combinations
 ]
 
+
 random.seed(42)
 # shuffle
 random.shuffle(task_list)
+#! for debugging purpose
+task_list = task_list[:200]
 
 def load_fout_and_existing(fout_name):
 

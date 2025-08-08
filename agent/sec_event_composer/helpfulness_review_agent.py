@@ -94,10 +94,10 @@ class HelpfulnessReviewAgent(RoutedAgent):
         for tag, entry in tag2entry.items():
             task = entry.task
             code = entry.code
-            rationale = entry.rationale
+            goal = entry.goal
 
             task = asyncio.create_task(
-                self._query_reasoning_judge(task=task, code=code, goal=rationale)
+                self._query_reasoning_judge(task=task, code=code, goal=goal)
             )
             tag2reasoning_tasks[tag] = task
 

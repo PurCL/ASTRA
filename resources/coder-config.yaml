@@ -13,7 +13,7 @@ mistral:
 qwen3-coder:
   model_name: Qwen/Qwen3-Coder-30B-A3B-Instruct
   apis:
-    - addr: http://35.89.239.12:8000/v1
+    - addr: http://35.87.6.13:8000/v1
       api_key: redteam233
 
 
