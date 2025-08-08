@@ -50,11 +50,13 @@ def main():
             is_probing=session_num < N_PROBING,
             is_finished=True,
         )
-    fout.write(json.dumps({
-        'session_id': session_id,
-        'red_team_id': rt_id,
-        'messages': messages,
-    }) + "\n")
+        fout.write(json.dumps({
+            'session_id': session_id,
+            'red_team_id': rt_id,
+            'messages': messages,
+        }) + "\n")
+        fout.flush()
+
     fout.close()
 
 
