@@ -101,11 +101,13 @@ rule2desc = {r: e["longDescription"] for r, e in rules.items()}
 
 client_ips = [
     # "52.12.13.129",
-    "34.218.58.61",
-    "35.92.76.124",
+    # "34.218.58.61",
+    # "35.92.76.124",
+    "localhost",
 ]
 
-ports = [p for p in range(8001, 8009)]
+# ports = [p for p in range(8001, 8009)]
+ports = [8004]
 
 
 class ModelJudge:
