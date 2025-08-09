@@ -9,10 +9,10 @@ import os
 config = yaml.safe_load(open("resources/coder-config.yaml"))
 fin = [
     json.loads(line)
-    for line in open("data_out/syn_sec_code_tasks_export.jsonl", "r").readlines()
+    for line in open("data_out/syn_sec_code_tasks-phi4m-only_export.jsonl", "r").readlines()
 ]
 
-fout_name = "data_out/syn_sec_code_tasks_export-inference.jsonl"
+fout_name = "data_out/syn_sec_code_tasks-phi4m-only_export-inference.jsonl"
 if os.path.exists(fout_name):
     existing_data = [json.loads(line) for line in open(fout_name, "r")]
     fout = open(fout_name, "a")

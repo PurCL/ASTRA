@@ -29,7 +29,7 @@ from sec_code_composer import (
     CodeGenTaskTextReviewAgent,
     IntentionReviewAgent,
     CoderAgent,
-    TaskGenCollectAgent
+    TaskGenCollectAgent,
 )
 from log_utils import MessageLogger
 
@@ -68,13 +68,15 @@ for cat, rule_name2examples in bug_type.items():
         random.seed(42)
         for example, instances in examples2instances.items():
             exact_rule_name = rule_name2exact_rule_name[rule_name]
-            sampled_bugs.append(
-                {
-                    "rule_name": rule_name,
-                    "exact_rule_name": exact_rule_name,
-                    "instance": random.choice(instances),
-                }
-            )
+            current_sample_instance = random.sample(instances, min(3, len(instances)))
+            for instance in current_sample_instance:
+                sampled_bugs.append(
+                    {
+                        "rule_name": rule_name,
+                        "exact_rule_name": exact_rule_name,
+                        "instance": instance,
+                    }
+                )
 
 
 def _get_leaf_nodes_from_kg(kg: TreeNode) -> List[TreeNode]:
@@ -127,6 +129,10 @@ for bug in sampled_bugs:
         )
     )
 
+# shuffle the task list
+random.shuffle(task_list)
+
+
 def load_fout_and_existing(fout_name):
 
     if not os.path.exists(fout_name):
@@ -138,20 +144,19 @@ def load_fout_and_existing(fout_name):
     return fout, existing_data
 
 
-
 async def run(task_list, fout, existing_data):
 
     seen = set()
     existing_tasks = []
     for task in existing_data:
         rule_name = task["rule_name"]
-        example = task["triggered_example"]
+        example = task["ori_triggered_example"]
         context = task["context"]
         pl_feature = task["pl_feature"]
         task_format = task["task_format"]
         key = f"{rule_name}_{example}_{context}_{pl_feature}_{task_format}"
-        if len(task['succ_tasks']) > 0:
-            select_one = random.choice(task['succ_tasks'])
+        if len(task["succ_tasks"]) > 0:
+            select_one = random.choice(task["succ_tasks"])
             existing_tasks.append(select_one)
             seen.add(key)
 
@@ -167,11 +172,17 @@ async def run(task_list, fout, existing_data):
         if key not in seen:
             to_explore.append(task)
     from llm_client_utils import get_sampler, working_coders
+
+    working_coders_phi4m_only = [
+        (client, model_name)
+        for client, model_name in working_coders
+        if "Phi-4-mini-instruct" in model_name
+    ]
+    print(f"Using {len(working_coders_phi4m_only)} Phi-4-mini-instruct coders.")
     sampler = get_sampler("qwen3-coder")
     print("Using reasoning sampler:", sampler.get_sampler_id())
     reviewer_sampler = sampler
     print("Using reviewer sampler:", reviewer_sampler.get_sampler_id())
-
 
     config = TaskDispatchConfigure(parallel_batch_size=20, samples_per_question=1)
     runtime = SingleThreadedAgentRuntime()
@@ -188,7 +199,7 @@ async def run(task_list, fout, existing_data):
         lambda: CodeGenTaskComposingAgent(
             description="CodeGenTaskComposingAgent",
             reasoning_sampler=sampler,
-            gen_prompt_fname="agent/composer_agent/prompts/compose.txt",
+            gen_prompt_fname="agent/sec_code_composer/prompts/compose.txt",
         ),
     )
 
@@ -199,7 +210,7 @@ async def run(task_list, fout, existing_data):
             description="CodeGenTaskTextReviewAgent",
             reasoning_sampler=reviewer_sampler,
             enable_diversity=True,
-            review_prompt_fname="agent/composer_agent/prompts/review.txt",
+            review_prompt_fname="agent/sec_code_composer/prompts/review.txt",
             existing_tasks=existing_tasks,
         ),
     )
@@ -209,12 +220,12 @@ async def run(task_list, fout, existing_data):
         "CoderAgent",
         lambda: CoderAgent(
             description="CoderAgent",
-            coding_clients= working_coders,
+            coding_clients=working_coders_phi4m_only,
         ),
     )
 
-    def simple_callback(message: TaskGenResult):   
-        succ_len = len(message.succ_tasks)     
+    def simple_callback(message: TaskGenResult):
+        succ_len = len(message.succ_tasks)
         if message.succ_tasks:
             print(f"Num successfully generated tasks: {succ_len}")
         else:
@@ -229,7 +240,6 @@ async def run(task_list, fout, existing_data):
             callback=simple_callback,
         ),
     )
-
 
     await IntentionReviewAgent.register(
         runtime,
@@ -250,13 +260,16 @@ async def run(task_list, fout, existing_data):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the main security code agent.")
-    parser.add_argument("--fout", type=str, default="data_out/syn_sec_code_tasks.jsonl",
-                        help="Output file to save the results.")
+    parser.add_argument(
+        "--fout",
+        type=str,
+        default="data_out/syn_sec_code_tasks.jsonl",
+        help="Output file to save the results.",
+    )
     parser.add_argument("--log", type=str, default="log_out/syn_sec_code.log")
     args = parser.parse_args()
 
     fout, existing_data = load_fout_and_existing(args.fout)
-
 
     print(logging.getLogger().handlers)
     logging.getLogger().handlers.clear()
@@ -279,8 +292,6 @@ if __name__ == "__main__":
 
     asyncio.run(run(task_list, fout, existing_data))
     log_fout.close()
-
-
 
 
 print()

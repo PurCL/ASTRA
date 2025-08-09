@@ -47,7 +47,7 @@ class IntentionReviewAgent(RoutedAgent):
         super().__init__(description=description)
         self._reasoning_sampler = reasoning_sampler
         self._reasoning_judge_prompt = open(
-            "agent/composer_agent/prompts/intention_review.txt", "r"
+            "agent/sec_code_composer/prompts/intention_review.txt", "r"
         ).read()
         self._rule_name2description = rule_name2description
 
@@ -94,7 +94,7 @@ class IntentionReviewAgent(RoutedAgent):
             expected_rule=exact_rule_name,
         )
         ret_entries = {}
-        for tag, trigger in ret.items():
+        for tag, (trigger, rules) in ret.items():
             if trigger:
                 ret_entries[tag] = ExperimentResultEntry(
                     rule_name=message.exact_rule_name,
