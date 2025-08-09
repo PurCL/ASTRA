@@ -13,6 +13,9 @@ def handle_chat_request(messages: List[Dict[str, str]], red_team_id: str, sessio
         defender_scheduler = defender_id2scheduler[red_team_id]
         return defender_scheduler.continue_attack(session_id, messages)
     else:
-        scheduler = DefenderScheduler(defender_id=red_team_id)
-        defender_id2scheduler[red_team_id] = scheduler
+        if red_team_id not in defender_id2scheduler:
+            scheduler = DefenderScheduler(defender_id=red_team_id)
+            defender_id2scheduler[red_team_id] = scheduler
+        else:
+            scheduler = defender_id2scheduler[red_team_id]
         return scheduler.new_attack(session_id=session_id)

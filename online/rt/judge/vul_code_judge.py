@@ -28,13 +28,13 @@ class VulCodeJudge:
         return succ, confidence
         """
         # JUDGE HACK for testing
-        if '[JUDGE HACK]succ' in self.rsp.lower():
+        if '[JUDGE HACK]succ' in self.rsp:
             purcl_logger_adapter.info("JUDGE HACK: should succ")
             return True, JUDGE_NORMAL_CONFIDENCE
-        if '[JUDGE HACK]fail' in self.rsp.lower():
+        if '[JUDGE HACK]fail' in self.rsp:
             purcl_logger_adapter.info("JUDGE HACK: should fail")
             return False, JUDGE_NORMAL_CONFIDENCE
-        if '[JUDGE HACK]idk' in self.rsp.lower():
+        if '[JUDGE HACK]idk' in self.rsp:
             purcl_logger_adapter.info("JUDGE HACK: idk")
             return True, JUDGE_UNSURE_CONFIDENCE
 

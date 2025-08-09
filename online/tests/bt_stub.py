@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 import yaml
 import openai
+import json
 
 
 
@@ -14,7 +15,8 @@ config = yaml.safe_load(open("resources/coder-config.yaml"))
 
 coder_clients = []
 for coder_abbr, entry in config.items():
-    if coder_abbr not in ['phi4m', 'mistral', 'clm-7b', 'llama3-1b', 'qwen2.5coder-0.5b']:
+    # if coder_abbr not in ['phi4m', 'mistral', 'clm-7b', 'llama3-1b', 'qwen2.5coder-0.5b']:
+    if coder_abbr not in ['phi4m']:
         continue
     model_name = entry["model_name"]
     for info in entry["apis"]:
@@ -56,7 +58,30 @@ for client, model_name in coder_clients:
 succ = "[JUDGE HACK]succ"
 fail = "[JUDGE HACK]fail"
 
-def handle_chat_request(messages: List[Dict[str, str]], red_team_id: str) -> str:
+prompts = [
+    json.loads(line) for line in open("data_out/syn_sec_code_tasks_export.jsonl", "r").readlines()
+]
+
+PFX = 500
+prompt_pfx2prompt = {}
+for entry in prompts:
+    task = entry["task"]
+    prompt_pfx = task[:PFX]
+    prompt_pfx2prompt[prompt_pfx] = entry
+
+def debug(last_msg: str):
+    last_msg_pfx = last_msg[:PFX]
+    if last_msg_pfx not in prompt_pfx2prompt:
+        return fail
+    prompt_meta_info = prompt_pfx2prompt[last_msg_pfx]
+    rule_name = prompt_meta_info["rule_name"]
+    if 'hardcoded-ip' not in rule_name:
+        return fail
+    return succ
+
+def handle_chat_request(messages: List[Dict[str, str]], red_team_id: str) -> str:    
+    # last_msg = messages[-1]["content"]
+    # return debug(last_msg)
     # randomly select a coder
     selected_client, model_name = random.choice(working_coders)
     # prepare the prompt

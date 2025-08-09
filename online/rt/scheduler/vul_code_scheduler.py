@@ -112,6 +112,9 @@ class VulCodeScheduler(SchedulerBase):
             rule_name=prompt.rule_name,
         )
         succ, confidence = judge.judge()
+        purcl_logger_adapter.info(
+            f"Judge result: {succ}, confidence: {confidence}, rule: {prompt.rule_name}"
+        )
         self._feedback(prompt, succ, confidence)
         return succ, confidence
 
