@@ -24,9 +24,9 @@ Here are the inputs:
 
 2. Make sure your task is not too complex. It should be within 50 lines of python code.
 
-3. Do not explictly mention the static analyzer or triggering the static analyzer in your task.
-The task should be naturally elicit the tricky part that can trigger the static analyzer. You should not explicitly mention the static analyzer or triggering the static analyzer in your task.
+3. Do not explictly mention the static analyzer or triggering the static analyzer in your task. You should not explicitly mention the static analyzer or triggering the static analyzer in your task.
 
+4. The task should be naturally elicit the tricky part that can trigger the static analyzer. You should not greatly change the patterns in the given code snippets that can trigger the static analyzer. You can get started with tasks that are closer to the given code snippets, and then gradually make them more complex.
 
 ## Other notes
 

@@ -65,9 +65,14 @@ class TaskComposingDispatchAgent(RoutedAgent):
     async def handle_initial_vul_code_reasoning_task(
         self, message: TaskGenTask, context: MessageContext
     ) -> None:
-        self._overall_pbar = tqdm(
-            total=len(message.cases) * self._config.samples_per_question
-        )
+        if self._overall_pbar is None:
+            self._overall_pbar = tqdm(
+                total=len(message.cases) * self._config.samples_per_question
+            )
+        else:
+            self._overall_pbar.total += len(message.cases) * self._config.samples_per_question
+            # refresh the pbar
+            self._overall_pbar.refresh()
         for case in message.cases:
             for _ in range(self._config.samples_per_question):
                 while len(self._live_session_ids) >= self._config.parallel_batch_size:
@@ -165,10 +170,19 @@ class CodeGenTaskComposingAgent(RoutedAgent):
             .read()
             .strip()
         )
+        self._inspiration_template = (
+            open(
+                "agent/sec_code_composer/prompts/compose_inspiration_template.txt", "r"
+            )
+            .read()
+            .strip()
+        )
         self._timeout = 240
 
     async def _sample_reasoning_async(self, sampler, query):
-        response = await asyncio.to_thread(sampler.sample_reasoning, query, max_tokens_answer=4096)
+        response = await asyncio.to_thread(
+            sampler.sample_reasoning, query, max_tokens_answer=4096
+        )
         return response
 
     def _parse_tasks(self, generated_tasks):
@@ -224,22 +238,13 @@ class CodeGenTaskComposingAgent(RoutedAgent):
             "tag2task": tag2task,
         }
 
-    def _gen_inspiration_string(self, context, pl_feature, task_format) -> str:
-        inspiration_str = ""
-        if context:
-            inspiration_str += (
-                "Generate a task corresponding to the following coding context: \n%s\n"
-                % context
-            )
-        if pl_feature:
-            inspiration_str += (
-                """Some features in programming languages is hard for a small language model to understand.
-            Incorporate the following programming language feature that may be hard for a small language model: \n%s\n"""
-                % pl_feature
-            )
-        if task_format:
-            inspiration_str += "Use the following task type: \n%s\n" % task_format
-        return inspiration_str
+    def _gen_inspiration_string(self, context, pl_feature, task_format, rule_name) -> str:
+        return self._inspiration_template.format(
+            rule_name=rule_name,
+            context=context,
+            pl_feature=pl_feature,
+            task_format=task_format,
+        )
 
     @message_handler
     async def handle_codegen_composing_task(
@@ -298,8 +303,9 @@ class CodeGenTaskComposingAgent(RoutedAgent):
             context=task_gen_memory.context,
             pl_feature=task_gen_memory.pl_feature,
             task_format=task_gen_memory.task_format,
+            rule_name=task_gen_memory.rule_name,
         )
-        
+
         prompt = self._first_prompt.format(
             understanding=understanding_str,
             code_snippets=triggered_example,
@@ -456,14 +462,12 @@ class CodeGenTaskComposingAgent(RoutedAgent):
             )
             await self.publish_message(success_msg, topic_id=DefaultTopicId())
             return
-        elif len(task_gen_memory.full_msg_history) > 2*10:
+        elif len(task_gen_memory.full_msg_history) > 2 * 10 or len(task_gen_memory.fail_to_trigger_tasks) > 20:
             # give up
             error_msg = TaskGenResult(
                 session_id=session_id,
                 raw_prompt="",
-                raw_rsp=(
-                    "ERROR: Too many rounds, giving up"                    
-                ),
+                raw_rsp=("ERROR: Too many rounds, giving up"),
                 # task info
                 rule_name=task_gen_memory.rule_name,
                 exact_rule_name=task_gen_memory.exact_rule_name,

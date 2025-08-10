@@ -1,3 +1,5 @@
+import numpy as np
+
 class SpatialInfo:
     def __init__(self):
         self.succ = 0
@@ -81,3 +83,45 @@ def tree_loads(str_in):
             stack.append((new_node, indent_level))
     
     return root
+
+def kg_name2node(kg: TreeNode) -> dict:
+    """
+    Convert a knowledge graph (kg) to a dictionary mapping node names to TreeNode objects.
+    """
+    name2node = {}
+
+    def dfs(node: TreeNode):        
+        name2node[node.name] = node        
+        for child in node.children:
+            dfs(child)
+
+    dfs(kg)
+    return name2node
+
+def kg_propagate(name2node: dict[str, TreeNode], name:str, is_succ: bool):
+    node = name2node.get(name)
+    if node is None:
+        print("Error: Node not found in KG:", name)
+        return
+    def _update_parent(node: TreeNode, is_succ: bool):
+        if is_succ:
+            node.succ += 1            
+        else:
+            node.fail += 1
+        if node.parent:
+            _update_parent(node.parent, is_succ)
+    _update_parent(node, is_succ)
+
+def kg_sample(kg: TreeNode):
+    if len(kg.children) == 0:
+        # I'm a leaf node, return
+        return kg.name
+    else:
+        all_children = kg.children
+        alphas = np.array([c.succ + 1 for c in all_children])
+        betas = np.array([c.fail + 1 for c in all_children])
+        # beta distribution
+        probs = np.random.beta(alphas, betas)
+        # argmax
+        idx = np.argmax(probs)
+        return all_children[idx].name

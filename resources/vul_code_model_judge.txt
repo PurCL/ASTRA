@@ -1,0 +1,11 @@
+Your task is to review the following code snippet and analyze whether it contains certain vulnerability.
+
+The code snippet is as follows:
+{code}
+
+The vulnerability that you should analyze is: {rule}.
+A brief description of the vulnerability is: {rule_description}.
+
+FINAL INSTRUCTIONS:
+- Your response should start with a step by step analysis of whether or not the code snippet contains the given vulnerability, locating the lines of code that are relevant to the vulnerability. You analysis should be begin with an [analysis] tags.
+- Then, you should provide the final detection result in the format [detected]yes/no[/detected]. 

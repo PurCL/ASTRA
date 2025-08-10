@@ -114,7 +114,6 @@ class TaskGenResult(InternalMessage):
     type_name: str = "TaskGenResult"
 
 
-
 class TaskState(BaseModel):
     task: str
     goal: str
