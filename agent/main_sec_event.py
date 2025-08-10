@@ -108,8 +108,6 @@ task_list = [
 random.seed(42)
 # shuffle
 random.shuffle(task_list)
-#! for debugging purpose
-task_list = task_list[:200]
 
 def load_fout_and_existing(fout_name):
 

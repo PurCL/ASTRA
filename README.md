@@ -8,7 +8,7 @@
 
 [![Amazon Nova AI Challenge](https://img.shields.io/badge/Amazon%20Nova%20AI%20Challenge-Winner%20Red%20Team-FF9900?style=for-the-badge&logo=amazon&logoColor=white)](https://www.amazon.science/nova-ai-challenge/pushing-the-boundaries-of-secure-ai-winners-of-the-amazon-nova-ai-challenge)
 [![Website](https://img.shields.io/badge/Website-ASTRA-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://astra-share.github.io)
-[![Paper](https://img.shields.io/badge/Paper-PDF-B31B1B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](astra-tr.pdf)
+[![Paper](https://img.shields.io/badge/Paper-PDF-B31B1B?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](https://www.arxiv.org/pdf/2508.03936)
 [![License](https://img.shields.io/badge/License-MIT-8DA0CB?style=for-the-badge&logo=mit&logoColor=white)](LICENSE)
 
 > **🏆 Red-Team Winner of Amazon Nova AI Challenge - First-ever global tournament where elite university teams battle to harden and hack AI coding assistants** 
