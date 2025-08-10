@@ -14,7 +14,7 @@ from autogen_core import (
 )
 from autogen_core.models import ChatCompletionClient
 from utils import get_claude_completion_adapter, remove_py_comments
-from kg_utils import tree_loads, TreeNode
+from kg_utils import tree_loads, TreeNode, kg_sample, kg_propagate, kg_name2node
 import random
 
 from sec_code_composer import (
@@ -99,38 +99,42 @@ def _get_leaf_nodes_from_kg(kg: TreeNode) -> List[TreeNode]:
     return leaf_nodes
 
 
-kg_leaves = {k: _get_leaf_nodes_from_kg(v) for k, v in kgs.items()}
+kgs_name2node = {}
+for kg_name, kg in kgs.items():
+    kgs_name2node[kg_name] = kg_name2node(kg)
+
+# kg_leaves = {k: _get_leaf_nodes_from_kg(v) for k, v in kgs.items()}
 
 
-task_list = []
-random.seed(42)
-for bug in sampled_bugs:
-    rule_name = bug["rule_name"]
-    exact_rule_name = bug["exact_rule_name"]
-    instance = bug["instance"]
+# task_list = []
+# random.seed(42)
+# for bug in sampled_bugs:
+#     rule_name = bug["rule_name"]
+#     exact_rule_name = bug["exact_rule_name"]
+#     instance = bug["instance"]
 
-    if rule_name not in rules:
-        logging.warning(f"Rule {rule_name} not found in rules.json")
-        continue
+#     if rule_name not in rules:
+#         logging.warning(f"Rule {rule_name} not found in rules.json")
+#         continue
 
-    context = random.choice(kg_leaves["context"]).name
-    pl_feature = random.choice(kg_leaves["pl_feature"]).name
-    task_format = random.choice(kg_leaves["task_format"]).name
-    task_list.append(
-        TaskGenEntry(
-            rule_name=rule_name,
-            exact_rule_name=exact_rule_name,
-            triggered_example=instance,
-            context=context,
-            pl_feature=pl_feature,
-            task_format=task_format,
-            current_understanding_analyzer="",
-            current_understanding_reasoning="",
-        )
-    )
+#     context = random.choice(kg_leaves["context"]).name
+#     pl_feature = random.choice(kg_leaves["pl_feature"]).name
+#     task_format = random.choice(kg_leaves["task_format"]).name
+#     task_list.append(
+#         TaskGenEntry(
+#             rule_name=rule_name,
+#             exact_rule_name=exact_rule_name,
+#             triggered_example=instance,
+#             context=context,
+#             pl_feature=pl_feature,
+#             task_format=task_format,
+#             current_understanding_analyzer="",
+#             current_understanding_reasoning="",
+#         )
+#     )
 
-# shuffle the task list
-random.shuffle(task_list)
+# # shuffle the task list
+# random.shuffle(task_list)
 
 
 def load_fout_and_existing(fout_name):
@@ -144,9 +148,9 @@ def load_fout_and_existing(fout_name):
     return fout, existing_data
 
 
-async def run(task_list, fout, existing_data):
+async def run(fout, existing_data):
 
-    seen = set()
+    seen_data = set()
     existing_tasks = []
     for task in existing_data:
         rule_name = task["rule_name"]
@@ -154,23 +158,70 @@ async def run(task_list, fout, existing_data):
         context = task["context"]
         pl_feature = task["pl_feature"]
         task_format = task["task_format"]
-        key = f"{rule_name}_{example}_{context}_{pl_feature}_{task_format}"
+        key = rule_name
         if len(task["succ_tasks"]) > 0:
             select_one = random.choice(task["succ_tasks"])
             existing_tasks.append(select_one)
-            seen.add(key)
+            seen_data.add(key)
+        # update kgs
+        succ = len(task["succ_tasks"]) > 0
+        kg_propagate(
+            kgs_name2node["context"],
+            context,
+            succ,
+        )
+        kg_propagate(
+            kgs_name2node["pl_feature"],
+            pl_feature,
+            succ,
+        )
+        kg_propagate(
+            kgs_name2node["task_format"],
+            task_format,
+            succ,
+        )
 
-    to_explore = []
-    for task in task_list:
-        rule_name = task.rule_name
-        example = task.triggered_example
-        context = task.context
-        pl_feature = task.pl_feature
-        task_format = task.task_format
-        key = f"{rule_name}_{example}_{context}_{pl_feature}_{task_format}"
+    initial_tasks = []
+    for bug_instance in random.sample(sampled_bugs, 50):
+        rule_name = bug_instance["rule_name"]
+        exact_rule_name = bug_instance["exact_rule_name"]
+        instance = bug_instance["instance"]
 
-        if key not in seen:
-            to_explore.append(task)
+        if rule_name not in rules:
+            logging.warning(f"Rule {rule_name} not found in rules.json")
+            continue
+
+        context = kg_sample(kgs["context"])
+        pl_feature = kg_sample(kgs["pl_feature"])
+        task_format = kg_sample(kgs["task_format"])
+        key = f"{rule_name}_{instance}_{context}_{pl_feature}_{task_format}"
+        if key not in seen_data:
+            initial_tasks.append(
+                TaskGenEntry(
+                    rule_name=rule_name,
+                    exact_rule_name=exact_rule_name,
+                    triggered_example=instance,
+                    context=context,
+                    pl_feature=pl_feature,
+                    task_format=task_format,
+                    current_understanding_analyzer="",
+                    current_understanding_reasoning="",
+                )
+            )
+            seen_data.add(key)
+        
+
+    # to_explore = []
+    # for task in task_list:
+    #     rule_name = task.rule_name
+    #     example = task.triggered_example
+    #     context = task.context
+    #     pl_feature = task.pl_feature
+    #     task_format = task.task_format
+    #     key = f"{rule_name}_{example}_{context}_{pl_feature}_{task_format}"
+
+    #     if key not in seen_data:
+    #         to_explore.append(task)
     from llm_client_utils import get_sampler, working_coders
 
     working_coders_phi4m_only = [
@@ -224,12 +275,73 @@ async def run(task_list, fout, existing_data):
         ),
     )
 
+    succ_instances = set()
     def simple_callback(message: TaskGenResult):
-        succ_len = len(message.succ_tasks)
+        succ_len = len(message.succ_tasks)        
         if message.succ_tasks:
             print(f"Num successfully generated tasks: {succ_len}")
         else:
             print("No successful tasks generated.")
+        is_succ = succ_len > 0
+        if is_succ:
+            succ_instances.add(message.ori_triggered_example)
+        context = message.context
+        pl_feature = message.pl_feature
+        task_format = message.task_format
+        # update kgs
+        kg_propagate(
+            kgs_name2node["context"],
+            context,
+            is_succ,
+        )
+        kg_propagate(
+            kgs_name2node["pl_feature"],
+            pl_feature,
+            is_succ,
+        )
+        kg_propagate(
+            kgs_name2node["task_format"],
+            task_format,
+            is_succ,
+        )        
+        # save the task
+        key = f"{message.rule_name}_{message.ori_triggered_example}_{context}_{pl_feature}_{task_format}"
+        seen_data.add(key)
+        another_bug_instance = random.choice(sampled_bugs)
+        trial = 5
+        while another_bug_instance['instance'] in succ_instances:
+            another_bug_instance = random.choice(sampled_bugs)
+            trial -= 1
+            if trial <= 0:
+                print("No more unique bug instances to sample.")
+                return
+        context = kg_sample(kgs["context"])
+        pl_feature = kg_sample(kgs["pl_feature"])
+        task_format = kg_sample(kgs["task_format"])
+        rule_name = another_bug_instance["rule_name"]
+        exact_rule_name = another_bug_instance["exact_rule_name"]
+        instance = another_bug_instance["instance"]
+        new_task = TaskGenEntry(
+            rule_name=rule_name,
+            exact_rule_name=exact_rule_name,
+            triggered_example=instance,
+            context=context,
+            pl_feature=pl_feature,
+            task_format=task_format,
+            current_understanding_analyzer="",
+            current_understanding_reasoning="",
+        )
+        key = f"{rule_name}_{instance}_{context}_{pl_feature}_{task_format}"
+        if key not in seen_data:
+            gen_task = TaskGenTask(cases=[new_task])
+            runtime.publish_message(gen_task, topic_id=DefaultTopicId())
+
+            print("Added a new task to the queue for generation.")
+        else:
+            print("The new task is already seen, not adding to the queue.")
+
+
+        # sample another task
 
     await TaskGenCollectAgent.register(
         runtime,
@@ -251,10 +363,9 @@ async def run(task_list, fout, existing_data):
         ),
     )
 
-    initial_task = TaskGenTask(cases=to_explore)
 
     runtime.start()
-    await runtime.publish_message(initial_task, topic_id=DefaultTopicId())
+    await runtime.publish_message(TaskGenTask(cases=initial_tasks), topic_id=DefaultTopicId())
     await runtime.stop_when_idle()
 
 
@@ -290,7 +401,7 @@ if __name__ == "__main__":
     trace_logger.setLevel(logging.ERROR)
     trace_logger.addHandler(logging.StreamHandler())
 
-    asyncio.run(run(task_list, fout, existing_data))
+    asyncio.run(run(fout, existing_data))
     log_fout.close()
 
 

@@ -65,9 +65,14 @@ class TaskComposingDispatchAgent(RoutedAgent):
     async def handle_initial_vul_code_reasoning_task(
         self, message: TaskGenTask, context: MessageContext
     ) -> None:
-        self._overall_pbar = tqdm(
-            total=len(message.cases) * self._config.samples_per_question
-        )
+        if self._overall_pbar is None:
+            self._overall_pbar = tqdm(
+                total=len(message.cases) * self._config.samples_per_question
+            )
+        else:
+            self._overall_pbar.total += len(message.cases) * self._config.samples_per_question
+            # refresh the pbar
+            self._overall_pbar.refresh()
         for case in message.cases:
             for _ in range(self._config.samples_per_question):
                 while len(self._live_session_ids) >= self._config.parallel_batch_size:
@@ -457,7 +462,7 @@ class CodeGenTaskComposingAgent(RoutedAgent):
             )
             await self.publish_message(success_msg, topic_id=DefaultTopicId())
             return
-        elif len(task_gen_memory.full_msg_history) > 2 * 10:
+        elif len(task_gen_memory.full_msg_history) > 2 * 10 or len(task_gen_memory.fail_to_trigger_tasks) > 20:
             # give up
             error_msg = TaskGenResult(
                 session_id=session_id,
