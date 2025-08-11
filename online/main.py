@@ -7,7 +7,7 @@ from rt import rt_entry
 
 
 def main():
-    rt_id = "purcl_test_rt-xxz-0808-1110pm"
+    rt_id = "purcl_test_rt-xxz-0811-1226am"
     fout = open(f"log_out/test_log_{rt_id}.jsonl", "w")
     N_SESSION = 200
     N_PROBING = 50

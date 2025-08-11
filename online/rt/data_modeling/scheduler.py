@@ -21,7 +21,7 @@ class SecEventSchedulerDO(BaseModel):
     defender_id: str = ""
     num_sec_sessions: int = 0
     stage: str = ""
-    tag2status: Dict[str, TagStatusEntry] = {}
+    dim2tag2status: Dict[str, Dict[str, TagStatusEntry]] = {}
     overall_succ: int = 0
     overall_fail: int = 0
     

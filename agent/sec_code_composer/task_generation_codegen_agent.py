@@ -71,7 +71,7 @@ class TaskComposingDispatchAgent(RoutedAgent):
             )
         else:
             self._overall_pbar.total += len(message.cases) * self._config.samples_per_question
-            # refresh the pbar
+            # current progress
             self._overall_pbar.refresh()
         for case in message.cases:
             for _ in range(self._config.samples_per_question):

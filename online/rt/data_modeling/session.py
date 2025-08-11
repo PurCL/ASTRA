@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Dict, List, Tuple
 from enum import Enum
 from rt.logger.setup import purcl_logger_adapter
-from .prompts import VulCodePromptDO
+from .prompts import SecEventPromptDO, VulCodePromptDO
 
 
 class SessionType(Enum):
@@ -36,3 +36,7 @@ class VulCodeSessionDO(SessionDO):
     scheduled_prompts: List[VulCodePromptDO]
     rewards: List[float] = []
     confidences: List[float] = []
+
+
+class SecEventSessionDO(SessionDO):
+    scheduled_prompt: SecEventPromptDO

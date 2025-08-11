@@ -7,9 +7,10 @@ from rt.data_modeling import (
     TagStatusEntry,
     SessionType,
 )
-from rt.prompt_utils import all_vul_code_prompts
+from rt.prompt_utils import all_vul_code_prompts, all_sec_event_prompts
 from rt.logger import purcl_logger_adapter
 from .vul_code_scheduler import VulCodeScheduler
+from .sec_event_scheduler import SecEventScheduler
 
 class DefenderScheduler:
 
@@ -20,6 +21,8 @@ class DefenderScheduler:
         self._init_vul_code_scheduler()
         self._init_sec_event_scheduler()
         self._vul_code_scheduler = VulCodeScheduler(self._defender_do.vul_code_scheduler_do)
+        self._sec_event_scheduler = SecEventScheduler(self._defender_do.sec_event_scheduler_do)
+
 
     def _init_vul_code_scheduler(self) -> VulCodeSchedulerDO:
         vul_code_scheduler = self._defender_do.vul_code_scheduler_do
@@ -52,12 +55,48 @@ class DefenderScheduler:
                 ] = TagStatusEntry()
 
         return vul_code_scheduler
-
+    
     def _init_sec_event_scheduler(self) -> SecEventSchedulerDO:
-        pass
+        sec_event_scheduler = self._defender_do.sec_event_scheduler_do
+        sec_event_scheduler.defender_id = self.defender_id
+        if "context" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["context"] = {}
+        if "pl_feature" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["pl_feature"] = {}
+        if "task_format" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["task_format"] = {}
+        if "asset" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["asset"] = {}
+        if "software" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["software"] = {}
+        if "tactics" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["tactics"] = {}
+        if "weakness" not in sec_event_scheduler.dim2tag2status:
+            sec_event_scheduler.dim2tag2status["weakness"] = {}
+
+        for prompt in all_sec_event_prompts:
+            context = prompt.context = prompt.context
+            task_format = prompt.task_format = prompt.task_format
+            asset = prompt.asset = prompt.asset
+            software = prompt.software = prompt.software
+            tactics = prompt.tactics = prompt.tactics
+            weakness = prompt.weakness
+            if context not in sec_event_scheduler.dim2tag2status["context"]:
+                sec_event_scheduler.dim2tag2status["context"][context] = TagStatusEntry()
+            if task_format not in sec_event_scheduler.dim2tag2status["task_format"]:
+                sec_event_scheduler.dim2tag2status["task_format"][task_format] = TagStatusEntry()
+            if asset not in sec_event_scheduler.dim2tag2status["asset"]:
+                sec_event_scheduler.dim2tag2status["asset"][asset] = TagStatusEntry()
+            if software not in sec_event_scheduler.dim2tag2status["software"]:
+                sec_event_scheduler.dim2tag2status["software"][software] = TagStatusEntry()
+            if tactics not in sec_event_scheduler.dim2tag2status["tactics"]:
+                sec_event_scheduler.dim2tag2status["tactics"][tactics] = TagStatusEntry()
+            if weakness not in sec_event_scheduler.dim2tag2status["weakness"]:
+                sec_event_scheduler.dim2tag2status["weakness"][weakness] = TagStatusEntry()
+
 
     def new_attack(self, session_id: str):
-        if True:
+        if False:
         # if len(self._session_id2do) % 2 == 0:
             # new vul code session
             session_do, prompt = self._vul_code_scheduler.new_attack(session_id)
@@ -65,9 +104,10 @@ class DefenderScheduler:
             self._defender_do.num_all_non_probing_sessions += 1
             return prompt
         else:
-            # new sec event session
-            purcl_logger_adapter.info("Not implemented yet for sec event scheduler.")
-            raise NotImplementedError("Sec event scheduler not implemented yet.")
+            session_do, prompt = self._sec_event_scheduler.new_attack(session_id)
+            self._session_id2do[session_id] = session_do
+            self._defender_do.num_all_non_probing_sessions += 1
+            return prompt
 
     def continue_attack(self, session_id: str, messages: List[Dict[str, str]]) -> str:
         if session_id not in self._session_id2do:
@@ -77,8 +117,7 @@ class DefenderScheduler:
         if session_do.session_type == SessionType.VUL:
             return self._vul_code_scheduler.continue_attack(session_id, messages, session_do)
         else:
-            purcl_logger_adapter.error("Sec event scheduler not implemented yet.")
-            raise NotImplementedError("Sec event scheduler not implemented yet.")
+            return self._sec_event_scheduler.continue_attack(session_id, messages, session_do)
 
 
     def finish_attack(self, session_id: str, messages: List[Dict[str, str]]):
@@ -90,5 +129,4 @@ class DefenderScheduler:
             purcl_logger_adapter.info(f"Finishing vul code session {session_id}.")
             self._vul_code_scheduler.finish_attack(session_id, messages, session_do)
         else:
-            purcl_logger_adapter.error("Sec event scheduler not implemented yet.")
-            raise NotImplementedError("Sec event scheduler not implemented yet.")
+            return self._sec_event_scheduler.finish_attack(session_id, messages, session_do)

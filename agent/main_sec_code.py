@@ -276,7 +276,7 @@ async def run(fout, existing_data):
     )
 
     succ_instances = set()
-    def simple_callback(message: TaskGenResult):
+    async def simple_callback(message: TaskGenResult):
         succ_len = len(message.succ_tasks)        
         if message.succ_tasks:
             print(f"Num successfully generated tasks: {succ_len}")
@@ -307,10 +307,18 @@ async def run(fout, existing_data):
         # save the task
         key = f"{message.rule_name}_{message.ori_triggered_example}_{context}_{pl_feature}_{task_format}"
         seen_data.add(key)
-        another_bug_instance = random.choice(sampled_bugs)
+        all_unsucc_bugs = []
+        for bug_instance in sampled_bugs:
+            instance = bug_instance["instance"]
+            if instance not in succ_instances:
+                all_unsucc_bugs.append(bug_instance)
+        if len(all_unsucc_bugs) == 0:
+            print("All bugs are successfully generated, no more tasks to sample.")
+            return
+        another_bug_instance = random.choice(all_unsucc_bugs)
         trial = 5
         while another_bug_instance['instance'] in succ_instances:
-            another_bug_instance = random.choice(sampled_bugs)
+            another_bug_instance = random.choice(all_unsucc_bugs)
             trial -= 1
             if trial <= 0:
                 print("No more unique bug instances to sample.")
@@ -334,7 +342,7 @@ async def run(fout, existing_data):
         key = f"{rule_name}_{instance}_{context}_{pl_feature}_{task_format}"
         if key not in seen_data:
             gen_task = TaskGenTask(cases=[new_task])
-            runtime.publish_message(gen_task, topic_id=DefaultTopicId())
+            await runtime.publish_message(gen_task, topic_id=DefaultTopicId())
 
             print("Added a new task to the queue for generation.")
         else:

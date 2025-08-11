@@ -47,6 +47,6 @@ class TaskGenCollectAgent(RoutedAgent):
         self._fout.write(json.dumps(ret_dict) + "\n")
         self._fout.flush()
         if self._callback is not None:
-            self._callback(message)
+            await self._callback(message)
         else:
             print("No callback provided, skipping further processing.")
