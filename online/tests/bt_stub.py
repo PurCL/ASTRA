@@ -16,7 +16,8 @@ config = yaml.safe_load(open("resources/coder-config.yaml"))
 coder_clients = []
 for coder_abbr, entry in config.items():
     # if coder_abbr not in ['phi4m', 'mistral', 'clm-7b', 'llama3-1b', 'qwen2.5coder-0.5b']:
-    if coder_abbr not in ['phi4m']:
+    # if coder_abbr not in ['phi4m']:
+    if coder_abbr not in ['mistral']:
         continue
     model_name = entry["model_name"]
     for info in entry["apis"]:
