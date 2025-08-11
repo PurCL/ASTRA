@@ -9,3 +9,7 @@ log_out/**
 
 tests/log/*
 tests/session_data/*
+
+auto_detect/**
+
+.cache*/**
