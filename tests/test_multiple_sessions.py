@@ -18,9 +18,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from temporal_explorator import get_next_attack_prompt, reset_explorer
 from temporal_explorator.models.state import State
-from temporal_explorator.models.action import Action
-from temporal_explorator.config import get_config
-from temporal_explorator.utils.logger import logger, purcl_logger_adapter, update_session_info
+from temporal_explorator.utils.logger import purcl_logger_adapter, update_session_info
 
 
 # def load_data(data_dir="/data4/user/shen447/amazon_code_challenge/amazon-cobot-code/purcl_attacker/t3_malware_probing_agent/data"):
@@ -100,33 +98,10 @@ class TestTemporalExploratorIntegration:
         }
 
         # Test configuration
-        self.config = {
-            # State mapper configuration
-            "state_mapper": {
-                "model_url": "http://35.87.6.13:8000/v1",
-                "model_api_key": "redteam233",
-                "model_name": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-                "temperature": 0.7,
-                "max_tokens": 1024,
-                "max_retries": 5
-            },
-            
-            # Action selector configuration
-            "action_selector": {
-                "action_selection_strategy": "deterministic"
-            },
-            
-            # Prompt generator configuration
-            "prompt_generator": {
-                "mutator_model_url": "http://35.87.6.13:8000/v1",
-                "mutator_model_api_key": "redteam233",
-                "mutator_model_name_or_path": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-                "mutator_model_temperature": 0.7,
-                "mutator_model_max_tokens": 1024,
-                "mutator_model_max_retries": 5
-            }
-        }
-        
+        # load from yaml
+        with open("temporal_explorator/config/default_config.yaml", "r") as f:
+            self.config = yaml.safe_load(f)
+
         # Test data - will be set per session
         # self.test_bt_id = "llama-3.1-70b-inst"
         self.test_bt_id = "qwen-2.5-coder-7b-instruct"
