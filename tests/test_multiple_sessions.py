@@ -87,8 +87,7 @@ class TestTemporalExploratorIntegration:
             self.load_data()
         
         
-        # Test configuration
-        self.config = {
+        self.bt_config = {
             # "model_url": "http://54.202.245.166:8010/v1",
             # "model_api_key": "reverse-training",
             # "model_name": "llama-3.1-70b-inst-judge",
@@ -98,15 +97,10 @@ class TestTemporalExploratorIntegration:
             "temperature": 0.7,
             "max_tokens": 1024,
             "max_retries": 5,
-            
-            # Mutator model configuration
-            "mutator_model_url": "http://35.87.6.13:8000/v1",
-            "mutator_model_api_key": "redteam233",
-            "mutator_model_name_or_path": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-            "mutator_model_temperature": 0.7,
-            "mutator_model_max_tokens": 1024,
-            "mutator_model_max_retries": 5,
-            
+        }
+
+        # Test configuration
+        self.config = {
             # State mapper configuration
             "state_mapper": {
                 "model_url": "http://35.87.6.13:8000/v1",
@@ -332,8 +326,8 @@ class TestTemporalExploratorIntegration:
             from openai import OpenAI
             
             client = OpenAI(
-                base_url=self.config["model_url"],
-                api_key=self.config["model_api_key"]
+                base_url=self.bt_config["model_url"],
+                api_key=self.bt_config["model_api_key"]
             )
             
             # Prepare messages - include full chat history if provided
@@ -343,10 +337,10 @@ class TestTemporalExploratorIntegration:
                 messages = [{"role": "user", "content": prompt}]
             
             response = client.chat.completions.create(
-                model=self.config["model_name"],
+                model=self.bt_config["model_name"],
                 messages=messages,
-                temperature=self.config["temperature"],
-                max_tokens=self.config["max_tokens"]
+                temperature=self.bt_config["temperature"],
+                max_tokens=self.bt_config["max_tokens"]
             )
             
             return response.choices[0].message.content
