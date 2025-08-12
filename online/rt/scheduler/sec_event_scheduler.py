@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 
 import yaml
 from rt.data_modeling import (
@@ -9,7 +9,7 @@ from rt.data_modeling import (
     TagStatusEntry,
 )
 
-from rt.temporal_explorator import get_next_attack_prompt, reset_explorer, State
+from rt.temporal_explorator import TemporalExplorator, State
 from .scheduler_common import SchedulerBase
 import numpy as np
 from rt.prompt_utils import all_sec_event_prompts
@@ -19,11 +19,13 @@ from rt.logger import purcl_logger_adapter
 temporal_explorator_config = yaml.safe_load(
     open("temporal_explorator/config/default_config.yaml")
 )
+temporal_explorator_log_dir = ".cache.sec_event"
 
 class SecEventScheduler(SchedulerBase):
 
     def __init__(self, scheduler_do: SecEventSchedulerDO):
         self.scheduler_do = scheduler_do
+        self.temporal_explorator = TemporalExplorator(temporal_explorator_config, temporal_explorator_log_dir)
 
     def _sample_prompts(self, n=5):
         dim_and_tags = []
@@ -128,7 +130,8 @@ class SecEventScheduler(SchedulerBase):
             session_id=session_id,
             defender_id=self.scheduler_do.defender_id,
             session_type=SessionType.MAL,
-            scheduled_prompt=new_prompt
+            scheduled_prompt=new_prompt,
+            state=State.UNKNOWN,
         )
 
         self.scheduler_do.num_sec_sessions += 1
@@ -139,25 +142,15 @@ class SecEventScheduler(SchedulerBase):
         session_id: str,
         messages: List[Dict[str, str]],
         session_do: SecEventSessionDO,
-    ) -> str:
-        prompt, state = get_next_attack_prompt(
+    ) -> Optional[str]:
+        prompt, state = self.temporal_explorator.process_turn(
             bt_id=self.scheduler_do.defender_id,
             session_id=session_id,
             chat_history=messages,
             goal=session_do.scheduled_prompt.goal,
-            config=temporal_explorator_config,
-            save_dir='.cache.sec_event'
         )
-        if state == State.JAILBROKEN:
-            self._feedback(
-                session_do.scheduled_prompt, succ=True, confidence=1.0
-            )
-            return "<JAILBROKEN>"
-        else:
-            self._feedback(
-                session_do.scheduled_prompt, succ=False, confidence=1.0
-            )
-            return prompt
+        session_do.state = state
+        return prompt
 
 
     def finish_attack(
@@ -165,16 +158,8 @@ class SecEventScheduler(SchedulerBase):
         session_id: str,
         messages: List[Dict[str, str]],
         session_do: SecEventSessionDO,
-    ) -> str:
-        prompt, state = get_next_attack_prompt(
-            bt_id=self.scheduler_do.defender_id,
-            session_id=session_id,
-            chat_history=messages,
-            goal=session_do.scheduled_prompt.goal,
-            config=temporal_explorator_config,
-            save_dir='.cache.sec_event'
-        )
-        if state == State.JAILBROKEN:
+    ) -> Optional[str]:
+        if session_do.state == State.JAILBROKEN:
             self._feedback(
                 session_do.scheduled_prompt, succ=True, confidence=1.0
             )

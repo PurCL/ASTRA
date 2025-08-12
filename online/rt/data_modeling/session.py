@@ -3,6 +3,7 @@ from typing import Dict, List, Tuple
 from enum import Enum
 from rt.logger.setup import purcl_logger_adapter
 from .prompts import SecEventPromptDO, VulCodePromptDO
+from rt.temporal_explorator.models.state import State
 
 
 class SessionType(Enum):
@@ -40,3 +41,4 @@ class VulCodeSessionDO(SessionDO):
 
 class SecEventSessionDO(SessionDO):
     scheduled_prompt: SecEventPromptDO
+    state: State

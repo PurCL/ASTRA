@@ -2,8 +2,8 @@ from openai import OpenAI
 from typing import List, Dict
 import re
 import traceback
-from ..utils.logger import purcl_logger_adapter
-from .exceptions import ModelCommunicationError, ValidationError
+from rt.logger import purcl_logger_adapter
+from rt.temporal_explorator.utils.exceptions import ModelCommunicationError, ValidationError
 
 def query_model(
     model_client: OpenAI,

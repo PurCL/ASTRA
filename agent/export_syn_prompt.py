@@ -9,6 +9,10 @@ parser.add_argument(
 parser.add_argument(
     "--fout", default=""
 )
+parser.add_argument(
+    "--key", default="rationale", 
+    help="key to export, rationale for sec_code and goal for sec_event"
+)
 
 args = parser.parse_args()
 
@@ -38,18 +42,18 @@ for item in data_in:
         if task["task"] not in succ_tasks:
             continue
         task_str = task["task"]
-        if 'rationale' in task:
-            rationale = task["rationale"]
+        if args.key in task:
+            rationale = task[args.key]
         else:
             rationale = 'N/A'
         
         data_out.append({
             'task': task_str,
-            'rationale': rationale,
+            args.key: rationale,
             **item_copied
         })
             
-data_out = [d for d in data_out if d['rationale'].strip() != '']
+data_out = [d for d in data_out if d[args.key].strip() != '']
 
 with open(args.fout, "w") as fout:
     for item in data_out:

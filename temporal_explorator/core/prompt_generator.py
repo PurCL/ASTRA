@@ -9,17 +9,16 @@ from typing import List, Dict, Any, Optional
 from openai import OpenAI
 import traceback
 
-from ..utils.logger import logger, purcl_logger_adapter
-
-from ..models.state import State
-from ..models.action import Action
-from ..prompts.system_prompts import (
+from rt.temporal_explorator.models.state import State
+from rt.temporal_explorator.models.action import Action
+from rt.temporal_explorator.prompts.system_prompts import (
     ASK_FOR_REASONING_TRACE_SYSTEM_PROMPT,
     ASK_FOR_CODE_SYSTEM_PROMPT,
     PERSUASION_SYSTEM_PROMPT,
     REMOVE_IRRELEVANT_FACTOR_SYSTEM_PROMPT
 )
-from ..utils.chat_utils import query_model
+from rt.temporal_explorator.utils.chat_utils import query_model
+from rt.logger import purcl_logger_adapter
 
 
 class PromptGenerator:
@@ -37,8 +36,6 @@ class PromptGenerator:
         Args:
             config: Configuration dictionary containing model parameters
         """
-        purcl_logger_adapter.info("Initializing PromptGenerator")
-        purcl_logger_adapter.debug(f"Config keys: {list(config.keys())}")
         
         self.config = config
         
@@ -56,8 +53,6 @@ class PromptGenerator:
         self.max_tokens = config.get('mutator_model_max_tokens', 500)
         self.max_retries = config.get('mutator_model_max_retries', 3)
         
-        purcl_logger_adapter.debug(f"Model config: name={self.model_name}, temp={self.temperature}, max_tokens={self.max_tokens}")
-        purcl_logger_adapter.info("PromptGenerator initialized successfully")
     
     def generate_prompt(
         self,

@@ -6,7 +6,6 @@ throughout the system.
 """
 
 from .chat_utils import query_model, extract_tag
-from .logger import logger, purcl_logger_adapter, purcl_logger_extra, update_session_info
 from .exceptions import (
     TemporalExploratorError,
     ValidationError,
@@ -21,10 +20,6 @@ from .exceptions import (
 __all__ = [
     "query_model",
     "extract_tag",
-    "logger",
-    "purcl_logger_adapter",
-    "purcl_logger_extra",
-    "update_session_info",
     "TemporalExploratorError",
     "ValidationError",
     "StateMappingError",
