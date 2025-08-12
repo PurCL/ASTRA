@@ -7,13 +7,13 @@ import traceback
 from typing import List, Dict, Optional, Any
 from pathlib import Path
 
-from ..models.state import State
-from ..models.action import Action
-from .state_mapper import StateMapper
-from .action_selector import ActionSelector
-from .prompt_generator import PromptGenerator
-from ..utils.logger import logger, purcl_logger_adapter
-from ..utils.exceptions import (
+from rt.temporal_explorator.models.state import State
+from rt.temporal_explorator.models.action import Action
+from rt.temporal_explorator.core.state_mapper import StateMapper
+from rt.temporal_explorator.core.action_selector import ActionSelector
+from rt.temporal_explorator.core.prompt_generator import PromptGenerator
+from rt.logger import purcl_logger_adapter
+from rt.temporal_explorator.utils.exceptions import (
     ValidationError,
     SessionError,
     StateMappingError,
@@ -63,8 +63,6 @@ class TemporalExplorator:
         purcl_logger_adapter.info("Initializing PromptGenerator...")
         self.prompt_generator = PromptGenerator(config.get("prompt_generator", {}))
         
-        purcl_logger_adapter.info("TemporalExplorator initialized successfully")
-        purcl_logger_adapter.info(f"TemporalExplorator initialized successfully with save_dir: {self.save_dir}")
     
     def process_turn(
         self,
@@ -103,8 +101,6 @@ class TemporalExplorator:
         # Update session with latest response
         purcl_logger_adapter.info("Updating session with latest response...")
         self._update_session_with_response(session_data, chat_history, goal)
-        purcl_logger_adapter.info(f"Session data updated: {len(session_data)} entries")
-        purcl_logger_adapter.info(f"Session data: {session_data}")
         
         # Map current state
         purcl_logger_adapter.info("Mapping current state...")
@@ -113,9 +109,8 @@ class TemporalExplorator:
         if current_state == State.JAILBROKEN:
             # Persist session data
             purcl_logger_adapter.info("Jailbroken! Exiting...")
-            purcl_logger_adapter.info("Persisting session data...")
             self._persist_session(session_data, bt_id, session_id)
-            return "Jailbroken!", current_state
+            return f"<{State.JAILBROKEN.value}>", current_state
         
         # Select next action
         purcl_logger_adapter.info("Selecting next action...")
@@ -123,26 +118,18 @@ class TemporalExplorator:
         purcl_logger_adapter.info(f"Selected action: {next_action}")
         
         # Generate prompt
-        purcl_logger_adapter.info("Generating prompt...")
         next_prompt = self._generate_prompt(current_state, next_action, session_data)
-        purcl_logger_adapter.info(f"Generated prompt length: {len(next_prompt) if next_prompt else 0}")
-        purcl_logger_adapter.info(f"Generated prompt: {next_prompt}")
         
         # Record the turn
-        purcl_logger_adapter.info("Recording turn...")
         self._record_turn(session_data, next_action, next_prompt, current_state)
         
         # Persist session data
-        purcl_logger_adapter.info("Persisting session data...")
         self._persist_session(session_data, bt_id, session_id)
         
-        purcl_logger_adapter.info(f"Turn processing completed for session: {session_key}")
-        purcl_logger_adapter.info(f"Generated prompt for session {bt_id}_{session_id}")
         return next_prompt, current_state
     
     def _validate_chat_history(self, chat_history: List[Dict[str, str]]) -> None:
         """Validate the chat history format and length."""
-        purcl_logger_adapter.info(f"Validating chat history with {len(chat_history)} messages")
         
         try:
             if not isinstance(chat_history, list):

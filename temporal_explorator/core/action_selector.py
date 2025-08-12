@@ -8,9 +8,9 @@ to appropriate actions for the temporal explorator system.
 from typing import Dict, Any, Optional
 from enum import Enum
 
-from ..models.state import State
-from ..models.action import Action
-from ..utils.logger import logger, purcl_logger_adapter
+from rt.temporal_explorator.models.state import State
+from rt.temporal_explorator.models.action import Action
+from rt.logger import purcl_logger_adapter
 
 
 class ActionSelectionStrategy(Enum):
@@ -35,8 +35,6 @@ class ActionSelector:
         Args:
             config: Configuration dictionary containing action selection parameters
         """
-        purcl_logger_adapter.info("Initializing ActionSelector")
-        purcl_logger_adapter.debug(f"Config: {config}")
         
         self.config = config or {}
         strategy_name = self.config.get('action_selection_strategy', 'deterministic')

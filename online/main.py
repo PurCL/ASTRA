@@ -7,10 +7,10 @@ from rt import rt_entry
 
 
 def main():
-    rt_id = "purcl_test_rt-gs-0811-0927am"
+    rt_id = "purcl_test_rt-gs-0811-0726pm"
     fout = open(f"log_out/test_log_{rt_id}.jsonl", "w")
-    N_SESSION = 10
-    N_PROBING = 5
+    N_SESSION = 50
+    N_PROBING = 25
     N_TURN = 6
     for session_num in tqdm(range(N_SESSION), desc="Testing..."):
         session_id = str(uuid.uuid4())
@@ -25,11 +25,9 @@ def main():
                 is_probing=session_num < N_PROBING,
                 is_finished=False,
             )
-            
-            if rt_rsp is None:
-                break
-
             print(f"RT response: {rt_rsp[:100]}")
+            if rt_rsp == "<Jailbroken>":
+                break
 
             messages.append(
                 {

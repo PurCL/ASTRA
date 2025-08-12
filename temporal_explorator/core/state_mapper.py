@@ -5,11 +5,11 @@ State mapper module for mapping conversation states based on actions and respons
 from typing import Dict, List, Any, Optional
 from openai import OpenAI
 
-from ..models.state import State
-from ..models.action import Action
-from ..utils.chat_utils import query_model
-from ..utils.logger import logger, purcl_logger_adapter
-from ..prompts.system_prompts import (
+from rt.temporal_explorator.models.state import State
+from rt.temporal_explorator.models.action import Action
+from rt.temporal_explorator.utils.chat_utils import query_model
+from rt.logger import purcl_logger_adapter
+from rt.temporal_explorator.prompts.system_prompts import (
     JAILBROKEN_VALIDATOR_SYSTEM_PROMPT,
     REFUSAL_SYSTEM_PROMPT,
     TRACE_VALIDATOR_SYSTEM_PROMPT,
@@ -33,8 +33,6 @@ class StateMapper:
         Args:
             config: Configuration dictionary containing model parameters
         """
-        purcl_logger_adapter.info("Initializing StateMapper")
-        purcl_logger_adapter.debug(f"Config keys: {list(config.keys())}")
         
         self.config = config
         
@@ -52,8 +50,6 @@ class StateMapper:
         self.max_tokens = config.get('max_tokens', 500)
         self.max_retries = config.get('max_retries', 3)
 
-        purcl_logger_adapter.debug(f"Model config: name={self.model_name}, temp={self.temperature}, max_tokens={self.max_tokens}")
-        purcl_logger_adapter.info("StateMapper initialized successfully")
     
     def map(
         self,

@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 
 import yaml
 from rt.data_modeling import (
@@ -143,25 +143,13 @@ class SecEventScheduler(SchedulerBase):
         messages: List[Dict[str, str]],
         session_do: SecEventSessionDO,
     ) -> Optional[str]:
-        # prompt, state = get_next_attack_prompt(
-        #     bt_id=self.scheduler_do.defender_id,
-        #     session_id=session_id,
-        #     chat_history=messages,
-        #     goal=session_do.scheduled_prompt.goal,
-        #     config=temporal_explorator_config,
-        #     save_dir='.cache.sec_event'
-        # )
         prompt, state = self.temporal_explorator.process_turn(
             bt_id=self.scheduler_do.defender_id,
             session_id=session_id,
             chat_history=messages,
             goal=session_do.scheduled_prompt.goal,
         )
-
-        # update state
         session_do.state = state
-        print(f"Current state: {state}")
-        input("Press Enter to continue...")
         return prompt
 
 
