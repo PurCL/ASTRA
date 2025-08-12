@@ -75,45 +75,61 @@ ASTRA operates through a sophisticated three-stage process:
 
 ## 🚀 Quick Start
 
-*Coming soon - Code examples will be available when the repository is fully implemented.*
+### Prerequisites
+
+- Python 3.8+
+- Required dependencies (see `requirements.txt`)
+- API access to LLM providers (OpenAI, Anthropic, etc.)
+
+### Installation
+
+```bash
+git clone https://github.com/PurCL/astra-share.git
+cd astra-share
+pip install -r requirements.txt
+```
 
 ### Basic Usage
 
-*Basic usage examples will be provided here.*
+#### Offline Domain Modeling
 
-### Multi-Session Testing
+Pre-built knowledge graphs are already available in the `kg/` directory for secure code and security event domains. To explore or extend:
 
-*Multi-session testing examples will be provided here.*
+```bash
+# View existing knowledge graphs
+ls kg/
+# Example: mal_tactics.kg, pl_features.kg, context.kg
+```
 
-## 📦 Installation
+#### Generate Attack Prompts
 
-*Installation instructions will be provided when the repository is ready for release.*
+Use the structured knowledge graphs to generate sophisticated jailbreaking prompts:
 
-### Prerequisites
+```bash
+# Generate secure code attack prompts
+python3 agent/main_sec_code.py --fout data_out/my_code_attacks.jsonl --log logs/code_gen.log
 
-*Prerequisites will be listed here.*
+# Generate security event attack prompts  
+python3 agent/main_sec_event.py --fout data_out/my_event_attacks.jsonl --log logs/event_gen.log
+```
 
-### Install Dependencies
+#### Online Adaptive Exploration
 
-*Installation commands will be provided here.*
+Perform real-time adaptive red-teaming against target AI systems:
 
-### Environment Setup
+```bash
+# Configure your target model in online/tests/example_bt.py
+# Then run adaptive exploration
+python3 online/main.py --pair_id test_session_001
+```
 
-*Environment setup instructions will be provided here.*
+### Output Structure
 
-## 💡 Usage Examples
+- **Generated Prompts**: `data_out/*.jsonl` - Contains synthesized attack prompts
+- **Exploration Logs**: `log_out/*.jsonl` - Records of online exploration sessions  
+- **Knowledge Graphs**: `kg/*.kg` - Structured domain knowledge
 
-*Usage examples will be provided when the codebase is implemented.*
-
-### Example 1: Single Session Testing
-
-*Single session testing examples will be provided here.*
-
-### Example 2: Batch Testing
-
-*Batch testing examples will be provided here.*
-
-
+For detailed usage instructions, see [USAGE.md](USAGE.md).
 
 ## 📊 Evaluation
 

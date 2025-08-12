@@ -1,3 +1,4 @@
+from tqdm import tqdm
 import yaml
 import openai
 from reasoning_sampler import LocalOAIClientSampler
@@ -39,7 +40,7 @@ def test_client(client, model_name) -> bool:
 
 
 working_coders = []
-for client, model_name in coder_clients:
+for client, model_name in tqdm(coder_clients, desc="Testing coder clients..."):
     ret = test_client(client, model_name)
     if ret:
         working_coders.append((client, model_name))
