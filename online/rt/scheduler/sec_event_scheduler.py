@@ -143,6 +143,9 @@ class SecEventScheduler(SchedulerBase):
         messages: List[Dict[str, str]],
         session_do: SecEventSessionDO,
     ) -> Optional[str]:
+        if session_do.state == State.JAILBROKEN:
+            # already jailbroken, no need to continue
+            return "<Jailbroken>"
         prompt, state = self.temporal_explorator.process_turn(
             bt_id=self.scheduler_do.defender_id,
             session_id=session_id,
@@ -164,6 +167,21 @@ class SecEventScheduler(SchedulerBase):
                 session_do.scheduled_prompt, succ=True, confidence=1.0
             )
             return None
+        
+        # if previous turns are not jailbroken yet
+        # we need to judge the final turn
+        _, state = self.temporal_explorator.process_turn(
+            bt_id=self.scheduler_do.defender_id,
+            session_id=session_id,
+            chat_history=messages,
+            goal=session_do.scheduled_prompt.goal,
+        )
+        session_do.state = state
+        if state == State.JAILBROKEN:
+            self._feedback(
+                session_do.scheduled_prompt, succ=True, confidence=1.0
+            )
+            return "<Jailbroken>"
         else:
             self._feedback(
                 session_do.scheduled_prompt, succ=False, confidence=1.0
