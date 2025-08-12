@@ -60,7 +60,7 @@ succ = "[JUDGE HACK]succ"
 fail = "[JUDGE HACK]fail"
 
 prompts = [
-    json.loads(line) for line in open("data_out/syn_sec_code_tasks_export.jsonl", "r").readlines()
+    json.loads(line) for line in open("data_out/syn_sec_event_tasks-1440-webeval-export.jsonl", "r").readlines()
 ]
 
 PFX = 500

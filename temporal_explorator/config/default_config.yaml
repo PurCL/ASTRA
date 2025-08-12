@@ -1,8 +1,8 @@
 # Default configuration for temporal explorator
 state_mapper:
-  model_url: "http://54.202.245.166:8010/v1"
-  model_api_key: "reverse-training"
-  model_name: "llama-3.1-70b-inst-judge"
+  model_url: "http://35.87.6.13:8000/v1"
+  model_api_key: "redteam233"
+  model_name: "Qwen/Qwen3-Coder-30B-A3B-Instruct"
   temperature: 0.7
   max_tokens: 1024
   max_retries: 5
@@ -11,9 +11,9 @@ action_selector:
   action_selection_strategy: "deterministic"
 
 prompt_generator:
-  mutator_model_url: "http://54.202.245.166:8010/v1"
-  mutator_model_api_key: "reverse-training"
-  mutator_model_name_or_path: "llama-3.1-70b-inst-judge"
+  mutator_model_url: "http://35.87.6.13:8000/v1"
+  mutator_model_api_key: "redteam233"
+  mutator_model_name_or_path: "Qwen/Qwen3-Coder-30B-A3B-Instruct"
   mutator_model_temperature: 0.7
   mutator_model_max_tokens: 1024
   mutator_model_max_retries: 5

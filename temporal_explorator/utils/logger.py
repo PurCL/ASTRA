@@ -5,7 +5,7 @@ from pathlib import Path
 # Create log directory if it doesn't exist
 log_dir = Path(__file__).parent.parent.parent / "tests" / "log"
 log_dir.mkdir(parents=True, exist_ok=True)
-log_file = log_dir / "qwen-2.5-coder-7b-instruct-new-agent-prompt-150.log"
+log_file = log_dir / "online-test.log"
 
 # Configure the root logger
 logger = logging.getLogger()
@@ -28,6 +28,12 @@ purcl_logger.handlers.clear()
 purcl_file_handler = logging.FileHandler(log_file)
 purcl_file_handler.setFormatter(purcl_formatter)
 purcl_logger.addHandler(purcl_file_handler)
+
+# Create console handler for purcl_logger
+purcl_console_handler = logging.StreamHandler()
+purcl_console_handler.setFormatter(purcl_formatter)
+purcl_logger.addHandler(purcl_console_handler)
+
 purcl_logger.propagate = False
 
 purcl_logger_extra = {

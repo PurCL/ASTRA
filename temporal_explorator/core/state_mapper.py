@@ -51,7 +51,7 @@ class StateMapper:
         self.temperature = config.get('temperature', 0.7)
         self.max_tokens = config.get('max_tokens', 500)
         self.max_retries = config.get('max_retries', 3)
-        
+
         purcl_logger_adapter.debug(f"Model config: name={self.model_name}, temp={self.temperature}, max_tokens={self.max_tokens}")
         purcl_logger_adapter.info("StateMapper initialized successfully")
     
