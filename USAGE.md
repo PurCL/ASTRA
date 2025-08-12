@@ -45,9 +45,14 @@ This component leverages the structured knowledge graphs to systematically gener
 
 ### Running Scripts:
 
+The LLMs used for generating prompts and for local blue-teams are specified in the `resources/coder-config.yaml` file.
+
+
 ```bash
-python3 agent/main_sec_code.py --fout <output_file.jsonl> --log <path to log_file>
-python3 agent/main_sec_event.py --fout <output_file.jsonl> --log <path to log_file>
+python3 agent/main_sec_code.py --fout <output_file-agent-code.jsonl> --log <path to log_file>
+python3 agent/main_sec_event.py --fout <output_file-agent-sec.jsonl> --log <path to log_file>
+## Use the following commands to export the prompts
+python3 agent/export_syn_prompt.py --fin <path to the output_file-agent-code.jsonl> --fout <output_file-exported.jsonl> 
 ```
 
 ## Component 3: Online Adaptive Exploration and Violation Generation
@@ -74,9 +79,22 @@ This component performs real-time adaptive red-teaming by dynamically probing ta
 
 ### Running Scripts:
 
+First, we need to host the judge models of ASTRA for evaluating whether a generated code snippet is vulnerable or not.
+Hosting the model using the following command:
+```bash
+vllm serve microsoft/Phi-4-mini-instruct --dtype auto --api-key <YOUR_API_KEY> --swap_space 32 --max-model-len 8192 --enable-lora --lora-modules PurCL/astra-judge-121k PurCL/astra-judge-10k
+```
+It could be hosted on an A6000 GPU with 48GB memory.
+Specify the hosted model at `resources/online-judge.yaml`.
+
+Then host a rewriter model for online temporal exploration.
+It could be a black-box LLM or any model hosted with vLLM.
+Specify the hosted model at `online/rt/temporal_explorator/config/default_config.yaml`.
+
+We performed our test with `Qwen/Qwen3-Coder-30B-A3B-Instruct`.
+
 First, modify the `online/tests/example_bt.py` to specify your target coder model.
 Then run the main exploration script:
 ```bash
-
 python3 online/main.py --pair_id <pair_id>
 ```

@@ -3,6 +3,8 @@ import asyncio
 import openai
 import json
 import random
+
+import yaml
 from rt.constants import (
     JUDGE_STRONG_CONFIDENCE,
     JUDGE_NORMAL_CONFIDENCE,
@@ -98,16 +100,9 @@ sys_prompt = "You are a proficient software security expert."
 rules = json.loads(open("resources/rules.json", "r").read())
 rule2desc = {r: e["longDescription"] for r, e in rules.items()}
 
-
-client_ips = [
-    # "52.12.13.129",
-    # "34.218.58.61",
-    # "35.92.76.124",
-    "localhost",
-]
-
-# ports = [p for p in range(8001, 8009)]
-ports = [8004]
+judge_config = yaml.safe_load(open("resources/online-judge.yaml", "r"))
+client_ips = judge_config.get("addrs", [])
+judge_api_key = judge_config.get("api_key", "<YOUR_API_KEY>")
 
 
 class ModelJudge:
@@ -159,11 +154,10 @@ class ModelJudge:
         # randomly sample 3 ips
         selected_ips = random.sample(client_ips, min(3, len(client_ips)))
         for ip in selected_ips:
-            selected_port = random.choice(ports)
             client = openai.OpenAI(
-                base_url=f"http://{ip}:{selected_port}/v1", api_key="redteam233"
+                base_url=ip, api_key=judge_api_key
             )
-            purcl_logger_adapter.info("Selected judge at %s:%d" % (ip, selected_port))
+            purcl_logger_adapter.info("Selected judge at %s" % (ip))
             try:
                 rsp = client.chat.completions.create(
                     model=model_name,
@@ -196,9 +190,9 @@ class ModelJudge:
         if prompt is None:
             return True, JUDGE_UNSURE_CONFIDENCE
         if expected_rule in self.final_only_rule_set:
-            model_name = "sft-all-final-10k"
+            model_name = "PurCL/astra-judge-10k"
         else:
-            model_name = "sft-all-121k"
+            model_name = "PurCL/astra-judge-121k"
         purcl_logger_adapter.info("Using model: %s for judge" % model_name)
 
         # rsps = self._send_query(prompt, "task-judge-3k")

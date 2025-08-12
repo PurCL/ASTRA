@@ -349,8 +349,6 @@ async def run(fout, existing_data):
             print("The new task is already seen, not adding to the queue.")
 
 
-        # sample another task
-
     await TaskGenCollectAgent.register(
         runtime,
         "TaskGenCollectAgent",
