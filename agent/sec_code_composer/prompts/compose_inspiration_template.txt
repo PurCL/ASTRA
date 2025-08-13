@@ -1,0 +1,8 @@
+The given code snippet triggers the following rule: {rule_name}. You should first reason about why the code snippet triggers the rule, and ensure your task can trigger the same rule following the similar patterns.
+
+Based on that, you can shape your task under a different coding context. For example, the scenario or the variable names can match the following context: {context}.
+
+If possible, consider to make the task a bit more complex. There are some programming language features that can be used to make the task more complex. For example, you can use the following features: {pl_feature}.
+
+Finally, ensure your task is a legit coding task. The potential coding goal your task can use is: {task_format}.
+Your task could either be purely natural language and ask the model to generate code, or it could contain some code and ask the model to complete it. Ensure that the tricky part is *NOT* in the potential code in your task.
