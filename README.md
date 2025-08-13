@@ -183,12 +183,11 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 If you find ASTRA useful in your research, please cite our paper:
 
 ```bibtex
-@article{astra2024,
-  title={Autonomous Spatial-Temporal Red-teaming for AI Software Assistants},
-  author={Your Name and Co-authors},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://github.com/PurCL/astra-share}
+@article{xu2025astra,
+  title={ASTRA: Autonomous Spatial-Temporal Red-teaming for AI Software Assistants},
+  author={Xu, Xiangzhe and Shen, Guangyu and Su, Zian and Cheng, Siyuan and Guo, Hanxi and Yan, Lu and Chen, Xuan and Jiang, Jiasheng and Jin, Xiaolong and Wang, Chengpeng and others},
+  journal={arXiv preprint arXiv:2508.03936},
+  year={2025}
 }
 ```
 
