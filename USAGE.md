@@ -82,7 +82,7 @@ This component performs real-time adaptive red-teaming by dynamically probing ta
 First, we need to host the judge models of ASTRA for evaluating whether a generated code snippet is vulnerable or not.
 Hosting the model using the following command:
 ```bash
-vllm serve microsoft/Phi-4-mini-instruct --dtype auto --api-key <YOUR_API_KEY> --swap_space 32 --max-model-len 8192 --enable-lora --lora-modules PurCL/astra-judge-121k PurCL/astra-judge-10k
+vllm serve microsoft/Phi-4-mini-instruct --dtype auto --api-key <YOUR API KEY> --swap_space 32 --max-model-len 8192 --enable-lora --lora-modules PurCL/astra-judge-121k=PurCL/astra-judge-121k  PurCL/astra-judge-10k=PurCL/astra-judge-10k
 ```
 It could be hosted on an A6000 GPU with 48GB memory.
 Specify the hosted model at `resources/online-judge.yaml`.
