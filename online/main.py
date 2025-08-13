@@ -7,14 +7,14 @@ import argparse
 import yaml
 
 parser = argparse.ArgumentParser(description="Run the red team simulation.")
-parser.add_argument("--model_name", type=str, default="phi4m")
-parser.add_argument("--system_name", type=str, default="astra")
-parser.add_argument("--note", type=str, default="")
-parser.add_argument("--config", type=str, default="resources/client-config.yaml")
-parser.add_argument("--log", type=str, default="")
-parser.add_argument("--n_session", type=int, default=200)
-parser.add_argument("--n_probing", type=int, default=100)
-parser.add_argument("--n_turn", type=int, default=5)
+parser.add_argument("--model_name", type=str, default="phi4m", help="Name of the model to use as defender")
+parser.add_argument("--system_name", type=str, default="astra", help="Name of the red team system")
+parser.add_argument("--note", type=str, default="", help="Optional note to add to the pair ID")
+parser.add_argument("--config", type=str, default="resources/client-config.yaml", help="Path to client configuration file")
+parser.add_argument("--log", type=str, default="", help="Path to output log file (defaults to log_out/{pair_id}.jsonl)")
+parser.add_argument("--n_session", type=int, default=200, help="Number of chat sessions to simulate")
+parser.add_argument("--n_probing", type=int, default=100, help="Number of initial sessions used for probing")
+parser.add_argument("--n_turn", type=int, default=5, help="Maximum number of turns per chat session")
 args = parser.parse_args()
 
 def main():

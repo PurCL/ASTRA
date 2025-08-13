@@ -71,13 +71,11 @@ ASTRA operates through a sophisticated three-stage process:
 3. **🎯 Violation Generation** - Creates high-quality violation-inducing cases to improve model alignment and safety -->
 
 
-
-
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.9+
 - Required dependencies (see `requirements.txt`)
 - API access to LLM providers (OpenAI, Anthropic, etc.)
 
@@ -91,46 +89,26 @@ pip install -r requirements.txt
 
 ### Basic Usage
 
-#### Offline Domain Modeling
-
-Pre-built knowledge graphs are already available in the `kg/` directory for secure code and security event domains. To explore or extend:
-
-```bash
-# View existing knowledge graphs
-ls kg/
-# Example: mal_tactics.kg, pl_features.kg, context.kg
-```
-
-#### Generate Attack Prompts
-
-Use the structured knowledge graphs to generate sophisticated jailbreaking prompts:
-
-```bash
-# Generate secure code attack prompts
-python3 agent/main_sec_code.py --fout data_out/my_code_attacks.jsonl --log logs/code_gen.log
-
-# Generate security event attack prompts  
-python3 agent/main_sec_event.py --fout data_out/my_event_attacks.jsonl --log logs/event_gen.log
-```
-
-#### Online Adaptive Exploration
-
-Perform real-time adaptive red-teaming against target AI systems:
-
-```bash
-# Configure your target model in online/tests/example_bt.py
-# Then run adaptive exploration
-python3 online/main.py --pair_id test_session_001
-```
-
-### Output Structure
-
-- **Generated Prompts**: `data_out/*.jsonl` - Contains synthesized attack prompts
-- **Exploration Logs**: `log_out/*.jsonl` - Records of online exploration sessions  
-- **Knowledge Graphs**: `kg/*.kg` - Structured domain knowledge
-
+ASTRA consists multiple stages from knowledge graph construction to online adaptive red-teaming. This section provides a convenient guide on how to run the online adaptive red-teaming component with a new target model. 
 For detailed usage instructions, see [USAGE.md](USAGE.md).
 
+ASTRA comes with prompts generated for secure code generation and security event guidance domains. You can directly use those prompts to test your target model.
+
+Specify the configure of your model at `resources/client-config.yaml`.
+And then run the following command to start the online adaptive red-teaming process:
+
+```bash
+python3 online/main.py --model_name <name of the blue team model> --log <path to the output log file> --n_session <number of chat sessions> --n_probing <number of initial probing sessions before the chat sessions> --n_turn <maximum number of turns per session>
+```
+
+For example,
+
+```bash
+python3 online/main.py --model_name phi4m --log log_out/phi4m.jsonl --n_session 200 --n_probing 0 --n_turn 5
+```
+This will run 200 chat sessions with the target model `phi4m`, each with up to 5 turns, and log the results to `log_out/phi4m.jsonl`.
+
+<!-- 
 ## 📊 Evaluation
 
 <div align="center">
@@ -164,7 +142,7 @@ For detailed usage instructions, see [USAGE.md](USAGE.md).
 - **🎯 Target**: AI coding assistant
 - **🔄 Strategy**: Multi-turn conversation planning
 - **✅ Result**: Vulnerability discovered in 3 turns
-- **📊 Success**: 95% attack success rate
+- **📊 Success**: 95% attack success rate -->
 
 
 ## 📧 Contact
