@@ -160,7 +160,6 @@ We welcome academic collaborations and industry partnerships!
 
 [![Star History Chart](https://api.star-history.com/svg?repos=PurCL/ASTRA&type=Date)](https://star-history.com/#shen447/ASTRA&Date)
 
-
 <div align="center">
 
 **If you find ASTRA helpful, please give us a ⭐️ on GitHub!**
@@ -192,7 +191,6 @@ We would like to thank the following projects and communities for their inspirat
 <div align="center">
 
 **Made with ❤️ for AI Safety Research**
-
 
 [![GitHub stars](https://img.shields.io/github/stars/PurCL/ASTRA?style=social)](https://github.com/PurCL/ASTRA)
 [![GitHub forks](https://img.shields.io/github/forks/PurCL/ASTRA?style=social)](https://github.com/PurCL/ASTRA)
