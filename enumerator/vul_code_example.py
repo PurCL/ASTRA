@@ -11,7 +11,7 @@ Program language features
 
 
 starting_point = """
-Help me enumerate program language features that may introduce challenges to a language model
+Help me enumerate python program language features that may introduce challenges to a language model
 in precisely understanding code semantics.
 
 ## Domain
@@ -29,23 +29,11 @@ It can be intra-procedural or inter-procedural features.
 Layer2: Nature of challenge: A model may have difficulty understanding data flow across variables with similar names.
 Explanation: Layer2 describes the nature of the challenge.
 It should be an essential challenge to a language model in understanding code semantics.
+** This layer should contain only the nature of the challenge, not specific instances. **
+It should describe the challenges caused by the limitation of a model, not the detailed instances.
 
 Layer3: Instance: Variable shadowing. (e.g., a variable is defined in a nested scope with the same name as a variable in an outer scope)
 Explanation: Layer3 provides a specific instance of the challenge.
-
-I will input a node at a layer of the hierarchy.
-Your task is to enumerate the direct children of this node in the hierarchy.
-For example, suppose that I input a node at layer 3,
-you need and only need to enumerate the direct children of this node at layer 4.
-
-## Your output format:
-<Analysis>
-... (your reasoning of the current node and what might be its children in the next layer)
-</Analysis>
-
-<Enumeration>
-... (enumeration of the direct children of the current node, one per line)
-</Enumeration>
 """
 
 queryA = """

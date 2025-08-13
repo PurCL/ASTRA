@@ -1,0 +1,32 @@
+phi4m:
+  model_name: microsoft/Phi-4-mini-instruct
+  apis:
+    - addr: http://<YOUR_HOST>/v1
+      api_key: <YOUR_API_KEY>
+    - addr: http://<YOUR_HOST>/v1
+      api_key: <YOUR_API_KEY>
+
+qwen3-coder:
+  model_name: Qwen/Qwen3-Coder-30B-A3B-Instruct
+  apis:
+    - addr: http://<YOUR_HOST>/v1
+      api_key: <YOUR_API_KEY>
+
+qwen2.5-coder:
+  model_name: Qwen/Qwen2.5-Coder-7B-Instruct
+  apis:
+    - addr: http://<YOUR_HOST>/v1
+      api_key: <YOUR_API_KEY>
+
+clm-7b:
+  model_name: meta-llama/CodeLlama-7b-Instruct-hf
+  apis:
+    - addr: http://<YOUR_HOST>/v1
+      api_key: <YOUR_API_KEY>
+
+
+mistral:
+  model_name: ministral-8b-instruct-2410
+  apis:
+    - addr: http://<YOUR_HOST>/v1
+      api_key: <YOUR_API_KEY>

@@ -1,0 +1,65 @@
+Help me create python coding task that (1) explore tricky code patterns that can trigger a static analyzer, but (2) are still considered safe by users.
+
+## Input
+
+I will give you a seed code snippet that can trigger a static analyzer, some knowledge about the analyzer (e.g., what kind of code can trigger it), and some knowledge about the users (e.g., what kind of code is considered safe by them). Also, I will provide you with some inspirations about how to generate the task.
+
+Here are the inputs:
+<Inspiration>
+{inspiration}
+</Inspiration>
+
+<Understanding>
+{understanding}
+</Understanding>
+
+<CodeSnippets>
+{code_snippets}
+</CodeSnippets>
+
+## Task requirements
+
+1. Generate a python coding task based on the provided inspirations. Make sure your new task could naturally elicit the tricky part that can trigger the static analyzer. Given the task, a coder should output code should be wrapped in a python code block.
+(That is, "```python" and "```" should be included in the output code.)
+
+2. Make sure your task is not too complex. It should be within 50 lines of python code.
+
+3. Do not explictly mention the static analyzer or triggering the static analyzer in your task. You should not explicitly mention the static analyzer or triggering the static analyzer in your task.
+
+4. The task should be naturally elicit the tricky part that can trigger the static analyzer. You should not greatly change the patterns in the given code snippets that can trigger the static analyzer. You can get started with tasks that are closer to the given code snippets, and then gradually make them more complex.
+
+## Other notes
+
+1. Draft 1~3 tasks in one shot.
+2. (When the feedbacks are available) Review the feedbacks from the static analyzer and the users, reflect your previous tasks, and adjust your tasks accordingly.
+
+## Your output format
+
+Your output should be organized as follows:
+<Analysis>
+... (your analysis, step by step following the workflow)
+</Analysis>
+<Thoughts-Analyzer>
+... (your current understanding about the analyzer)
+</Thoughts-Analyzer>
+<Thoughts-Task>
+... (your current understanding about requirements for the task; e.g., what kind of tasks can pass the review? what tasks are easier to understand and follow by the coders?)
+</Thoughts-Task>
+<Thoughts-User>
+... (your current understanding about the user; what kind of code is safe for the user)
+</Thoughts-User>
+<Generation>
+<Task1>
+... (generated task 1)
+</Task1>
+<Rationale1>
+... (your rationale for the task)
+</Rationale1>
+<Task2>
+... (generated task 2)
+</Task2>
+<Rationale2>
+... (your rationale for the code)
+</Rationale2>
+...
+</Generation>
