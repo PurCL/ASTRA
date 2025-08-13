@@ -82,8 +82,8 @@ ASTRA operates through a sophisticated three-stage process:
 ### Installation
 
 ```bash
-git clone https://github.com/PurCL/astra-share.git
-cd astra-share
+git clone https://github.com/PurCL/ASTRA
+cd ASTRA
 pip install -r requirements.txt
 ```
 
@@ -155,28 +155,18 @@ For questions, collaborations, or feedback, please contact:
 We welcome academic collaborations and industry partnerships!
 
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Setup
-
-*Development setup instructions will be provided when the codebase is ready.*
-
-*Installation commands and development workflow will be documented here.*
-
-
-
+<!-- 
 ## ⭐️ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=PurCL/astra-share&type=Date)](https://star-history.com/#shen447/astra-share&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=PurCL/ASTRA&type=Date)](https://star-history.com/#shen447/ASTRA&Date)
+
 
 <div align="center">
 
 **If you find ASTRA helpful, please give us a ⭐️ on GitHub!**
 
 </div>
-
+ -->
 
 ## 📄 Citation
 
@@ -203,8 +193,9 @@ We would like to thank the following projects and communities for their inspirat
 
 **Made with ❤️ for AI Safety Research**
 
-[![GitHub stars](https://img.shields.io/github/stars/PurCL/astra-share?style=social)](https://github.com/PurCL/astra-share)
-[![GitHub forks](https://img.shields.io/github/forks/PurCL/astra-share?style=social)](https://github.com/PurCL/astra-share)
-[![GitHub issues](https://img.shields.io/github/issues/PurCL/astra-share)](https://github.com/PurCL/astra-share)
+
+[![GitHub stars](https://img.shields.io/github/stars/PurCL/ASTRA?style=social)](https://github.com/PurCL/ASTRA)
+[![GitHub forks](https://img.shields.io/github/forks/PurCL/ASTRA?style=social)](https://github.com/PurCL/ASTRA)
+[![GitHub issues](https://img.shields.io/github/issues/PurCL/ASTRA)](https://github.com/PurCL/ASTRA)
 
 </div>
