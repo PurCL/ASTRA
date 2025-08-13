@@ -5,9 +5,13 @@ from tree_utils import TreeNode, tree_dumps
 from stix2 import FileSystemSource
 from mitre_utils import subtechniques_of, getTacticsByMatrix, get_tactic_techniques 
 
+# clone https://github.com/mitre/cti and specify the path
 PATH_TO_CTI = "path/to/cti"
+# clone https://github.com/mitre-atlas/atlas-data and specify the path
 PATH_TO_ATLAS = "path/to/atlas"
 
+if PATH_TO_ATLAS == "path/to/atlas" or PATH_TO_CTI == "path/to/cti":
+    raise ValueError("Please specify the correct path to the CTI and ATLAS data repositories.")
 
 cti_data_source = {
     "MITRE-Enterprise": {"dir": f"{PATH_TO_CTI}/enterprise-attack", "kill_chain_name": "mitre-attack"},
