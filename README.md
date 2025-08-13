@@ -73,13 +73,13 @@ ASTRA operates through a sophisticated three-stage process:
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### ✅ Prerequisites
 
-- Python 3.9+
-- Required dependencies (see `requirements.txt`)
-- API access to LLM providers (OpenAI, Anthropic, etc.)
+- 🐍 Python 3.9+
+- 📦 Required dependencies (see `requirements.txt`)
+- 🔑 API access to LLM providers (OpenAI, Anthropic, etc.)
 
-### Installation
+### 🛠️ Installation
 
 ```bash
 git clone https://github.com/PurCL/ASTRA
@@ -87,15 +87,15 @@ cd ASTRA
 pip install -r requirements.txt
 ```
 
-### Basic Usage
+### ▶️ Basic Usage
 
-ASTRA consists multiple stages from knowledge graph construction to online adaptive red-teaming. This section provides a convenient guide on how to run the online adaptive red-teaming component with a new target model. 
-For detailed usage instructions, see [USAGE.md](USAGE.md).
+ASTRA consists multiple stages from knowledge graph construction to online adaptive red-teaming. This section provides a convenient guide on how to run the online adaptive red-teaming component with a new target model.  
+For detailed usage instructions, see 📘 [USAGE.md](USAGE.md).
 
 ASTRA comes with prompts generated for secure code generation and security event guidance domains. You can directly use those prompts to test your target model.
 
-Specify the configure of your model at `resources/client-config.yaml`.
-And then run the following command to start the online adaptive red-teaming process:
+🧰 Specify the configure of your model at `resources/client-config.yaml`.  
+Then run the following command to start the online adaptive red-teaming process:
 
 ```bash
 python3 online/main.py --model_name <name of the blue team model> --log <path to the output log file> --n_session <number of chat sessions> --n_probing <number of initial probing sessions before the chat sessions> --n_turn <maximum number of turns per session>
@@ -106,7 +106,7 @@ For example,
 ```bash
 python3 online/main.py --model_name phi4m --log log_out/phi4m.jsonl --n_session 200 --n_probing 0 --n_turn 5
 ```
-This will run 200 chat sessions with the target model `phi4m`, each with up to 5 turns, and log the results to `log_out/phi4m.jsonl`.
+📝 This will run 200 chat sessions with the target model `phi4m`, each with up to 5 turns, and log the results to `log_out/phi4m.jsonl`.
 
 <!-- 
 ## 📊 Evaluation
