@@ -1,27 +1,43 @@
 import json
-# from tests import bt_stub
-from tests import example_bt as bt_stub
+from bt.client import BTClientFactory
 import uuid
 from tqdm import tqdm
 from rt import rt_entry
 import argparse
+import yaml
 
 parser = argparse.ArgumentParser(description="Run the red team simulation.")
-parser.add_argument("--pair_id", type=str, default="astra-vs-phi4m")
+parser.add_argument("--model_name", type=str, default="phi4m")
+parser.add_argument("--system_name", type=str, default="astra")
+parser.add_argument("--note", type=str, default="")
+parser.add_argument("--config", type=str, default="resources/client-config.yaml")
 parser.add_argument("--log", type=str, default="")
-
+parser.add_argument("--n_session", type=int, default=200)
+parser.add_argument("--n_probing", type=int, default=100)
+parser.add_argument("--n_turn", type=int, default=5)
 args = parser.parse_args()
 
 def main():
-    pair_id = args.pair_id
+    if args.note:
+        pair_id = f"{args.system_name}-vs-{args.model_name}-{args.note}"
+    else:
+        pair_id = f"{args.system_name}-vs-{args.model_name}"
+    config = yaml.safe_load(open(args.config, "r"))
+    client_config = config[args.model_name]
+    bt_entry = BTClientFactory.create_client(
+        client_name=client_config["model_name"],
+        **client_config,
+    )
+    bt_entry.test_client()
+
     if args.log:
         fout_name = args.log
     else:
         fout_name = f"log_out/{pair_id}.jsonl"
     fout = open(fout_name, "w")
-    N_SESSION = 50
-    N_PROBING = 25
-    N_TURN = 5
+    N_SESSION = args.n_session
+    N_PROBING = args.n_probing
+    N_TURN = args.n_turn
     for session_num in tqdm(range(N_SESSION), desc="Testing..."):
         session_id = str(uuid.uuid4())
         id_to_query = f"{pair_id}#~#{session_id}"
@@ -45,7 +61,7 @@ def main():
                     "content": rt_rsp,
                 }
             )
-            bt_rsp = bt_stub.handle_chat_request(
+            bt_rsp = bt_entry.handle_chat_request(
                 messages=messages, red_team_id=id_to_query
             )
             print(f"BT response: {bt_rsp[:100]}")

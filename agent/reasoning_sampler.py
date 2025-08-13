@@ -100,7 +100,7 @@ class DeepSeekReasoningSampler(ReasoningSampler):
         self.config = Config(read_timeout=240)
         self.model_id = "us.deepseek.r1-v1:0"
         self.br_client = boto3.client(
-            service_name="bedrock-runtime", config=self.config
+            service_name="bedrock-runtime", config=self.config, region_name="us-west-2"
         )
 
     def get_sampler_id(self):

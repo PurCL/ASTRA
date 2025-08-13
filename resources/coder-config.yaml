@@ -1,30 +1,30 @@
 phi4m:
   model_name: microsoft/Phi-4-mini-instruct
   apis:
-    - addr: http://localhost:8001/v1
-      api_key: redteam233
+    # - addr: http://localhost:8001/v1
+    #   api_key: redteam233
     - addr: http://54.212.178.87:8001/v1
       api_key: redteam233
     - addr: http://54.212.178.87:8002/v1
       api_key: redteam233
-    - addr: http://54.212.178.87:8003/v1
-      api_key: redteam233
-    - addr: http://54.212.178.87:8004/v1
-      api_key: redteam233
-    - addr: http://54.212.178.87:8005/v1
-      api_key: redteam233
-    - addr: http://54.212.178.87:8006/v1
-      api_key: redteam233
-    - addr: http://54.212.178.87:8007/v1
-      api_key: redteam233
+    # - addr: http://54.212.178.87:8003/v1
+    #   api_key: redteam233
+    # - addr: http://54.212.178.87:8004/v1
+    #   api_key: redteam233
+    # - addr: http://54.212.178.87:8005/v1
+    #   api_key: redteam233
+    # - addr: http://54.212.178.87:8006/v1
+    #   api_key: redteam233
+    # - addr: http://54.212.178.87:8007/v1
+    #   api_key: redteam233
 
 
 
-mistral:
-  model_name: mistralai/Ministral-8B-Instruct-2410
-  apis:
-    - addr: http://localhost:8002/v1
-      api_key: redteam233
+# mistral:
+#   model_name: mistralai/Ministral-8B-Instruct-2410
+#   apis:
+#     - addr: http://localhost:8002/v1
+#       api_key: redteam233
 
 qwen3-coder:
   model_name: Qwen/Qwen3-Coder-30B-A3B-Instruct
@@ -33,22 +33,29 @@ qwen3-coder:
       api_key: redteam233
 
 qwen2.5-coder:
-  model_name: qwen-2.5-coder-7b-instruct
+  model_name: Qwen/Qwen2.5-Coder-7B-Instruct
   apis:
     - addr: http://54.212.178.87:8010/v1
-      api_key: astra
+      api_key: redteam233
+#     - addr: http://54.212.178.87:8011/v1
+#       api_key: redteam233
 
-# clm-7b:
-#   model_name: meta-llama/CodeLlama-7b-Instruct-hf
-#   apis:
-#     - addr: http://54.148.88.179:8001/v1
+clm-7b:
+  model_name: meta-llama/CodeLlama-7b-Instruct-hf
+  apis:
+    - addr: http://54.212.178.87:8011/v1
+      api_key: redteam233
+#     - addr: http://54.212.178.87:8011/v1
 #       api_key: redteam233
-#     - addr: http://54.148.88.179:8002/v1
-#       api_key: redteam233
-#     - addr: http://54.148.88.179:8003/v1
-#       api_key: redteam233
-#     - addr: http://54.148.88.179:8004/v1
-#       api_key: redteam233
+
+
+mistral:
+  model_name: ministral-8b-instruct-2410
+  apis:
+    - addr: http://54.212.178.87:8012/v1
+      api_key: redteam233
+    # - addr: http://54.212.178.87:8011/v1
+    #   api_key: redteam233
 
 
 # cgm-7b:

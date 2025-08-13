@@ -5,15 +5,19 @@ from tree_utils import TreeNode, tree_dumps
 from stix2 import FileSystemSource
 from mitre_utils import subtechniques_of, getTacticsByMatrix, get_tactic_techniques 
 
+PATH_TO_CTI = "path/to/cti"
+PATH_TO_ATLAS = "path/to/atlas"
+
+
 cti_data_source = {
-    "MITRE-Enterprise": {"dir": "../cti/enterprise-attack", "kill_chain_name": "mitre-attack"},
-    "MITRE-Mobile": {"dir": "../cti/mobile-attack", "kill_chain_name": "mitre-mobile-attack"},
-    "MITRE-ICS": {"dir": "../cti/ics-attack", "kill_chain_name": "mitre-ics-attack"},
+    "MITRE-Enterprise": {"dir": f"{PATH_TO_CTI}/enterprise-attack", "kill_chain_name": "mitre-attack"},
+    "MITRE-Mobile": {"dir": f"{PATH_TO_CTI}/mobile-attack", "kill_chain_name": "mitre-mobile-attack"},
+    "MITRE-ICS": {"dir": f"{PATH_TO_CTI}/ics-attack", "kill_chain_name": "mitre-ics-attack"},
 }
 
 
 atlas_data_source = {
-    "MITRE-ATLAS": "../atlas-data/dist/ATLAS.yaml",
+    "MITRE-ATLAS": f"{PATH_TO_ATLAS}/dist/ATLAS.yaml",
 }
 
 

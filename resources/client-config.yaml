@@ -1,0 +1,39 @@
+phi4m:
+  model_name: microsoft/Phi-4-mini-instruct
+  addr: http://54.212.178.87:8002/v1
+  api_key: redteam233
+
+qwen-2.5-coder:
+  model_name: Qwen/Qwen2.5-Coder-7B-Instruct
+  addr: http://54.212.178.87:8010/v1
+  api_key: redteam233
+  
+mistral-8b-instruct:
+  model_name: ministral-8b-instruct-2410
+  addr: http://54.212.178.87:8012/v1
+  api_key: redteam233
+
+gpt-oss-20b:
+  model_name: openai.gpt-oss-20b-1:0
+  region: us-west-2
+  max_completion_tokens: 1024
+  temperature: 0.8
+  read_timeout: 240
+  reasoning_effort: low
+
+gpt-oss-120b:
+  model_name: openai.gpt-oss-120b-1:0
+  region: us-west-2
+  max_completion_tokens: 1024
+  temperature: 0.8
+  read_timeout: 240
+  reasoning_effort: low
+
+claude-3.5-haiku:
+  model_name: "anthropic.claude-3-5-haiku-20241022-v1:0"
+  anthropic_version: "bedrock-2023-05-31"
+  region: us-west-2
+  max_tokens: 1024
+  temperature: 0.8
+  read_timeout: 240
+  top_k: 50

@@ -4,10 +4,11 @@ share/**
 !share/README.md
 !share/*.py
 log_out/**
-
-tests/log/*
-tests/session_data/*
+data_out/**
+# tests/log/*
+# tests/session_data/*
 
 auto_detect/**
 
+tests/
 .cache*/**

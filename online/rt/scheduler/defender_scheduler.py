@@ -96,9 +96,9 @@ class DefenderScheduler:
 
 
     def new_attack(self, session_id: str):
-        if False:
+        # if False:
         # if True:
-        # if len(self._session_id2do) % 2 == 0:
+        if len(self._session_id2do) % 2 == 0:
             # new vul code session
             session_do, prompt = self._vul_code_scheduler.new_attack(session_id)
             self._session_id2do[session_id] = session_do
