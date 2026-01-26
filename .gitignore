@@ -11,3 +11,5 @@ auto_detect/**
 
 tests/
 .cache*/**
+
+codeql-db/**
