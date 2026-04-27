@@ -5,67 +5,80 @@ from agents.model_settings import ModelSettings
 from agents.models.interface import ModelTracing
 
 
-def _get_model_sonnet_4_5():
-    # Claude 4 model IDs on Bedrock (example: Sonnet 4)
-    # See AWS announcement for these IDs. :contentReference[oaicite:3]{index=3}
-    model_id = "global.anthropic.claude-sonnet-4-5-20250929-v1:0"
-
-    # Force the Bedrock Converse route (best for tool use).
-    # LiteLLM supports explicit bedrock/converse/<model> routing. :contentReference[oaicite:4]{index=4}
-    model = LitellmModel(model=f"bedrock/converse/{model_id}")
-    return model
-
-
-def _get_model_haiku_4_5():
-    model_id = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    model = LitellmModel(model=f"bedrock/converse/{model_id}")
-    return model
-
-
-def _get_model_gpt_oss_20b():
-    model_id = "openai.gpt-oss-20b-1:0"
-    model = LitellmModel(model=f"bedrock/converse/{model_id}")
-    return model
-
-def _get_model_gpt_oss_120b():
-    model_id = "openai.gpt-oss-120b-1:0"
-    model = LitellmModel(model=f"bedrock/converse/{model_id}")
-    return model
-
-def _get_model_sonnet_3_7():
-    model_id = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
-    model = LitellmModel(model=f"bedrock/converse/{model_id}")
-    return model
-
+# Load configurations
 config = yaml.safe_load(open("resources/client-config.yaml"))
+agent_sec_config = yaml.safe_load(open("resources/agent-sec-config.yaml"))
 
 
-def _get_model_local(model_short_name: str):
-    model_config = config[model_short_name]
+def _get_bedrock_model(model_config: dict) -> LitellmModel:
+    """
+    Create a Bedrock model instance.
+    Uses the bedrock/converse/<model_id> routing for best tool use support.
+    """
+    model_id = model_config["model_name"]
+    return LitellmModel(model=f"bedrock/converse/{model_id}")
+
+
+def _get_openai_compatible_model(model_config: dict) -> LitellmModel:
+    """
+    Create an OpenAI-compatible model instance (vLLM, SGLang, etc.).
+    """
     model_name = model_config["model_name"]
     addr = model_config["addr"]
     api_key = model_config["api_key"]
-    model = LitellmModel(
+    return LitellmModel(
         model=f"hosted_vllm/{model_name}",
         base_url=addr,
         api_key=api_key,
     )
-    return model
 
 
-def get_model(model_name: str):
-    if 'sonnet-4-5' in model_name:
-        return _get_model_sonnet_4_5()
-    elif 'haiku-4-5' in model_name:
-        return _get_model_haiku_4_5()
-    elif 'sonnet-3-7' in model_name:
-        return _get_model_sonnet_3_7()
-    elif 'gpt-oss-20b' in model_name:
-        return _get_model_gpt_oss_20b()
-    elif 'gpt-oss-120b' in model_name:
-        return _get_model_gpt_oss_120b()
+def get_model(model_name: str) -> LitellmModel:
+    """
+    Get a model instance by name with provider-based routing.
+
+    The model name should be defined in resources/client-config.yaml.
+    Each model config must have a 'provider' field:
+    - "bedrock": Routes to AWS Bedrock Converse API
+    - "openai": Routes to OpenAI-compatible server (vLLM, SGLang, etc.)
+
+    Args:
+        model_name: Short name of the model (e.g., "claude-sonnet-4-5", "qwen3coder")
+
+    Returns:
+        LitellmModel instance configured for the appropriate backend
+
+    Raises:
+        KeyError: If model_name is not found in client-config.yaml
+        ValueError: If provider field is missing or unsupported
+    """
+    if model_name not in config:
+        raise KeyError(
+            f"Model '{model_name}' not found in resources/client-config.yaml. "
+            f"Available models: {list(config.keys())}"
+        )
+
+    model_config = config[model_name]
+
+    # Check for provider field
+    if "provider" not in model_config:
+        raise ValueError(
+            f"Model '{model_name}' is missing 'provider' field in client-config.yaml. "
+            f"Must be either 'bedrock' or 'openai'"
+        )
+
+    provider = model_config["provider"]
+
+    # Route based on provider
+    if provider == "bedrock":
+        return _get_bedrock_model(model_config)
+    elif provider == "openai":
+        return _get_openai_compatible_model(model_config)
     else:
-        return _get_model_local(model_name)
+        raise ValueError(
+            f"Unsupported provider '{provider}' for model '{model_name}'. "
+            f"Must be either 'bedrock' or 'openai'"
+        )
 
 
 async def get_response_text(model, input_items,

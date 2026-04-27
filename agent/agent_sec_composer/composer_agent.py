@@ -1,10 +1,10 @@
 from agents import function_tool, RunContextWrapper
 from agents.extensions.models.litellm_model import LitellmModel
-from .utils_model import get_model, get_response_text
+from .utils_model import get_model, get_response_text, agent_sec_config
 from .context import MainAgentContext
 
 
-composer_model_name = "claude-sonnet-4-5"
+composer_model_name = agent_sec_config.get("composer_model", "claude-sonnet-4-5")
 
 
 def _get_composer_sys_prompt() -> str:

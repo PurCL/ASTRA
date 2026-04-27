@@ -1,2 +1,5 @@
 kg/bugtype.kg.json filter=lfs diff=lfs merge=lfs -text
 data_out/ filter=lfs diff=lfs merge=lfs -text
+kg/agent-sec/init.gen.kg filter=lfs diff=lfs merge=lfs -text
+kg/agent-sec/init.kg filter=lfs diff=lfs merge=lfs -text
+kg/agent-sec/init.yaml filter=lfs diff=lfs merge=lfs -text

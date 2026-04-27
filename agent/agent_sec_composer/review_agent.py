@@ -1,6 +1,6 @@
 from agents import function_tool,RunContextWrapper
 from agents.extensions.models.litellm_model import LitellmModel
-from .utils_model import get_model, get_response_text
+from .utils_model import get_model, get_response_text, agent_sec_config
 from .context import MainAgentContext
 import asyncio
 import json
@@ -23,7 +23,7 @@ Send a generated request text to a committe of review sub-agents.
 """
     context_obj: MainAgentContext = ctx.context
     # log_fout = open(context_obj.log_fout_name, "a")
-    reviewer_model_names = ["claude-sonnet-3-7", "claude-haiku-4-5", "gpt-oss-20b", "gpt-oss-120b", "qwen3coder"]
+    reviewer_model_names = agent_sec_config.get("reviewer_models", ["claude-sonnet-3-7", "claude-haiku-4-5"])
 
     reviewer_models = [get_model(model_name) for model_name in reviewer_model_names]
     reviews = await asyncio.gather(*[_get_review(model, request_text) for model in reviewer_models])

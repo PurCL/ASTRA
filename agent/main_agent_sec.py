@@ -4,6 +4,10 @@ from agent_sec_composer.main_agent import MainAgentInput, run_main_agent
 import asyncio
 import os
 import json
+import yaml
+
+# Load configuration
+agent_sec_config = yaml.safe_load(open("resources/agent-sec-config.yaml"))
 
 kg_fin = tree_loads(open("kg/agent-sec/init.gen.kg", "r").read())
 
@@ -32,7 +36,11 @@ def gen_instance_id(concrete_prohibited_instance: str, technique_family: str, pr
 
 kg_leaves = _get_leaf_nodes_from_kg(kg_fin)
 
-fout_name = 'data_out/syn_agent_sec.jsonl'
+# Create output directory if it doesn't exist
+output_dir = agent_sec_config.get("output_dir", "data_out")
+os.makedirs(output_dir, exist_ok=True)
+
+fout_name = f'{output_dir}/syn_agent_sec.jsonl'
 if os.path.exists(fout_name):
     existing_data = [json.loads(line) for line in open(fout_name, 'r')]
 else:
@@ -79,7 +87,8 @@ async def query_one(leaf_node: TreeNode):
         return None
 
 # async run, max parallel num is K
-K = 50
+K = agent_sec_config.get("parallel_tasks", 50)
+print(f"Running with {K} parallel tasks")
 semaphore = asyncio.Semaphore(K)
 async def run_all():
     pbar = tqdm(total=len(to_query), desc="Querying instances")

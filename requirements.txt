@@ -18,3 +18,4 @@ tqdm==4.67.0
 sacrebleu==2.5.1
 
 boto3
+openai-agents[litellm]

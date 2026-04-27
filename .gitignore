@@ -13,3 +13,9 @@ tests/
 .cache*/**
 
 codeql-db/**
+
+data_out/**
+
+log_out_agent_sec/**
+
+.vscode/**

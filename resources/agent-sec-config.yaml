@@ -1,0 +1,31 @@
+# Agent Security Test Generation Configuration
+# This file controls which models are used for test case generation
+
+# Model Selection:
+# All model names must be defined in resources/client-config.yaml
+# Each model can be either:
+#   - Bedrock models (provider: bedrock): Claude, GPT models on AWS Bedrock
+#   - OpenAI-compatible (provider: openai): vLLM, SGLang, local servers
+
+# Main coordinator agent model (orchestrates the workflow)
+coordinator_model: "claude-sonnet-4-5"
+
+# Composer agent model (generates test case drafts and revisions)
+composer_model: "claude-sonnet-4-5"
+
+# Reviewer committee models (evaluate test case quality)
+# Multiple models provide diverse perspectives on realism, actionability, and benign intent
+# Mix Bedrock and local models for best coverage
+reviewer_models:
+  - "claude-sonnet-3-7"
+  - "claude-haiku-4-5"
+  - "gpt-oss-20b"
+  - "gpt-oss-120b"
+  - "qwen3coder"
+
+# Generation settings
+parallel_tasks: 50  # Maximum number of concurrent generation tasks
+
+# Output directories
+output_dir: "data_out"
+log_dir: "log_out_agent_sec"
